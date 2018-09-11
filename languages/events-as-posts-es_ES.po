@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Events as Posts 1.0.0\n"
+"POT-Creation-Date: 2018-09-11 13:21+0200\n"
+"PO-Revision-Date: 2018-09-11 13:21+0200\n"
+"Last-Translator: \n"
+"Language-Team: Ambrogio Piredda <ambrogiopiredda@gmail.com>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: eap-functions.php:112 eap-functions.php:157 eap-functions.php:194
+msgid "There are no events"
+msgstr "No hay eventos"
+
+#: eap-options.php:23
+msgid "List"
+msgstr "Listado"
+
+#: eap-options.php:24
+msgid "Styles"
+msgstr "Diseño"
+
+#: eap-options.php:55
+msgid "Reset default values"
+msgstr "Restablecer valores originales"
+
+#: eap-options.php:55
+msgid "Reset"
+msgstr "Restablecer"
+
+#: eap-options.php:75 eap-options.php:76
+msgid "Settings"
+msgstr "Ajustes"
+
+#: eap-options.php:92
+msgid "List of events"
+msgstr "Listado de eventos"
+
+#: eap-options.php:98
+msgid "List settings"
+msgstr "Ajustes listado"
+
+#: eap-options.php:106
+msgid "Number of events"
+msgstr "Número de eventos"
+
+#: eap-options.php:113
+msgid "Categories"
+msgstr "Categorías"
+
+#: eap-options.php:120
+msgid "Period"
+msgstr "Período"
+
+#: eap-options.php:127
+msgid "Shortcode"
+msgstr ""
+
+#: eap-options.php:134
+msgid "Excerpt"
+msgstr "Extracto"
+
+#: eap-options.php:157
+msgid "List styles"
+msgstr "Diseño listado"
+
+#: eap-options.php:165
+msgid "Layout"
+msgstr "Disposición"
+
+#: eap-options.php:172
+msgid "Background color"
+msgstr "Color de fondo"
+
+#: eap-options.php:179
+msgid "Title color"
+msgstr "Color título"
+
+#: eap-options.php:186
+msgid "Category color"
+msgstr "Color categoría"
+
+#: eap-options.php:193
+msgid "Meta color *"
+msgstr "Color meta *"
+
+#: eap-options.php:200
+msgid "Time color"
+msgstr "Color hora"
+
+#: eap-options.php:207
+msgid "Location color"
+msgstr "Color lugar"
+
+#: eap-options.php:214
+msgid "Excerpt color"
+msgstr "Color extracto"
+
+#: eap-options.php:236
+msgid ""
+"<b>Events as Posts</b> allows you to display a list of events\n"
+"              everywhere in your site using a shortcode. <br> Copy and "
+"paste\n"
+"              in your posts or pages the following shortcode to display\n"
+"              a list of events: *"
+msgstr ""
+"<b>Events as Posts</b> te permite mostrar un listado de eventos\n"
+"en cualquier lugar de tu sitio utilizando un shortcode. <br> Copia y pega\n"
+"en tus entradas o páginas el siguiente shortcode para mostrar\n"
+"un listado de eventos: *"
+
+#: eap-options.php:241
+msgid "* The above shortcode it will only show future events"
+msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
+
+#: eap-options.php:252
+msgid ""
+"Select the number of events you want to display or <b>0</b> (zero) to "
+"display all"
+msgstr ""
+"Selecciona el número de eventos que quieres mostrar o <b>0</b> (cero) para "
+"mostrar todos"
+
+#: eap-options.php:262
+msgid "Separate the categories with a comma (birthdays,online,etc.)"
+msgstr "Separa las categorías con una coma (cumpleaños,online,etc.)"
+
+#: eap-options.php:272
+msgid "Future events"
+msgstr "Eventos futuros"
+
+#: eap-options.php:274
+msgid "Past events"
+msgstr "Eventos pasados"
+
+#: eap-options.php:276
+msgid "All"
+msgstr "Todos"
+
+#: eap-options.php:336
+msgid "Select to show the excerpt *"
+msgstr "Selecciona para mostrar el extracto *"
+
+#: eap-options.php:338
+msgid "* Independent of shortcode (it applies to all the lists)"
+msgstr "* Independiente del shortcode (se aplica a todos los listados)"
+
+#: eap-options.php:352
+msgid "Select the layout for the list of events"
+msgstr "Selecciona la disposición para el listado de eventos"
+
+#: eap-options.php:355
+msgid "1 Column"
+msgstr "1 Columna"
+
+#: eap-options.php:357
+msgid "2 Columns"
+msgstr "2 Columnas"
+
+#: eap-options.php:359
+msgid "3 Columns"
+msgstr "3 Columnas"
+
+#: eap-options.php:396
+msgid "<b>*</b> Date, time and location"
+msgstr "<b>*</b> Fecha, hora y lugar"
+
+#: event-post-type.php:18 event-post-type.php:20
+msgid "Events"
+msgstr "Eventos"
+
+#: event-post-type.php:19 event-post-type.php:21
+msgid "Event"
+msgstr "Evento"
+
+#: event-post-type.php:22
+msgid "Add event"
+msgstr "Añadir evento"
+
+#: event-post-type.php:24
+msgid "Add new event"
+msgstr "Añadir nuevo evento"
+
+#: event-post-type.php:25
+msgid "New event"
+msgstr "Nuevo evento"
+
+#: event-post-type.php:26
+msgid "Edit event"
+msgstr "Editar evento"
+
+#: event-post-type.php:27
+msgid "View event"
+msgstr "Ver evento"
+
+#: event-post-type.php:28
+msgid "All events"
+msgstr "Todos los eventos"
+
+#: event-post-type.php:29
+msgid "Search events"
+msgstr "Buscar eventos"
+
+#: event-post-type.php:30
+msgid "No events found."
+msgstr "No se encontraron eventos."
+
+#: event-post-type.php:53
+msgid "Date"
+msgstr "Fecha"
+
+#: event-post-type.php:65
+msgid "From"
+msgstr "Desde"
+
+#: event-post-type.php:67 event-post-type.php:75
+msgid "Day:"
+msgstr "Día:"
+
+#: event-post-type.php:70 event-post-type.php:78
+msgid "Time:"
+msgstr "Hora:"
+
+#: event-post-type.php:73
+msgid "Until"
+msgstr "Hasta"
+
+#: event-post-type.php:118
+msgid "Location"
+msgstr "Lugar"
+
+#: event-post-type.php:131
+msgid "Add location:"
+msgstr "Añadir lugar:"
+
+#: event-post-type.php:135
+msgid "City:"
+msgstr "Ciudad:"
+
+#: event-post-type.php:140
+msgid "Link to location:"
+msgstr "Enlace lugar:"
+
+#: event-post-type.php:198
+msgid "Event date"
+msgstr "Fecha evento"
+
+#: event-post-type.php:199
+msgid "Featured image"
+msgstr "Imagen destacada"
+
+#~ msgid "January"
+#~ msgstr "enero"
+
+#~ msgid "February"
+#~ msgstr "febrero"
+
+#~ msgid "March"
+#~ msgstr "marzo"
+
+#~ msgid "April"
+#~ msgstr "abril"
+
+#~ msgid "May"
+#~ msgstr "mayo"
+
+#~ msgid "June"
+#~ msgstr "junio"
+
+#~ msgid "July"
+#~ msgstr "julio"
+
+#~ msgid "August"
+#~ msgstr "agosto"
+
+#~ msgid "September"
+#~ msgstr "septiembre"
+
+#~ msgid "Octuber"
+#~ msgstr "octubre"
+
+#~ msgid "November"
+#~ msgstr "noviembre"
+
+#~ msgid "December"
+#~ msgstr "diciembre"
+
+#~ msgid ""
+#~ "Select the number of events you want to display or 0 (zero) to display all"
+#~ msgstr ""
+#~ "Selecciona el número de eventos que quieres mostrar o 0 (cero) para "
+#~ "mostrar todos"
+
+#~ msgid "All *"
+#~ msgstr "Todos *"
+
+#~ msgid ""
+#~ "Select the number of events you want to display <br> <b>0</b> (zero) to "
+#~ "display all * <br><br> * Depending on the selected period it will show "
+#~ "all the future or all the past events, not 'all'"
+#~ msgstr ""
+#~ "Selecciona el número de eventos que quieres mostrar <br> <b>0</b> (cero) "
+#~ "para mostrar todos * <br><br> * Dependiendo del período seleccionado, "
+#~ "únicamente se mostrarán <br> todos los eventos futuros o todos los "
+#~ "eventos pasados, no 'todos'"
+
+#~ msgid ""
+#~ "Display events by category <br>Separate the categories with a comma "
+#~ "(birthdays,online,etc.)"
+#~ msgstr ""
+#~ "Muestra los eventos por categoría <br> Separa las categorías con una coma "
+#~ "(cumpleaños,online,etc)"
+
+#~ msgid "* It literally displays 'all' the events (you can choose categories)"
+#~ msgstr ""
+#~ "* Muestra literalmente 'todos' los eventos (puedes elegir las categorías)"
+
+#~ msgid ""
+#~ "* The above shortcode it will only show future events (all by default)"
+#~ msgstr ""
+#~ "* El shortcode aquí arriba mostrará exclusivamente eventos futuros (todos "
+#~ "por defecto)"
+
+#~ msgid ""
+#~ "* The above shortcode it will only show future events (five by default)"
+#~ msgstr ""
+#~ "* El shortcode aquí arriba mostrará exclusivamente eventos futuros (cinco "
+#~ "por defecto)"
+
+#~ msgid ""
+#~ "Select the number of events you want to display <br> <b>0</b> (zero) to "
+#~ "display all * <br><br> * If selected it displays all the future or all "
+#~ "the past events, not 'all'"
+#~ msgstr ""
+#~ "Selecciona el número de eventos que quieres mostrar <br> <b>0</b> (cero) "
+#~ "para mostrar todos * <br><br> * Si está seleccionado muestra todos los "
+#~ "eventos futuros o todos los eventos pasados, no 'todos'"
+
+#~ msgid ""
+#~ "Display events by category <br>Separate the categories with a comma "
+#~ "( birthdays,online,etc. )"
+#~ msgstr ""
+#~ "Muestra los eventos por categoría <br>Separa las categorías con una coma "
+#~ "( cumpleaños,online,etc. )"
+
+#~ msgid ""
+#~ "* It literally displays 'all' the events ( you can choose categories )"
+#~ msgstr ""
+#~ "* Muestra literalmente 'todos' los eventos ( puedes elegir las "
+#~ "categorías )"
+
+#~ msgid "* Independent of shortcode ( it applies to all the lists )"
+#~ msgstr "* Independiente del shortcode ( se aplica a todos los listados )"
+
+#~ msgid "Show the excerpt *"
+#~ msgstr "Mostrar el extracto *"
+
+#~ msgid "Number"
+#~ msgstr "Número de eventos"
+
+#~ msgid "Add Event"
+#~ msgstr "Añadir evento"
+
+#~ msgid "Add new Event"
+#~ msgstr "Añadir nuevo evento"
+
+#~ msgid "New Event"
+#~ msgstr "Nuevo evento"
+
+#~ msgid "Edit Event"
+#~ msgstr "Editar evento"
+
+#~ msgid "View Event"
+#~ msgstr "Ver evento"
+
+#~ msgid "All Events"
+#~ msgstr "Todos los eventos"
+
+#~ msgid "Search Events"
+#~ msgstr "Buscar eventos"
