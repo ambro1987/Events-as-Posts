@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 1.0.0\n"
-"POT-Creation-Date: 2018-09-11 13:21+0200\n"
-"PO-Revision-Date: 2018-09-11 13:21+0200\n"
+"POT-Creation-Date: 2018-09-11 17:27+0200\n"
+"PO-Revision-Date: 2018-09-11 17:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda <ambrogiopiredda@gmail.com>\n"
 "Language: es_ES\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-KeywordsList: __;_e;%s\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: eap-functions.php:112 eap-functions.php:157 eap-functions.php:194
@@ -249,13 +249,16 @@ msgstr "Ciudad:"
 msgid "Link to location:"
 msgstr "Enlace lugar:"
 
-#: event-post-type.php:198
+#: event-post-type.php:195
 msgid "Event date"
 msgstr "Fecha evento"
 
-#: event-post-type.php:199
+#: event-post-type.php:196
 msgid "Featured image"
 msgstr "Imagen destacada"
+
+#~ msgid "September"
+#~ msgstr "septiembre"
 
 #~ msgid "January"
 #~ msgstr "enero"
@@ -280,9 +283,6 @@ msgstr "Imagen destacada"
 
 #~ msgid "August"
 #~ msgstr "agosto"
-
-#~ msgid "September"
-#~ msgstr "septiembre"
 
 #~ msgid "Octuber"
 #~ msgstr "octubre"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 1.0.0\n"
-"POT-Creation-Date: 2018-09-09 18:37+0200\n"
-"PO-Revision-Date: 2018-09-09 18:38+0200\n"
+"POT-Creation-Date: 2018-09-11 17:23+0200\n"
+"PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda <ambrogiopiredda@gmail.com>\n"
 "Language: en\n"
@@ -13,58 +13,10 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: eap-functions.php:10
-msgid "January"
-msgstr ""
-
-#: eap-functions.php:13
-msgid "February"
-msgstr ""
-
-#: eap-functions.php:16
-msgid "March"
-msgstr ""
-
-#: eap-functions.php:19
-msgid "April"
-msgstr ""
-
-#: eap-functions.php:22
-msgid "May"
-msgstr ""
-
-#: eap-functions.php:25
-msgid "June"
-msgstr ""
-
-#: eap-functions.php:28
-msgid "July"
-msgstr ""
-
-#: eap-functions.php:31
-msgid "August"
-msgstr ""
-
-#: eap-functions.php:34
-msgid "September"
-msgstr ""
-
-#: eap-functions.php:37
-msgid "Octuber"
-msgstr ""
-
-#: eap-functions.php:40
-msgid "November"
-msgstr ""
-
-#: eap-functions.php:43
-msgid "December"
-msgstr ""
-
-#: eap-functions.php:102 eap-functions.php:148 eap-functions.php:185
+#: eap-functions.php:112 eap-functions.php:157 eap-functions.php:194
 msgid "There are no events"
 msgstr ""
 
@@ -97,7 +49,7 @@ msgid "List settings"
 msgstr ""
 
 #: eap-options.php:106
-msgid "Number"
+msgid "Number of events"
 msgstr ""
 
 #: eap-options.php:113
@@ -157,29 +109,23 @@ msgid ""
 "<b>Events as Posts</b> allows you to display a list of events\n"
 "              everywhere in your site using a shortcode. <br> Copy and "
 "paste\n"
-"              in your posts or pages the following shortcode to display\n"
+"              in your posts or pages the following shortcode to "
+"display\n"
 "              a list of events: *"
 msgstr ""
 
-#: eap-options.php:240
-msgid "[display_events]"
-msgstr ""
-
 #: eap-options.php:241
-msgid "* The above shortcode it will only show future events (five by default)"
+msgid "* The above shortcode it will only show future events"
 msgstr ""
 
 #: eap-options.php:252
 msgid ""
-"Select the number of events you want to display <br> <b>0</b> (zero) to "
-"display all * <br><br> * If selected it displays all the future or all the "
-"past events, not 'all'"
+"Select the number of events you want to display or <b>0</b> (zero) to "
+"display all"
 msgstr ""
 
 #: eap-options.php:262
-msgid ""
-"Display events by category <br>Separate the categories with a comma "
-"( birthdays,online,etc. )"
+msgid "Separate the categories with a comma (birthdays,online,etc.)"
 msgstr ""
 
 #: eap-options.php:272
@@ -191,38 +137,34 @@ msgid "Past events"
 msgstr ""
 
 #: eap-options.php:276
-msgid "All *"
+msgid "All"
 msgstr ""
 
-#: eap-options.php:278
-msgid "* It literally displays 'all' the events ( you can choose categories )"
+#: eap-options.php:336
+msgid "Select to show the excerpt *"
 msgstr ""
 
-#: eap-options.php:326
-msgid "Show the excerpt *"
+#: eap-options.php:338
+msgid "* Independent of shortcode (it applies to all the lists)"
 msgstr ""
 
-#: eap-options.php:328
-msgid "* Independent of shortcode ( it applies to all the lists )"
-msgstr ""
-
-#: eap-options.php:342
+#: eap-options.php:352
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: eap-options.php:345
+#: eap-options.php:355
 msgid "1 Column"
 msgstr ""
 
-#: eap-options.php:347
+#: eap-options.php:357
 msgid "2 Columns"
 msgstr ""
 
-#: eap-options.php:349
+#: eap-options.php:359
 msgid "3 Columns"
 msgstr ""
 
-#: eap-options.php:386
+#: eap-options.php:396
 msgid "<b>*</b> Date, time and location"
 msgstr ""
 
@@ -235,31 +177,31 @@ msgid "Event"
 msgstr ""
 
 #: event-post-type.php:22
-msgid "Add Event"
+msgid "Add event"
 msgstr ""
 
 #: event-post-type.php:24
-msgid "Add new Event"
+msgid "Add new event"
 msgstr ""
 
 #: event-post-type.php:25
-msgid "New Event"
+msgid "New event"
 msgstr ""
 
 #: event-post-type.php:26
-msgid "Edit Event"
+msgid "Edit event"
 msgstr ""
 
 #: event-post-type.php:27
-msgid "View Event"
+msgid "View event"
 msgstr ""
 
 #: event-post-type.php:28
-msgid "All Events"
+msgid "All events"
 msgstr ""
 
 #: event-post-type.php:29
-msgid "Search Events"
+msgid "Search events"
 msgstr ""
 
 #: event-post-type.php:30
@@ -300,4 +242,12 @@ msgstr ""
 
 #: event-post-type.php:140
 msgid "Link to location:"
+msgstr ""
+
+#: event-post-type.php:195
+msgid "Event date"
+msgstr ""
+
+#: event-post-type.php:196
+msgid "Featured image"
 msgstr ""
