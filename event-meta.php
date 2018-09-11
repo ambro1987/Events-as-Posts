@@ -10,11 +10,11 @@ $link_location = get_post_meta( get_the_ID(), 'eap_link_location', true );
 
 // format from date
 $from_date = eap_format_date($from_date);
-$from_date[1] = eap_translate_month_in_spanish($from_date[1]);
+$from_date[1] = eap_make_moth_translatable($from_date[1]);
 // if until date is set format until date
 if ($until_date) {
   $until_date = eap_format_date($until_date);
-  $until_date[1] = eap_translate_month_in_spanish($until_date[1]);
+  $until_date[1] = eap_make_moth_translatable($until_date[1]);
 }
 
 // separation mark '-' between from day/time and until day/time

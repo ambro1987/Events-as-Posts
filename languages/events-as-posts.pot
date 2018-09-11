@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 1.0.0\n"
-"POT-Creation-Date: 2018-09-11 17:23+0200\n"
+"POT-Creation-Date: 2018-09-11 17:52+0200\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda <ambrogiopiredda@gmail.com>\n"
@@ -15,6 +16,54 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: eap-functions.php:23
+msgid "January"
+msgstr ""
+
+#: eap-functions.php:26
+msgid "February"
+msgstr ""
+
+#: eap-functions.php:29
+msgid "March"
+msgstr ""
+
+#: eap-functions.php:32
+msgid "Abril"
+msgstr ""
+
+#: eap-functions.php:35
+msgid "May"
+msgstr ""
+
+#: eap-functions.php:38
+msgid "June"
+msgstr ""
+
+#: eap-functions.php:41
+msgid "July"
+msgstr ""
+
+#: eap-functions.php:44
+msgid "August"
+msgstr ""
+
+#: eap-functions.php:47
+msgid "September"
+msgstr ""
+
+#: eap-functions.php:50
+msgid "October"
+msgstr ""
+
+#: eap-functions.php:53
+msgid "November"
+msgstr ""
+
+#: eap-functions.php:56
+msgid "December"
+msgstr ""
 
 #: eap-functions.php:112 eap-functions.php:157 eap-functions.php:194
 msgid "There are no events"

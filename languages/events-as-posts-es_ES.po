@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 1.0.0\n"
-"POT-Creation-Date: 2018-09-11 17:27+0200\n"
-"PO-Revision-Date: 2018-09-11 17:28+0200\n"
+"POT-Creation-Date: 2018-09-11 17:58+0200\n"
+"PO-Revision-Date: 2018-09-11 17:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda <ambrogiopiredda@gmail.com>\n"
 "Language: es_ES\n"
@@ -15,6 +15,54 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;%s\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: eap-functions.php:23
+msgid "January"
+msgstr "enero"
+
+#: eap-functions.php:26
+msgid "February"
+msgstr "febrero"
+
+#: eap-functions.php:29
+msgid "March"
+msgstr "marzo"
+
+#: eap-functions.php:32
+msgid "Abril"
+msgstr "abril"
+
+#: eap-functions.php:35
+msgid "May"
+msgstr "mayo"
+
+#: eap-functions.php:38
+msgid "June"
+msgstr "junio"
+
+#: eap-functions.php:41
+msgid "July"
+msgstr "julio"
+
+#: eap-functions.php:44
+msgid "August"
+msgstr "agosto"
+
+#: eap-functions.php:47
+msgid "September"
+msgstr "septiembre"
+
+#: eap-functions.php:50
+msgid "October"
+msgstr "octubre"
+
+#: eap-functions.php:53
+msgid "November"
+msgstr "noviembre"
+
+#: eap-functions.php:56
+msgid "December"
+msgstr "diciembre"
 
 #: eap-functions.php:112 eap-functions.php:157 eap-functions.php:194
 msgid "There are no events"
@@ -257,41 +305,11 @@ msgstr "Fecha evento"
 msgid "Featured image"
 msgstr "Imagen destacada"
 
-#~ msgid "September"
-#~ msgstr "septiembre"
-
-#~ msgid "January"
-#~ msgstr "enero"
-
-#~ msgid "February"
-#~ msgstr "febrero"
-
-#~ msgid "March"
-#~ msgstr "marzo"
-
 #~ msgid "April"
 #~ msgstr "abril"
 
-#~ msgid "May"
-#~ msgstr "mayo"
-
-#~ msgid "June"
-#~ msgstr "junio"
-
-#~ msgid "July"
-#~ msgstr "julio"
-
-#~ msgid "August"
-#~ msgstr "agosto"
-
 #~ msgid "Octuber"
 #~ msgstr "octubre"
-
-#~ msgid "November"
-#~ msgstr "noviembre"
-
-#~ msgid "December"
-#~ msgstr "diciembre"
 
 #~ msgid ""
 #~ "Select the number of events you want to display or 0 (zero) to display all"

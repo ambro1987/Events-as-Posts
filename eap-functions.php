@@ -17,43 +17,43 @@ function eap_format_date($date) {
   return $date;
 }
 
-function eap_translate_month_in_spanish($month) {
+function eap_make_moth_translatable($month) {
   switch ($month) {
     case 'January':
-      $month = 'enero';
+      $month = __('January', 'events-as-posts');
       break;
     case 'February':
-      $month = 'febrero';
+      $month = __('February', 'events-as-posts');
       break;
     case 'March':
-      $month = 'marzo';
+      $month = __('March', 'events-as-posts');
       break;
     case 'Abril':
-      $month = 'abril';
+      $month = __('Abril', 'events-as-posts');
       break;
     case 'May':
-      $month = 'mayo';
+      $month = __('May', 'events-as-posts');
       break;
     case 'June':
-      $month = 'junio';
+      $month = __('June', 'events-as-posts');
       break;
     case 'July':
-      $month = 'julio';
+      $month = __('July', 'events-as-posts');
       break;
     case 'August':
-      $month = 'agosto';
+      $month = __('August', 'events-as-posts');
       break;
     case 'September':
-      $month = 'septiembre';
+      $month = __('September', 'events-as-posts');
       break;
     case 'October':
-      $month = 'octubre';
+      $month = __('October', 'events-as-posts');
       break;
     case 'November':
-      $month = 'noviembre';
+      $month = __('November', 'events-as-posts');
       break;
     case 'December':
-      $month = 'diciembre';
+      $month = __('December', 'events-as-posts');
   }
   return $month;
 }
