@@ -38,9 +38,9 @@ if (!$until_date || !$until_time) {
 }
 // if the from date is the same as the until date it doesn't show the until date
 if ($until_date[0] == $from_date[0] && $until_date[1] == $from_date[1] && $until_date[2] == $from_date[2] ) {
-  $until_date[0] = '';
-  $until_date[1] = '';
-  $until_date[2] = '';
+  for ($i = 0;  $i < sizeof($until_date); $i++) {
+    $until_date[$i] = '';
+  }
 }
 // if the city is not set
 if (!$city) {
