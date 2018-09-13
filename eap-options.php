@@ -20,8 +20,8 @@ function eap_settings_page_html() {
       <?php settings_errors();
       ?>
       <h2 class="nav-tab-wrapper">
-         <a href="?post_type=event&page=eap_settings&tab=tab1" class="nav-tab <?php echo $tab == 'tab1' ? 'nav-tab-active' : ''; ?>"><?php _e('List', 'events-as-posts'); ?></a>
-         <a href="?post_type=event&page=eap_settings&tab=tab2" class="nav-tab <?php echo $tab == 'tab2' ? 'nav-tab-active' : ''; ?>"><?php _e('Styles', 'events-as-posts'); ?></a>
+         <a href="?post_type=eap_event&page=eap_settings&tab=tab1" class="nav-tab <?php echo $tab == 'tab1' ? 'nav-tab-active' : ''; ?>"><?php _e('List', 'events-as-posts'); ?></a>
+         <a href="?post_type=eap_event&page=eap_settings&tab=tab2" class="nav-tab <?php echo $tab == 'tab2' ? 'nav-tab-active' : ''; ?>"><?php _e('Styles', 'events-as-posts'); ?></a>
       </h2>
 
       <?php
@@ -71,7 +71,7 @@ function eap_settings_page_html() {
 
 function eap_settings_page() {
     add_submenu_page(
-        'edit.php?post_type=event', // slug name for the parent menu
+        'edit.php?post_type=eap_event', // slug name for the parent menu
         __('Settings', 'events-as-posts'), // page title
         __('Settings', 'events-as-posts'), // menu title
         'manage_options', // capability

@@ -1,15 +1,14 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: http://example.com/
-Tags: comments, spam
-Requires at least: 4.6
-Tested up to: 4.7
-Stable tag: 4.3
-Requires PHP: 5.2.4
+=== Events as Posts ===
+Contributors:
+Donate link: https://paypal.me/ambrogiopiredda
+Tags: events
+Requires at least:
+Tested up to: 4.9.8
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+A simple plugin that allows you to post and display lists of events
 
 == Description ==
 

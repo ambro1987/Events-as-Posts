@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name:  Events as Posts
-Description:  A simple plugin that allows you to post events
+Description:  A simple plugin that allows you to post and display lists of events
 Version:      1.0.0
 Author:       Ambrogio Piredda
 Text Domain:  events-as-posts

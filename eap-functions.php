@@ -63,7 +63,7 @@ function eap_make_moth_translatable($month) {
  */
 
 function eap_add_meta_to_event_content( $content ) {
-  if( is_singular( 'event' ) ) {
+  if( is_singular( 'eap_event' ) ) {
     include_once ( plugin_dir_path( __FILE__ ) . 'event-meta.php' );
     $content = $post_meta . $content;
   }
@@ -87,7 +87,7 @@ function eap_display_events($atts) {
 
   $args = array (
      'posts_per_page' => $posts,
-     'post_type'      => 'event',
+     'post_type'      => 'eap_event',
      'order'          => $order,
      'orderby'        => 'meta_value',
      'meta_key'       => 'eap_from_day',
@@ -132,7 +132,7 @@ function eap_display_past_events($atts) {
 
   $args = array (
      'posts_per_page' => $posts,
-     'post_type'      => 'event',
+     'post_type'      => 'eap_event',
      'order'          => $order,
      'orderby'        => 'meta_value',
      'meta_key'       => 'eap_from_day',
@@ -174,7 +174,7 @@ function eap_display_all_events($atts) {
   ), $atts));
 
   $args = array (
-     'post_type'      => 'event',
+     'post_type'      => 'eap_event',
      'order'          => $order,
      'orderby'        => 'meta_value',
      'meta_key'       => 'eap_from_day',

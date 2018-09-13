@@ -41,7 +41,7 @@
      'menu_icon'         => 'dashicons-calendar-alt',
      'taxonomies'        => array('category'),
    );
-   register_post_type('event', $args);
+   register_post_type('eap_event', $args);
  }
  add_action('init', 'eap_create_event_post_type');
 
@@ -50,7 +50,7 @@
   */
 
  function eap_create_date_metabox() {
-   add_meta_box( 'eap_date_metabox', __( 'Date', 'events-as-posts' ), 'eap_date_metabox_callback', 'event', 'side', 'high' );
+   add_meta_box( 'eap_date_metabox', __( 'Date', 'events-as-posts' ), 'eap_date_metabox_callback', 'eap_event', 'side', 'high' );
  }
  add_action( 'add_meta_boxes', 'eap_create_date_metabox' );
 
@@ -115,7 +115,7 @@
   */
 
  function eap_create_location_metabox() {
-   add_meta_box( 'eap_location_metabox', __( 'Location', 'events-as-posts' ), 'eap_location_metabox_callback', 'event', 'side', 'high' );
+   add_meta_box( 'eap_location_metabox', __( 'Location', 'events-as-posts' ), 'eap_location_metabox_callback', 'eap_event', 'side', 'high' );
  }
  add_action( 'add_meta_boxes', 'eap_create_location_metabox' );
 
@@ -196,7 +196,7 @@
     $columns['featured'] = __('Featured image', 'events-as-posts');
     return $columns;
   }
-  add_filter('manage_event_posts_columns' , 'eap_event_columns');
+  add_filter('manage_eap_event_posts_columns' , 'eap_event_columns');
 
   // display the content of the event date column
   function eap_event_columns_content($column_name, $post_ID) {
@@ -220,7 +220,7 @@
       }
     }
   }
-  add_action('manage_event_posts_custom_column', 'eap_event_columns_content', 10, 2);
+  add_action('manage_eap_event_posts_custom_column', 'eap_event_columns_content', 10, 2);
 
   // orders columns by event date
   function eap_event_columns_sort_columns_by( $query ) {
@@ -243,4 +243,4 @@
     $columns['event_date'] = 'event_date';
     return $columns;
   }
-  add_filter( 'manage_edit-event_sortable_columns', 'eap_event_columns_set_sortable_columns' );
+  add_filter( 'manage_edit-eap_event_sortable_columns', 'eap_event_columns_set_sortable_columns' );
