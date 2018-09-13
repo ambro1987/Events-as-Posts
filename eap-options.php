@@ -259,7 +259,7 @@ function eap_categories_cb() {
   $setting = get_option('eap_settings');
   ?>
   <input type="text" name="eap_settings[categories]" value="<?php echo isset( $setting['categories'] ) ? esc_attr( $setting['categories'] ) : ''; ?>">
-  <p><i><?php _e('Separate the categories with a comma (birthdays,online,etc.)', 'events-as-posts') ?></i></p>
+  <p><i><?php _e('Separate the categories with a comma (category 1, category 2, etc.)', 'events-as-posts') ?></i></p>
   <?php
 }
 

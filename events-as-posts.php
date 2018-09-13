@@ -6,7 +6,7 @@ Version:      1.0.0
 Author:       Ambrogio Piredda
 Text Domain:  events-as-posts
 Domain Path:  /languages
-License:      GPL2
+License:      GPLv2 or later
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 */
 
@@ -15,7 +15,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 require ( plugin_dir_path( __FILE__ ) . 'eap-functions.php' );
 require ( plugin_dir_path( __FILE__ ) . 'event-post-type.php' );
 require ( plugin_dir_path( __FILE__ ) . 'eap-options.php' );
-// include ( plugin_dir_path( __FILE__ ) . 'custom-columns.php');
 
  /**
   * When activated

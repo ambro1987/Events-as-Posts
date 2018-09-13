@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 1.0.0\n"
-"POT-Creation-Date: 2018-09-11 17:58+0200\n"
-"PO-Revision-Date: 2018-09-11 17:59+0200\n"
+"POT-Creation-Date: 2018-09-13 07:31+0200\n"
+"PO-Revision-Date: 2018-09-13 07:32+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda <ambrogiopiredda@gmail.com>\n"
 "Language: es_ES\n"
@@ -178,8 +178,8 @@ msgstr ""
 "mostrar todos"
 
 #: eap-options.php:262
-msgid "Separate the categories with a comma (birthdays,online,etc.)"
-msgstr "Separa las categorías con una coma (cumpleaños,online,etc.)"
+msgid "Separate the categories with a comma (category 1, category 2, etc.)"
+msgstr "Separa las categorías con una coma (categoría 1, categoría 2, etc.)"
 
 #: eap-options.php:272
 msgid "Future events"
@@ -304,6 +304,9 @@ msgstr "Fecha evento"
 #: event-post-type.php:196
 msgid "Featured image"
 msgstr "Imagen destacada"
+
+#~ msgid "Separate the categories with a comma (birthdays,online,etc.)"
+#~ msgstr "Separa las categorías con una coma (cumpleaños,online,etc.)"
 
 #~ msgid "April"
 #~ msgstr "abril"
