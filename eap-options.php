@@ -234,7 +234,7 @@ add_action('admin_init', 'eap_settings_style_init');
 function eap_events_list_cb() {
   ?>
   <p><?php _e('<b>Events as Posts</b> allows you to display a list of events
-              everywhere in your site using a shortcode. <br> Copy and paste
+              everywhere on your site using a shortcode. <br> Copy and paste
               in your posts or pages the following shortcode to display
               a list of events: *', 'events-as-posts') ?> </p>
   <span style="color:red;">[display_events]</span>

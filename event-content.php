@@ -6,12 +6,11 @@ $category = get_the_category();
 
 // format the content
 ?>
-
-<div id="post-<?php the_ID(); ?>" class="eap__event">
+<div id="post-<?php the_ID(); ?>" <?php post_class();?>>
   <div class="eap__img">
     <?php the_post_thumbnail() ?>
   </div>
-  <div>
+  <div class="eap__text">
     <header class="eap__header">
       <h2 class="eap__title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
       <span class="eap__category">

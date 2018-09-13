@@ -1,7 +1,6 @@
-.eap__title {
-  margin: 0 0 .8em !important;
+.eap__text {
+  padding: 0 1em;
 }
-
 .eap__category {
   display: block;
   margin-bottom: .4em;

@@ -156,7 +156,7 @@ msgstr ""
 #: eap-options.php:236
 msgid ""
 "<b>Events as Posts</b> allows you to display a list of events\n"
-"              everywhere in your site using a shortcode. <br> Copy and "
+"              everywhere on your site using a shortcode. <br> Copy and "
 "paste\n"
 "              in your posts or pages the following shortcode to "
 "display\n"

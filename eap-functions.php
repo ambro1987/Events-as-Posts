@@ -223,12 +223,18 @@ function eap_events_style() {
   if ( $setting['layout'] == 1 || !$setting['layout']) {
     ?>
     <style>
-      .eap__event {
+      .eap__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1.6em;
+      }
+      .eap_event {
         display: grid;
         grid-template-columns: 1fr 2fr;
         grid-gap: 1.6em;
-        padding: 1.6em;
-        margin-bottom: 1.6em;
+      }
+      .eap__title {
+        margin: 0 0 .8em;
       }
     </style>
     <?php
@@ -237,18 +243,22 @@ function eap_events_style() {
   } elseif ( $setting['layout'] == 2 ) {
     ?>
     <style>
+      /* fallback style */
       .eap__list {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 1.6em;
       }
-      .eap__event {
-        flex-basis: 36%;
-        margin: 0 1em 1em;
-        padding: 1em;
+      .eap_event {
+        flex-basis: 42%;
+        margin: 0 1.6em 1.6em 0;
+      }
+      /* end fallback style */
+
+      .eap__list {
+        grid-template-columns: repeat(2, 1fr);
       }
       .eap__title {
-        margin: .6em 0 .8em !important;
+        margin: .6em 0 .8em;
       }
     </style>
     <?php
@@ -257,18 +267,22 @@ function eap_events_style() {
   } elseif ( $setting['layout'] == 3 ) {
     ?>
     <style>
+      /* fallback styles */
       .eap__list {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 1.6em;
       }
-      .eap__event {
-        flex-basis: 27%;
-        margin: 0 1em 1em;
-        padding: 1em;
+      .eap_event {
+        flex-basis: 26%;
+        margin: 0 1.6em 1.6em 0;
+      }
+      /* end fallback styles */
+
+      .eap__list {
+        grid-template-columns: repeat(3, 1fr);
       }
       .eap__title {
-        margin: .6em 0 .8em !important;
+        margin: .6em 0 .8em;
       }
     </style>
     <?php
@@ -279,7 +293,7 @@ function eap_events_style() {
   ?>
   <style>
     /* background color */
-    .eap__event {
+    .eap_event {
       background: <?php echo $setting['bg_color']; ?>;
     }
     /* title color */
