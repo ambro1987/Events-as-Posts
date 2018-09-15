@@ -14,12 +14,9 @@ A simple plugin that allows you to post events on your site
 
 == Description ==
 
-**Event as Posts** is a simple plugin that allows you to post events as if they were normal posts,
-but with added fields like date and location.
+**Event as Posts** is a simple plugin that allows you to post events as if they were normal posts, but with added fields like date and location.
 
-It also allows you to display **lists of events** everywhere on your site using a shortcode.
-You can choose if you want to display future, past or all the events, and also the
-number of events and of which category.
+It also allows you to display **lists of events** everywhere on your site using a shortcode. You can choose if you want to display future, past or all the events, and also the number of events and of which category.
 
 Other features include:
 
@@ -50,8 +47,7 @@ Other features include:
 
 = When I choose to display events by category they are not showing. =
 
-Double check that you have written the category name correctly and, if you have more than one category, that you have
-separated them with a comma.
+Double check that you have written the category name correctly and, if you have more than one category, that you have separated them with a comma.
 
 = I chose to display the excerpt in a list of events and it's showing in all the lists, how can it be? =
 
