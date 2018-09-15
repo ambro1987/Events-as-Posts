@@ -65,16 +65,16 @@ function eap_make_moth_translatable($month) {
 function eap_add_meta_to_event_content( $content ) {
   if( is_singular( 'eap_event' ) ) {
     include_once ( plugin_dir_path( __FILE__ ) . 'event-meta.php' );
-    $content = $post_meta . $content;
   }
   return $content;
 }
 add_filter('the_content', 'eap_add_meta_to_event_content');
 
 /**
- * Custom loop to display events
+ * Custom loops
  */
 
+// display future events
 function eap_display_events($atts) {
   ob_start();
   $actual_date = date('Y\-m\-d');
@@ -116,10 +116,7 @@ function eap_display_events($atts) {
    return $loop_content;
 }
 
-/**
- * Custom loop to display past events
- */
-
+// display past events
 function eap_display_past_events($atts) {
   ob_start();
   $actual_date = date('Y\-m\-d');
@@ -161,10 +158,7 @@ function eap_display_past_events($atts) {
    return $loop_content;
 }
 
-/**
- * Custom loop to display past events
- */
-
+// display all events
 function eap_display_all_events($atts) {
   ob_start();
   // Shortcode attributes
@@ -174,12 +168,14 @@ function eap_display_all_events($atts) {
   ), $atts));
 
   $args = array (
+     'posts_per_page' => '-1',
      'post_type'      => 'eap_event',
      'order'          => $order,
      'orderby'        => 'meta_value',
      'meta_key'       => 'eap_from_day',
      'category_name'  => $category,
    );
+
    $custom_query = new WP_Query($args);
    if ($custom_query->have_posts()) : ?>
      <div class="eap__list">
@@ -234,7 +230,7 @@ function eap_events_style() {
         grid-gap: 1.6em;
       }
       .eap__title {
-        margin: 0 0 .8em;
+        margin: 0 0 .8em !important;
       }
     </style>
     <?php
@@ -324,3 +320,14 @@ function eap_events_style() {
   <?php
 }
 add_action('wp_head', 'eap_events_style');
+
+
+// shows events in category pages
+function eap_category_filter($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_category) {
+      $query->set('post_type', array( 'post', 'eap_event' ) );
+    }
+  }
+}
+add_action('pre_get_posts','eap_category_filter');

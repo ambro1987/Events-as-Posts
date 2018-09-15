@@ -230,7 +230,7 @@ add_action('admin_init', 'eap_settings_style_init');
  * List of events callback functions
  */
 
- // display the list setting section
+ // display the list of events section
 function eap_events_list_cb() {
   ?>
   <p><?php _e('<b>Events as Posts</b> allows you to display a list of events
@@ -241,6 +241,10 @@ function eap_events_list_cb() {
   <p><i><?php _e('* The above shortcode it will only show future events', 'events-as-posts') ?></i></p>
   <br>
   <?php
+}
+// list settings section
+function eap_events_list_settings_cb() {
+  // write something here if you want
 }
 
 // display input for selecting the number of events in the list
@@ -330,10 +334,15 @@ function eap_generate_shortcode_cb() {
 
 // display otption for the excerpt
 function eap_excerpt_cb() {
+  // get option
   $setting = get_option('eap_settings');
+  // to avoid notices
+  if (empty($setting['excerpt'])) {
+    $setting['excerpt'] = '';
+  }
   ?>
-  <input type="checkbox" name="eap_settings[excerpt]" value="true" <?php checked('true', $setting['excerpt']); ?>>
-  <span><?php _e('Select to show the excerpt *', 'events-as-posts') ?></span>
+  <input type="checkbox" id="eap_excerpt-checkbox" name="eap_settings[excerpt]" value="true" <?php checked('true', $setting['excerpt']); ?>>
+  <label for="eap_excerpt-checkbox"><?php _e('Select to show the excerpt *', 'events-as-posts') ?></label>
   <br><br>
   <span><i><?php _e('* Independent of shortcode (it applies to all the lists)', 'events-as-posts') ?></i></span>
   <?php
@@ -343,6 +352,11 @@ function eap_excerpt_cb() {
 /**
 * Style callback functions
 */
+
+// list style section
+function eap_events_style_cb() {
+  // write something here if you want
+}
 
 // display options for list layout
 function eap_layout_cb() {

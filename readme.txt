@@ -1,7 +1,7 @@
 === Events as Posts ===
-Contributors:
+Contributors: Ambrogio Piredda
 Donate link: https://paypal.me/ambrogiopiredda
-Tags: events, agenda
+Tags: event, events, event list, agenda
 Requires at least: 4.0.24
 Tested up to: 4.9.8
 Stable tag: 1.0.0
@@ -63,8 +63,8 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 
 == Screenshots ==
 
-1. Event post
-2. Add new event
-3. Events admin menu
-4. Events settings
+1. Event post with date, time and location
+2. Add a new event as if where a normal post
+3. Order events by date in admin menu
+4. List of events settings
 5. List of events

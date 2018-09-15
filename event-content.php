@@ -1,8 +1,6 @@
 <?php
 // get options
 $setting = get_option('eap_settings');
-// get categories
-$category = get_the_category();
 
 // format the content
 ?>
@@ -13,6 +11,10 @@ $category = get_the_category();
   <div class="eap__text">
     <header class="eap__header">
       <h2 class="eap__title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+      <?php
+      // get event categories
+      $category = get_the_category();
+      ?>
       <span class="eap__category">
         <?php
         // display categories
@@ -29,9 +31,11 @@ $category = get_the_category();
     </header>
     <main class="eap__main">
       <p class="eap__excerpt">
-        <?php if ( $setting['excerpt'] == 'true' ) {
+        <?php
+        if ( !empty($setting['excerpt']) == 'true' ) {
           the_excerpt();
-        } ?>
+        }
+        ?>
      </p>
     </main>
   </div>
