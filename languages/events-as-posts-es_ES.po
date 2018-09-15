@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Events as Posts 1.0.0\n"
-"POT-Creation-Date: 2018-09-13 14:02+0200\n"
-"PO-Revision-Date: 2018-09-13 14:02+0200\n"
+"Project-Id-Version: Events as Posts 1.0\n"
+"POT-Creation-Date: 2018-09-15 13:53+0200\n"
+"PO-Revision-Date: 2018-09-15 13:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
 "Language: es_ES\n"
@@ -64,7 +64,7 @@ msgstr "noviembre"
 msgid "December"
 msgstr "diciembre"
 
-#: eap-functions.php:112 eap-functions.php:157 eap-functions.php:194
+#: eap-functions.php:112 eap-functions.php:154 eap-functions.php:190
 msgid "There are no events"
 msgstr "No hay eventos"
 
@@ -169,7 +169,7 @@ msgstr ""
 msgid "* The above shortcode it will only show future events"
 msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
 
-#: eap-options.php:252
+#: eap-options.php:256
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
@@ -177,47 +177,47 @@ msgstr ""
 "Selecciona el número de eventos que quieres mostrar o <b>0</b> (cero) para "
 "mostrar todos"
 
-#: eap-options.php:262
+#: eap-options.php:266
 msgid "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr "Separa las categorías con una coma (categoría 1, categoría 2, etc.)"
 
-#: eap-options.php:272
+#: eap-options.php:276
 msgid "Future events"
 msgstr "Eventos futuros"
 
-#: eap-options.php:274
+#: eap-options.php:278
 msgid "Past events"
 msgstr "Eventos pasados"
 
-#: eap-options.php:276
+#: eap-options.php:280
 msgid "All"
 msgstr "Todos"
 
-#: eap-options.php:336
+#: eap-options.php:345
 msgid "Select to show the excerpt *"
 msgstr "Selecciona para mostrar el extracto *"
 
-#: eap-options.php:338
+#: eap-options.php:347
 msgid "* Independent of shortcode (it applies to all the lists)"
 msgstr "* Independiente del shortcode (se aplica a todos los listados)"
 
-#: eap-options.php:352
+#: eap-options.php:366
 msgid "Select the layout for the list of events"
 msgstr "Selecciona la disposición para el listado de eventos"
 
-#: eap-options.php:355
+#: eap-options.php:369
 msgid "1 Column"
 msgstr "1 Columna"
 
-#: eap-options.php:357
+#: eap-options.php:371
 msgid "2 Columns"
 msgstr "2 Columnas"
 
-#: eap-options.php:359
+#: eap-options.php:373
 msgid "3 Columns"
 msgstr "3 Columnas"
 
-#: eap-options.php:396
+#: eap-options.php:410
 msgid "<b>*</b> Date, time and location"
 msgstr "<b>*</b> Fecha, hora y lugar"
 

@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Events as Posts
 Description:  A simple plugin that allows you to post events on your site
-Version:      1.0.0
+Version:      0.1
 Author:       Ambrogio Piredda
 Text Domain:  events-as-posts
 Domain Path:  /languages

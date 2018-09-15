@@ -1,10 +1,11 @@
 === Events as Posts ===
-Contributors: Ambrogio Piredda
+
+Contributors: orbam7819
 Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.0.24
 Tested up to: 4.9.8
-Stable tag: 1.0.0
+Stable tag: 0.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,3 +69,9 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 3. Order events by date in admin menu
 4. List of events settings
 5. List of events
+
+
+== Changelog ==
+
+= 0.1 =
+* First release.
