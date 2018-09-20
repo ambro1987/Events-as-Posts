@@ -14,7 +14,7 @@ A simple plugin that allows you to post events on your site
 
 == Description ==
 
-**Event as Posts** is a simple plugin that allows you to post events as if they were normal posts, but with added fields like date and location.
+**Events as Posts** is a simple plugin that allows you to post events as if they were normal posts, but with added fields like date and location.
 
 It also allows you to display **lists of events** everywhere on your site using a shortcode. You can choose if you want to display future, past or all the events, and also the number of events and of which category.
 
@@ -34,7 +34,7 @@ Other features include:
 **Installation via WordPress**
 
 1. Go to the menu 'Plugins' -> 'Install' and search for 'Events as Posts'
-2. Click 'install'
+2. Click 'Install'
 
 **Manual Installation**
 
