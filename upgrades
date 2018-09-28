@@ -1,3 +1,0 @@
-# validar la fecha de evento que el usuario escoje por si la fecha de 'hasta' es inferior a la de 'desde'
-# mostrar un listado de categorías bajo la opción de añadir categorías en la página de ajustes
-# validar los nombres de las categorías (https://developer.wordpress.org/reference/functions/term_exists/) y hacer el input sea seguro

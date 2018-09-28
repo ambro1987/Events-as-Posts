@@ -138,7 +138,7 @@
    </p>
    <p>
      <label for="eap__link-location" class=""><?php _e( 'Link to location:', 'events-as-posts' )?></label>
-     <input type="text" maxlength="50" name="eap_link_location" id="eap__link-location" value="<?php if ( isset ( $eap_stored_meta['eap_link_location'] ) ) echo $eap_stored_meta['eap_link_location'][0]; ?>" />
+     <input type="url" name="eap_link_location" id="eap__link-location" value="<?php if ( isset ( $eap_stored_meta['eap_link_location'] ) ) echo $eap_stored_meta['eap_link_location'][0]; ?>" />
      <br><br>
      <a href="https://www.google.com/maps" target="_blank">Google Maps</a>
    </p>

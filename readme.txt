@@ -69,5 +69,8 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 
 == Changelog ==
 
+= 0.1.? =
+'Link to location' field in 'Event' -> 'Add event' makes sure you're entering a URL and not something else.
+
 = 0.1 =
 * First release.
