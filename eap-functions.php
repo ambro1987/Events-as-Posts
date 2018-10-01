@@ -275,31 +275,82 @@ function eap_events_style() {
   <style>
     /* background color */
     .eap__event {
-      background: <?php echo $setting['bg_color']; ?>;
+      background:
+      <?php
+      if ($setting['bg_color']) {
+        echo $setting['bg_color'];
+      } else {
+        echo '#f4f4f4';
+      }
+      ?>;
     }
     /* title color */
-    .eap__title a, .eap__title:hover {
-      color: <?php echo $setting['title_color']; ?>;
+    .eap__title a,
+    .eap__title a:hover {
+      color:
+      <?php
+      if ($setting['title_color']) {
+        echo $setting['title_color'];
+      } else {
+        echo '#333';
+      }
+      ?>;
     }
     /* category color */
     .eap__category {
-      color: <?php echo $setting['cat_color']; ?>;
+      color:
+      <?php
+      if ($setting['cat_color']) {
+        echo $setting['cat_color'];
+      } else {
+        echo '#333';
+      }
+      ?>;
     }
     /* meta color */
     .eap__meta {
-      color: <?php echo $setting['meta_color']; ?>;
+      color:
+      <?php
+      if ($setting['meta_color']) {
+        echo $setting['meta_color'];
+      } else {
+        echo '#333';
+      }
+      ?>;
     }
     /* time color */
     .eap__time {
-      color: <?php echo $setting['time_color']; ?>;
+      color:
+      <?php
+      if ($setting['time_color']) {
+        echo $setting['time_color'];
+      } else {
+        echo '#333';
+      }
+      ?>;
     }
     /* location color */
-    .eap__location, .eap__location:hover {
-      color: <?php echo $setting['loc_color']; ?>;
+    .eap__location,
+    .eap__location:hover {
+      color:
+      <?php
+      if ($setting['loc_color']) {
+        echo $setting['loc_color'] . ' !important';
+      } else {
+        echo '#333 !important';
+      }
+      ?>;
     }
     /* excerpt color */
     .eap__excerpt {
-      color: <?php echo $setting['excerpt_color']; ?>;
+      color:
+      <?php
+      if ($setting['excerpt_color']) {
+        echo $setting['excerpt_color'];
+      } else {
+        echo '#333';
+      }
+      ?>;
     }
   </style>
   <?php

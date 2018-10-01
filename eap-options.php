@@ -58,6 +58,11 @@ function eap_settings_page_html() {
         // deletes all options if the reset button is pressed
         if (isset($_POST['reset'])) {
           delete_option('eap_settings_style');
+          ?>
+          <script type="text/javascript">
+            window.location.href = '?post_type=eap_event&page=eap_settings&tab=tab2';
+          </script>
+          <?php
         }
       }
       ?>
