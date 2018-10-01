@@ -71,10 +71,13 @@ if (!$city) {
 
 <div class="eap__meta">
   <span class="eap__datetime"><?php echo $from_date[0] . ' ' . $from_date[1] . ' ' . $from_date[2] ?>, <span class="eap__time"><?php echo $from_time ?></span><?php echo $separation_mark ?>
-  <span class="eap__datetime"><?php
-  if ($until_date) {
+  <span class="eap__datetime">
+    <?php
+    if ($until_date) {
       echo $until_date[0] . ' ' . $until_date[1] . ' ' . $until_date[2] . $comma_dt;
-  }?><span class="eap__time"><?php echo $until_time ?></span>
+    }
+    ?>
+  <span class="eap__time"><?php echo $until_time ?></span>
   <br>
   <?php if ($link_location) : ?>
     <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a>

@@ -63,9 +63,15 @@ function eap_make_month_translatable($month) {
  */
 
 function eap_add_meta_to_event_content( $content ) {
+
+  ob_start();
+
   if( is_singular( 'eap_event' ) ) {
-    include_once ( plugin_dir_path( __FILE__ ) . 'event-meta.php' );
+    include ( plugin_dir_path( __FILE__ ) . 'event-meta.php' );
   }
+
+  $event_meta = ob_get_clean();
+  $content = $event_meta . $content;
   return $content;
 }
 add_filter('the_content', 'eap_add_meta_to_event_content');
