@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-10-01 22:53+0200\n"
-"PO-Revision-Date: 2018-10-01 22:53+0200\n"
+"POT-Creation-Date: 2018-10-01 23:51+0200\n"
+"PO-Revision-Date: 2018-10-02 00:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
 "Language: es_ES\n"
@@ -64,7 +64,7 @@ msgstr "noviembre"
 msgid "December"
 msgstr "diciembre"
 
-#: eap-functions.php:118 eap-functions.php:160 eap-functions.php:196
+#: eap-functions.php:119 eap-functions.php:162 eap-functions.php:199
 msgid "There are no events"
 msgstr "No hay eventos"
 
@@ -231,31 +231,31 @@ msgstr "Evento"
 
 #: event-post-type.php:22
 msgid "Add event"
-msgstr "Añadir Evento"
+msgstr "Añadir evento"
 
 #: event-post-type.php:24
 msgid "Add new event"
-msgstr "Añadir nuevo Evento"
+msgstr "Añadir nuevo evento"
 
 #: event-post-type.php:25
 msgid "New event"
-msgstr "Nuevo Evento"
+msgstr "Nuevo evento"
 
 #: event-post-type.php:26
 msgid "Edit event"
-msgstr "Editar Evento"
+msgstr "Editar evento"
 
 #: event-post-type.php:27
 msgid "View event"
-msgstr "Ver Evento"
+msgstr "Ver evento"
 
 #: event-post-type.php:28
 msgid "All events"
-msgstr "Todos los Eventos"
+msgstr "Todos los eventos"
 
 #: event-post-type.php:29
 msgid "Search events"
-msgstr "Buscar Eventos"
+msgstr "Buscar eventos"
 
 #: event-post-type.php:30
 msgid "No events found."
@@ -304,6 +304,9 @@ msgstr "Fecha evento"
 #: event-post-type.php:196
 msgid "Featured image"
 msgstr "Imagen destacada"
+
+#~ msgid "* The above shortcode will only show future events"
+#~ msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
 
 #~ msgid "* The above shortcode will only displays future events"
 #~ msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"

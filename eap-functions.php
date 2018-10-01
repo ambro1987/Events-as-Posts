@@ -114,6 +114,7 @@ function eap_display_events($atts) {
           include ( plugin_dir_path( __FILE__ ) . 'event-content.php' );
      endwhile; ?>
      </div>
+     <br>
    <?php else :
      _e('There are no events', 'events-as-posts');
    endif;
@@ -156,6 +157,7 @@ function eap_display_past_events($atts) {
           include ( plugin_dir_path( __FILE__ ) . 'event-content.php' );
      endwhile; ?>
      </div>
+     <br>
    <?php else :
      _e('There are no events', 'events-as-posts');
    endif;
@@ -192,6 +194,7 @@ function eap_display_all_events($atts) {
           include ( plugin_dir_path( __FILE__ ) . 'event-content.php' );
      endwhile; ?>
      </div>
+     <br>
    <?php else :
      _e('There are no events', 'events-as-posts');
    endif;
@@ -226,9 +229,7 @@ function eap_events_style() {
     ?>
     <style>
       .eap__list {
-        display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 1.6em;
       }
       .eap__event {
         display: grid;
@@ -245,17 +246,6 @@ function eap_events_style() {
   } elseif ( $setting['layout'] == 2 ) {
     ?>
     <style>
-      /* fallback style */
-      .eap__list {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .eap__event {
-        flex-basis: 42%;
-        margin: 0 1.6em 1.6em 0;
-      }
-      /* end fallback style */
-
       .eap__list {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -269,17 +259,6 @@ function eap_events_style() {
   } elseif ( $setting['layout'] == 3 ) {
     ?>
     <style>
-      /* fallback styles */
-      .eap__list {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .eap__event {
-        flex-basis: 26%;
-        margin: 0 1.6em 1.6em 0;
-      }
-      /* end fallback styles */
-
       .eap__list {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -295,7 +274,7 @@ function eap_events_style() {
   ?>
   <style>
     /* background color */
-    .eap_event {
+    .eap__event {
       background: <?php echo $setting['bg_color']; ?>;
     }
     /* title color */
@@ -326,7 +305,6 @@ function eap_events_style() {
   <?php
 }
 add_action('wp_head', 'eap_events_style');
-
 
 // shows events in category pages
 function eap_category_filter($query) {
