@@ -4,7 +4,7 @@ $setting = get_option('eap_settings');
 
 // format the content
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class();?>>
+<div id="post-<?php the_ID(); ?>" class="eap__event">
   <div class="eap__img">
     <?php the_post_thumbnail() ?>
   </div>

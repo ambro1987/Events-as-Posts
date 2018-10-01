@@ -224,7 +224,7 @@ function eap_events_style() {
         grid-template-columns: 1fr;
         grid-gap: 1.6em;
       }
-      .eap_event {
+      .eap__event {
         display: grid;
         grid-template-columns: 1fr 2fr;
         grid-gap: 1.6em;
@@ -244,7 +244,7 @@ function eap_events_style() {
         display: flex;
         flex-wrap: wrap;
       }
-      .eap_event {
+      .eap__event {
         flex-basis: 42%;
         margin: 0 1.6em 1.6em 0;
       }
@@ -268,7 +268,7 @@ function eap_events_style() {
         display: flex;
         flex-wrap: wrap;
       }
-      .eap_event {
+      .eap__event {
         flex-basis: 26%;
         margin: 0 1.6em 1.6em 0;
       }
