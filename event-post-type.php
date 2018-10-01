@@ -206,7 +206,7 @@
       if ($event_date) {
         // format the date
         $event_date = eap_format_date($event_date);
-        $event_date[1] = eap_make_moth_translatable($event_date[1]);
+        $event_date[1] = eap_make_month_translatable($event_date[1]);
 
         //output the date [0] = day, etc.
         echo $event_date[0] . ' ' . $event_date[1] . ', ' . $event_date[2];

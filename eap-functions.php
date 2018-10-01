@@ -17,7 +17,7 @@ function eap_format_date($date) {
   return $date;
 }
 
-function eap_make_moth_translatable($month) {
+function eap_make_month_translatable($month) {
   switch ($month) {
     case 'January':
       $month = __('January', 'events-as-posts');
