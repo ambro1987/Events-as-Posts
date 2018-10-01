@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Events as Posts 1.0\n"
-"POT-Creation-Date: 2018-10-01 13:54+0200\n"
-"PO-Revision-Date: 2018-10-01 13:54+0200\n"
+"Project-Id-Version: Events as Posts 0.1\n"
+"POT-Creation-Date: 2018-10-01 22:53+0200\n"
+"PO-Revision-Date: 2018-10-01 22:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
 "Language: es_ES\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;%s\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: eap-functions.php:23
@@ -64,7 +64,7 @@ msgstr "noviembre"
 msgid "December"
 msgstr "diciembre"
 
-#: eap-functions.php:112 eap-functions.php:154 eap-functions.php:190
+#: eap-functions.php:118 eap-functions.php:160 eap-functions.php:196
 msgid "There are no events"
 msgstr "No hay eventos"
 
@@ -231,31 +231,31 @@ msgstr "Evento"
 
 #: event-post-type.php:22
 msgid "Add event"
-msgstr "Añadir evento"
+msgstr "Añadir Evento"
 
 #: event-post-type.php:24
 msgid "Add new event"
-msgstr "Añadir nuevo evento"
+msgstr "Añadir nuevo Evento"
 
 #: event-post-type.php:25
 msgid "New event"
-msgstr "Nuevo evento"
+msgstr "Nuevo Evento"
 
 #: event-post-type.php:26
 msgid "Edit event"
-msgstr "Editar evento"
+msgstr "Editar Evento"
 
 #: event-post-type.php:27
 msgid "View event"
-msgstr "Ver evento"
+msgstr "Ver Evento"
 
 #: event-post-type.php:28
 msgid "All events"
-msgstr "Todos los eventos"
+msgstr "Todos los Eventos"
 
 #: event-post-type.php:29
 msgid "Search events"
-msgstr "Buscar eventos"
+msgstr "Buscar Eventos"
 
 #: event-post-type.php:30
 msgid "No events found."
@@ -305,108 +305,14 @@ msgstr "Fecha evento"
 msgid "Featured image"
 msgstr "Imagen destacada"
 
-#~ msgid "* The above shortcode it will only show future events"
+#~ msgid "* The above shortcode will only displays future events"
 #~ msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
 
-#~ msgid "Separate the categories with a comma (birthdays,online,etc.)"
-#~ msgstr "Separa las categorías con una coma (cumpleaños,online,etc.)"
+#~ msgid "*The shortcode above only displays future events"
+#~ msgstr "Whatever"
 
-#~ msgid "April"
-#~ msgstr "abril"
+#~ msgid "* The shortcode above only displays future events"
+#~ msgstr "* El shortcode aquí arriba solamente muestra eventos futuros"
 
-#~ msgid "Octuber"
-#~ msgstr "octubre"
-
-#~ msgid ""
-#~ "Select the number of events you want to display or 0 (zero) to display all"
-#~ msgstr ""
-#~ "Selecciona el número de eventos que quieres mostrar o 0 (cero) para "
-#~ "mostrar todos"
-
-#~ msgid "All *"
-#~ msgstr "Todos *"
-
-#~ msgid ""
-#~ "Select the number of events you want to display <br> <b>0</b> (zero) to "
-#~ "display all * <br><br> * Depending on the selected period it will show "
-#~ "all the future or all the past events, not 'all'"
-#~ msgstr ""
-#~ "Selecciona el número de eventos que quieres mostrar <br> <b>0</b> (cero) "
-#~ "para mostrar todos * <br><br> * Dependiendo del período seleccionado, "
-#~ "únicamente se mostrarán <br> todos los eventos futuros o todos los "
-#~ "eventos pasados, no 'todos'"
-
-#~ msgid ""
-#~ "Display events by category <br>Separate the categories with a comma "
-#~ "(birthdays,online,etc.)"
-#~ msgstr ""
-#~ "Muestra los eventos por categoría <br> Separa las categorías con una coma "
-#~ "(cumpleaños,online,etc)"
-
-#~ msgid "* It literally displays 'all' the events (you can choose categories)"
-#~ msgstr ""
-#~ "* Muestra literalmente 'todos' los eventos (puedes elegir las categorías)"
-
-#~ msgid ""
-#~ "* The above shortcode it will only show future events (all by default)"
-#~ msgstr ""
-#~ "* El shortcode aquí arriba mostrará exclusivamente eventos futuros (todos "
-#~ "por defecto)"
-
-#~ msgid ""
-#~ "* The above shortcode it will only show future events (five by default)"
-#~ msgstr ""
-#~ "* El shortcode aquí arriba mostrará exclusivamente eventos futuros (cinco "
-#~ "por defecto)"
-
-#~ msgid ""
-#~ "Select the number of events you want to display <br> <b>0</b> (zero) to "
-#~ "display all * <br><br> * If selected it displays all the future or all "
-#~ "the past events, not 'all'"
-#~ msgstr ""
-#~ "Selecciona el número de eventos que quieres mostrar <br> <b>0</b> (cero) "
-#~ "para mostrar todos * <br><br> * Si está seleccionado muestra todos los "
-#~ "eventos futuros o todos los eventos pasados, no 'todos'"
-
-#~ msgid ""
-#~ "Display events by category <br>Separate the categories with a comma "
-#~ "( birthdays,online,etc. )"
-#~ msgstr ""
-#~ "Muestra los eventos por categoría <br>Separa las categorías con una coma "
-#~ "( cumpleaños,online,etc. )"
-
-#~ msgid ""
-#~ "* It literally displays 'all' the events ( you can choose categories )"
-#~ msgstr ""
-#~ "* Muestra literalmente 'todos' los eventos ( puedes elegir las "
-#~ "categorías )"
-
-#~ msgid "* Independent of shortcode ( it applies to all the lists )"
-#~ msgstr "* Independiente del shortcode ( se aplica a todos los listados )"
-
-#~ msgid "Show the excerpt *"
-#~ msgstr "Mostrar el extracto *"
-
-#~ msgid "Number"
-#~ msgstr "Número de eventos"
-
-#~ msgid "Add Event"
-#~ msgstr "Añadir evento"
-
-#~ msgid "Add new Event"
-#~ msgstr "Añadir nuevo evento"
-
-#~ msgid "New Event"
-#~ msgstr "Nuevo evento"
-
-#~ msgid "Edit Event"
-#~ msgstr "Editar evento"
-
-#~ msgid "View Event"
-#~ msgstr "Ver evento"
-
-#~ msgid "All Events"
-#~ msgstr "Todos los eventos"
-
-#~ msgid "Search Events"
-#~ msgstr "Buscar eventos"
+#~ msgid "* The above shortcode will display only future events"
+#~ msgstr "bla, bla, bla"

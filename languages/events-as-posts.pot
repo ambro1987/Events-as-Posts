@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-10-01 13:54+0200\n"
+"POT-Creation-Date: 2018-10-01 22:52+0200\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: eap-functions.php:112 eap-functions.php:154 eap-functions.php:190
+#: eap-functions.php:118 eap-functions.php:160 eap-functions.php:196
 msgid "There are no events"
 msgstr ""
 
