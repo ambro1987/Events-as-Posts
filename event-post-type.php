@@ -68,7 +68,7 @@
      <input type="date" required name="eap_from_day" id="eap__from-day" value="<?php if ( isset ( $eap_stored_meta['eap_from_day'] ) ) echo $eap_stored_meta['eap_from_day'][0]; ?>" />
      <br>
      <label for="eap__from-time" class=""><?php _e( 'Time:', 'events-as-posts' )?></label>
-     <input type="time" required name="eap_from_time" id="eap__from-time" value="<?php if ( isset ( $eap_stored_meta['eap_from_time'] ) ) echo $eap_stored_meta['eap_from_time'][0]; ?>" />
+     <input type="time" name="eap_from_time" id="eap__from-time" value="<?php if ( isset ( $eap_stored_meta['eap_from_time'] ) ) echo $eap_stored_meta['eap_from_time'][0]; ?>" />
    </p>
    <h4><?php _e('Until', 'events-as-posts') ?></h4>
    <p>

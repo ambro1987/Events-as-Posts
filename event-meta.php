@@ -17,6 +17,13 @@ if ($until_date) {
   $until_date[1] = eap_make_month_translatable($until_date[1]);
 }
 // to avoid notices
+if (!$from_time) {
+  $from_time = '';
+} else {
+  // add a comma in before if it's set
+  $from_time = ', ' . $from_time;
+}
+
 if (!$until_time) {
   $until_time = '';
 }
@@ -70,7 +77,7 @@ if (!$city) {
 ?>
 
 <div class="eap__meta">
-  <span class="eap__datetime"><?php echo $from_date[0] . ' ' . $from_date[1] . ' ' . $from_date[2] ?>, <span class="eap__time"><?php echo $from_time ?></span><?php echo $separation_mark ?>
+  <span class="eap__datetime"><?php echo $from_date[0] . ' ' . $from_date[1] . ' ' . $from_date[2] ?><span class="eap__time"><?php echo $from_time ?></span><?php echo $separation_mark ?>
   <span class="eap__datetime">
     <?php
     if ($until_date) {
