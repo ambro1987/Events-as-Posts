@@ -8,7 +8,7 @@ $setting = get_option('eap_settings');
   <div class="eap__img">
     <?php the_post_thumbnail() ?>
   </div>
-  <div class="eap__text">
+  <div class="eap__content">
     <header class="eap__header">
       <h2 class="eap__title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
       <?php
@@ -29,14 +29,12 @@ $setting = get_option('eap_settings');
       </span>
       <?php include ( plugin_dir_path( __FILE__ ) . 'event-meta.php' ); ?>
     </header>
-    <main class="eap__main">
-      <p class="eap__excerpt">
-        <?php
-        if ( !empty($setting['excerpt']) == 'true' ) {
-          the_excerpt();
-        }
-        ?>
-     </p>
+    <main class="eap__excerpt">
+      <?php
+      if ( !empty($setting['excerpt']) == 'true' ) {
+        the_excerpt();
+      }
+      ?>
     </main>
   </div>
 </div>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 1.0\n"
-"POT-Creation-Date: 2018-09-15 13:53+0200\n"
-"PO-Revision-Date: 2018-09-15 13:53+0200\n"
+"POT-Creation-Date: 2018-10-01 13:54+0200\n"
+"PO-Revision-Date: 2018-10-01 13:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
 "Language: es_ES\n"
@@ -166,7 +166,7 @@ msgstr ""
 "un listado de eventos: *"
 
 #: eap-options.php:241
-msgid "* The above shortcode it will only show future events"
+msgid "* The above shortcode will only display future events"
 msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
 
 #: eap-options.php:256
@@ -304,6 +304,9 @@ msgstr "Fecha evento"
 #: event-post-type.php:196
 msgid "Featured image"
 msgstr "Imagen destacada"
+
+#~ msgid "* The above shortcode it will only show future events"
+#~ msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
 
 #~ msgid "Separate the categories with a comma (birthdays,online,etc.)"
 #~ msgstr "Separa las categorías con una coma (cumpleaños,online,etc.)"

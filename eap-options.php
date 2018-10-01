@@ -238,7 +238,7 @@ function eap_events_list_cb() {
               in your posts or pages the following shortcode to display
               a list of events: *', 'events-as-posts') ?> </p>
   <span style="color:red;">[display_events]</span>
-  <p><i><?php _e('* The above shortcode it will only show future events', 'events-as-posts') ?></i></p>
+  <p><i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i></p>
   <br>
   <?php
 }

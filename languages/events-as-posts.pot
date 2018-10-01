@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-09-11 17:52+0200\n"
+"POT-Creation-Date: 2018-10-01 13:54+0200\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: eap-functions.php:112 eap-functions.php:157 eap-functions.php:194
+#: eap-functions.php:112 eap-functions.php:154 eap-functions.php:190
 msgid "There are no events"
 msgstr ""
 
@@ -164,56 +164,57 @@ msgid ""
 msgstr ""
 
 #: eap-options.php:241
-msgid "* The above shortcode it will only show future events"
+msgid "* The above shortcode will only display future events"
 msgstr ""
 
-#: eap-options.php:252
+#: eap-options.php:256
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
 msgstr ""
 
-#: eap-options.php:262
-msgid "Separate the categories with a comma (birthdays,online,etc.)"
-msgstr ""
-
-#: eap-options.php:272
-msgid "Future events"
-msgstr ""
-
-#: eap-options.php:274
-msgid "Past events"
+#: eap-options.php:266
+msgid ""
+"Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr ""
 
 #: eap-options.php:276
+msgid "Future events"
+msgstr ""
+
+#: eap-options.php:278
+msgid "Past events"
+msgstr ""
+
+#: eap-options.php:280
 msgid "All"
 msgstr ""
 
-#: eap-options.php:336
+#: eap-options.php:345
 msgid "Select to show the excerpt *"
 msgstr ""
 
-#: eap-options.php:338
+#: eap-options.php:347
 msgid "* Independent of shortcode (it applies to all the lists)"
 msgstr ""
 
-#: eap-options.php:352
+#: eap-options.php:366
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: eap-options.php:355
+#: eap-options.php:369
 msgid "1 Column"
 msgstr ""
 
-#: eap-options.php:357
+#: eap-options.php:371
 msgid "2 Columns"
 msgstr ""
 
-#: eap-options.php:359
+#: eap-options.php:373
 msgid "3 Columns"
 msgstr ""
 
-#: eap-options.php:396
+#: eap-options.php:410
 msgid "<b>*</b> Date, time and location"
 msgstr ""
 
