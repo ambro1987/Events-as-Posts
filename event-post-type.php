@@ -202,16 +202,26 @@
   function eap_event_columns_content($column_name, $post_ID) {
     if ($column_name == 'event_date') {
       // get event date
-      $event_date = get_post_meta( $post_ID, 'eap_from_day', true);
-      if ($event_date) {
-        // format the date
-        $event_date = eap_format_date($event_date);
-        $event_date[1] = eap_make_month_translatable($event_date[1]);
+      $from_date = get_post_meta( $post_ID, 'eap_from_day', true);
+      $until_date = get_post_meta( $post_ID, 'eap_until_day', true);
 
-        //output the date [0] = day, etc.
-        echo $event_date[0] . ' ' . $event_date[1] . ', ' . $event_date[2];
+      // format the date
+      $from_date = eap_format_date($from_date);
+      $from_date[1] = eap_make_month_translatable($from_date[1]);
+      //output the date [0] = day, etc.
+      echo $from_date[0] . ' ' . $from_date[1] . ', ' . $from_date[2];
+
+      if ($until_date) {
+        // format the date
+        $until_date = eap_format_date($until_date);
+        $until_date[1] = eap_make_month_translatable($until_date[1]);
+        if ($until_date != $from_date) {
+          //output until date [0] = day, etc.
+          echo ' - ' . $until_date[0] . ' ' . $until_date[1] . ', ' . $until_date[2];
+        }
       }
     }
+
     // display the featured imgs
     if ($column_name == 'featured') {
       $post_featured_image = eap_get_featured_image($post_ID);
