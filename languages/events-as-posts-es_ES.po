@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-10-01 23:51+0200\n"
-"PO-Revision-Date: 2018-10-02 00:22+0200\n"
+"POT-Creation-Date: 2018-10-02 02:00+0200\n"
+"PO-Revision-Date: 2018-10-02 02:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
 "Language: es_ES\n"
@@ -84,75 +84,79 @@ msgstr "Restablecer valores originales"
 msgid "Reset"
 msgstr "Restablecer"
 
-#: eap-options.php:75 eap-options.php:76
+#: eap-options.php:81 eap-options.php:82
 msgid "Settings"
 msgstr "Ajustes"
 
-#: eap-options.php:92
+#: eap-options.php:98
 msgid "List of events"
 msgstr "Listado de eventos"
 
-#: eap-options.php:98
+#: eap-options.php:104
 msgid "List settings"
 msgstr "Ajustes listado"
 
-#: eap-options.php:106
+#: eap-options.php:112
 msgid "Number of events"
 msgstr "Número de eventos"
 
-#: eap-options.php:113
+#: eap-options.php:119
 msgid "Categories"
 msgstr "Categorías"
 
-#: eap-options.php:120
+#: eap-options.php:126
 msgid "Period"
 msgstr "Período"
 
-#: eap-options.php:127
+#: eap-options.php:133
 msgid "Shortcode"
 msgstr ""
 
-#: eap-options.php:134
+#: eap-options.php:140
 msgid "Excerpt"
 msgstr "Extracto"
 
-#: eap-options.php:157
+#: eap-options.php:163
 msgid "List styles"
 msgstr "Diseño listado"
 
-#: eap-options.php:165
+#: eap-options.php:171
 msgid "Layout"
 msgstr "Disposición"
 
-#: eap-options.php:172
+#: eap-options.php:178
 msgid "Background color"
 msgstr "Color de fondo"
 
-#: eap-options.php:179
+#: eap-options.php:185
 msgid "Title color"
 msgstr "Color título"
 
-#: eap-options.php:186
+#: eap-options.php:192
 msgid "Category color"
 msgstr "Color categoría"
 
-#: eap-options.php:193
-msgid "Meta color *"
-msgstr "Color meta *"
+#: eap-options.php:199
+msgid "Date color"
+msgstr "Color fecha"
 
-#: eap-options.php:200
+#: eap-options.php:206
 msgid "Time color"
 msgstr "Color hora"
 
-#: eap-options.php:207
+#: eap-options.php:213
 msgid "Location color"
 msgstr "Color lugar"
 
-#: eap-options.php:214
+#: eap-options.php:220
+msgid "City color"
+msgstr "Color ciudad"
+
+#: eap-options.php:227
 msgid "Excerpt color"
 msgstr "Color extracto"
 
-#: eap-options.php:236
+#: eap-options.php:249
 msgid ""
 "<b>Events as Posts</b> allows you to display a list of events\n"
 "              everywhere on your site using a shortcode. <br> Copy and "
@@ -165,11 +169,11 @@ msgstr ""
 "en tus entradas o páginas el siguiente shortcode para mostrar\n"
 "un listado de eventos: *"
 
-#: eap-options.php:241
+#: eap-options.php:254
 msgid "* The above shortcode will only display future events"
 msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
 
-#: eap-options.php:256
+#: eap-options.php:269
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
@@ -177,49 +181,45 @@ msgstr ""
 "Selecciona el número de eventos que quieres mostrar o <b>0</b> (cero) para "
 "mostrar todos"
 
-#: eap-options.php:266
+#: eap-options.php:279
 msgid "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr "Separa las categorías con una coma (categoría 1, categoría 2, etc.)"
 
-#: eap-options.php:276
+#: eap-options.php:289
 msgid "Future events"
 msgstr "Eventos futuros"
 
-#: eap-options.php:278
+#: eap-options.php:291
 msgid "Past events"
 msgstr "Eventos pasados"
 
-#: eap-options.php:280
+#: eap-options.php:293
 msgid "All"
 msgstr "Todos"
 
-#: eap-options.php:345
+#: eap-options.php:358
 msgid "Select to show the excerpt *"
 msgstr "Selecciona para mostrar el extracto *"
 
-#: eap-options.php:347
+#: eap-options.php:360
 msgid "* Independent of shortcode (it applies to all the lists)"
 msgstr "* Independiente del shortcode (se aplica a todos los listados)"
 
-#: eap-options.php:366
+#: eap-options.php:379
 msgid "Select the layout for the list of events"
 msgstr "Selecciona la disposición para el listado de eventos"
 
-#: eap-options.php:369
+#: eap-options.php:382
 msgid "1 Column"
 msgstr "1 Columna"
 
-#: eap-options.php:371
+#: eap-options.php:384
 msgid "2 Columns"
 msgstr "2 Columnas"
 
-#: eap-options.php:373
+#: eap-options.php:386
 msgid "3 Columns"
 msgstr "3 Columnas"
-
-#: eap-options.php:410
-msgid "<b>*</b> Date, time and location"
-msgstr "<b>*</b> Fecha, hora y lugar"
 
 #: event-post-type.php:18 event-post-type.php:20
 msgid "Events"
@@ -304,6 +304,12 @@ msgstr "Fecha evento"
 #: event-post-type.php:196
 msgid "Featured image"
 msgstr "Imagen destacada"
+
+#~ msgid "Meta color *"
+#~ msgstr "Color meta *"
+
+#~ msgid "<b>*</b> Date, time and location"
+#~ msgstr "<b>*</b> Fecha, hora y lugar"
 
 #~ msgid "* The above shortcode will only show future events"
 #~ msgstr "* El shortcode aquí arriba mostrará exclusivamente eventos futuros"
