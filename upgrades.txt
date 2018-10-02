@@ -8,3 +8,4 @@
 * añadir el lugar en las columnas del panel donde aparecen todos los eventos
 * opción para evento online
 * enlace ciudad
+* meta font-size option

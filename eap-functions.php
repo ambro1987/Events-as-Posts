@@ -231,13 +231,15 @@ function eap_events_style() {
       .eap__list {
         grid-template-columns: 1fr;
       }
-      .eap__event {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-gap: 1.6em;
-      }
       .eap__title {
         margin: 0 0 .8em !important;
+      }
+      @media all and (min-width: 576px) {
+        .eap__event {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          grid-gap: 1.6em;
+        }
       }
     </style>
     <?php
@@ -246,11 +248,13 @@ function eap_events_style() {
   } elseif ( $setting['layout'] == 2 ) {
     ?>
     <style>
-      .eap__list {
-        grid-template-columns: repeat(2, 1fr);
-      }
       .eap__title {
         margin: .6em 0 .8em;
+      }
+      @media all and (min-width: 576px) {
+        .eap__list {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
     </style>
     <?php
@@ -259,8 +263,10 @@ function eap_events_style() {
   } elseif ( $setting['layout'] == 3 ) {
     ?>
     <style>
-      .eap__list {
-        grid-template-columns: repeat(3, 1fr);
+      @media all and (min-width: 576px) {
+        .eap__list {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
       .eap__title {
         margin: .6em 0 .8em;

@@ -5,7 +5,7 @@ Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.0.24
 Tested up to: 4.9.8
-Stable tag: 0.1
+Stable tag: 0.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -69,8 +69,9 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 
 == Changelog ==
 
-= 0.? =
-* Display 'Until date' (if present) in 'Date' column in 'Events' -> 'All events' (Dashboard)
+= 0.2 &mdash; 2 of October, 2018 =
+* New: Displays event's 'Until' date (if present) in 'Date' column in 'Events' -> 'All events'
+* Fix: List of events responsive
 
-= 0.1 =
+= 0.1 &mdash; 15 of September, 2018 =
 * First release.
