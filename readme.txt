@@ -5,7 +5,7 @@ Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.0.24
 Tested up to: 4.9.8
-Stable tag: 0.2.1
+Stable tag: 0.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,6 +68,11 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 
 
 == Changelog ==
+
+= 0.3 &mdash; 3 of October, 2018 =
+* New: Read more button option for list of events
+* New: Admin stylesheet
+* Tweak: Location fields when adding or editing an event
 
 = 0.2.1 &mdash; 2 of October, 2018 =
 * Fix: Display all the future or all the past events independently of posts per page in 'Settings' -> 'Reading'

@@ -34,6 +34,13 @@ $setting = get_option('eap_settings');
       if ( !empty($setting['excerpt']) == 'true' ) {
         the_excerpt();
       }
+      if ( !empty($setting['more']) == 'true' ) {
+        ?>
+        <div class="eap__more">
+          <a href="<?php the_permalink(); ?>"><?php _e('Read more', 'events-as-posts'); ?></a>
+        </div>
+        <?php
+      }
       ?>
     </main>
   </div>

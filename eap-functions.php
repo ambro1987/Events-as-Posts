@@ -232,13 +232,13 @@ function eap_events_style() {
         grid-template-columns: 1fr;
       }
       .eap__title {
-        margin: 0 0 .8em !important;
+        margin: 0 0 .8rem !important;
       }
       @media all and (min-width: 576px) {
         .eap__event {
           display: grid;
           grid-template-columns: 1fr 2fr;
-          grid-gap: 1.6em;
+          grid-gap: 1.6rem;
         }
       }
     </style>
@@ -249,7 +249,7 @@ function eap_events_style() {
     ?>
     <style>
       .eap__title {
-        margin: .6em 0 .8em;
+        margin: .6rem 0 .8rem;
       }
       @media all and (min-width: 576px) {
         .eap__list {
@@ -269,7 +269,7 @@ function eap_events_style() {
         }
       }
       .eap__title {
-        margin: .6em 0 .8em;
+        margin: .6rem 0 .8rem;
       }
     </style>
     <?php

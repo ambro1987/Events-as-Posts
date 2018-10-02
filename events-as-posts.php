@@ -3,7 +3,7 @@
 Plugin Name:  Events as Posts
 Plugin URI:   https://wordpress.org/plugins/events-as-posts/
 Description:  A simple plugin that allows you to post events on your site
-Version:      0.2.1
+Version:      0.3
 Author:       Ambrogio Piredda
 Author URI:   https://profiles.wordpress.org/orbam7819
 Text Domain:  events-as-posts
@@ -54,7 +54,7 @@ require ( plugin_dir_path( __FILE__ ) . 'eap-options.php' );
 
  function eap_deactivation() {
    // unregister the post type, so the rules are no longer in memory
-   unregister_post_type( 'event' );
+   unregister_post_type( 'eap_event' );
    // clear the permalinks to remove our post type's rules from the database
    flush_rewrite_rules();
  }
@@ -66,9 +66,19 @@ require ( plugin_dir_path( __FILE__ ) . 'eap-options.php' );
 
  function eap_load_plugin_stylesheet() {
     $plugin_url = plugin_dir_url( __FILE__ );
-    wp_enqueue_style( 'eap_stylesheet', $plugin_url . 'inc/eap-stylesheet.css' );
+    wp_enqueue_style( 'eap_stylesheet', $plugin_url . '/inc/eap.css' );
   }
   add_action( 'wp_enqueue_scripts', 'eap_load_plugin_stylesheet' );
+
+ /**
+  * Load admin stylesheet
+  */
+
+  function eap_wp_admin_style() {
+    wp_register_style( 'eap_wp_admin_css', plugin_dir_url( __FILE__ ) . '/inc/eap-admin.css', false );
+    wp_enqueue_style( 'eap_wp_admin_css' );
+  }
+  add_action( 'admin_enqueue_scripts', 'eap_wp_admin_style' );
 
  /**
   * Load color picker style and script
@@ -79,7 +89,7 @@ require ( plugin_dir_path( __FILE__ ) . 'eap-options.php' );
         // Add the color picker css file
         wp_enqueue_style( 'wp-color-picker' );
         // Include our custom jQuery file with WordPress Color Picker dependency
-        wp_enqueue_script( 'custom-script-handle', plugins_url( 'inc/eap-script.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+        wp_enqueue_script( 'custom-script-handle', plugins_url( '/inc/eap.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
     }
  }
  add_action( 'admin_enqueue_scripts', 'eap_add_color_picker' );

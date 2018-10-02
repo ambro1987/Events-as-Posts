@@ -64,18 +64,18 @@
    ?>
    <h4><?php _e('From', 'events-as-posts') ?></h4>
    <p>
-     <label for="eap__from-day" class=""><?php _e( 'Day:', 'events-as-posts' )?></label>
+     <label for="eap__from-day" class=""><?php _e( 'Day', 'events-as-posts' )?></label>
      <input type="date" required name="eap_from_day" id="eap__from-day" value="<?php if ( isset ( $eap_stored_meta['eap_from_day'] ) ) echo $eap_stored_meta['eap_from_day'][0]; ?>" />
      <br>
-     <label for="eap__from-time" class=""><?php _e( 'Time:', 'events-as-posts' )?></label>
+     <label for="eap__from-time" class=""><?php _e( 'Time', 'events-as-posts' )?></label>
      <input type="time" name="eap_from_time" id="eap__from-time" value="<?php if ( isset ( $eap_stored_meta['eap_from_time'] ) ) echo $eap_stored_meta['eap_from_time'][0]; ?>" />
    </p>
    <h4><?php _e('Until', 'events-as-posts') ?></h4>
    <p>
-     <label for="eap__until-day" class=""><?php _e( 'Day:', 'events-as-posts' )?></label>
+     <label for="eap__until-day" class=""><?php _e( 'Day', 'events-as-posts' )?></label>
      <input type="date" name="eap_until_day" id="eap__until-day" value="<?php if ( isset ( $eap_stored_meta['eap_until_day'] ) ) echo $eap_stored_meta['eap_until_day'][0]; ?>" />
      <br>
-     <label for="eap__until-time" class=""><?php _e( 'Time:', 'events-as-posts' )?></label>
+     <label for="eap__until-time" class=""><?php _e( 'Time', 'events-as-posts' )?></label>
      <input type="time" name="eap_until_time" id="eap__until-time" value="<?php if ( isset ( $eap_stored_meta['eap_until_time'] ) ) echo $eap_stored_meta['eap_until_time'][0]; ?>" />
    </p>
   <?php
@@ -128,19 +128,21 @@
    $eap_stored_meta = get_post_meta( $post->ID );
    ?>
    <p>
-     <label for="eap__location" class=""><?php _e( 'Add location:', 'events-as-posts' )?></label>
-     <input type="text" required maxlength="40" name="eap_location" id="eap__location" value="<?php if ( isset ( $eap_stored_meta['eap_location'] ) ) echo $eap_stored_meta['eap_location'][0]; ?>" />
+     <label for="eap__location" class=""><?php _e( 'Event location', 'events-as-posts' )?></label>
+     <br>
+     <input type="text" required maxlength="80" name="eap_location" id="eap__location" value="<?php if ( isset ( $eap_stored_meta['eap_location'] ) ) echo $eap_stored_meta['eap_location'][0]; ?>" />
    </p>
    <p>
-     <label for="eap__city" class=""><?php _e( 'City:', 'events-as-posts' )?></label>
+     <label for="eap__link-location"><?php _e( 'Link to location', 'events-as-posts' )?></label>
+     <span> | </span>
+     <a href="https://www.google.com/maps" target="_blank">Google Maps</a>
+     <br>
+     <input type="url" name="eap_link_location" id="eap__link-location" value="<?php if ( isset ( $eap_stored_meta['eap_link_location'] ) ) echo $eap_stored_meta['eap_link_location'][0]; ?>" />
+   </p>
+   <p>
+     <label for="eap__city" class=""><?php _e( 'City', 'events-as-posts' )?></label>
      <br>
      <input type="text" maxlength="40" name="eap_city" id="eap__city" value="<?php if ( isset ( $eap_stored_meta['eap_city'] ) ) echo $eap_stored_meta['eap_city'][0]; ?>" />
-   </p>
-   <p>
-     <label for="eap__link-location" class=""><?php _e( 'Link to location:', 'events-as-posts' )?></label>
-     <input type="url" name="eap_link_location" id="eap__link-location" value="<?php if ( isset ( $eap_stored_meta['eap_link_location'] ) ) echo $eap_stored_meta['eap_link_location'][0]; ?>" />
-     <br><br>
-     <a href="https://www.google.com/maps" target="_blank">Google Maps</a>
    </p>
   <?php
   }

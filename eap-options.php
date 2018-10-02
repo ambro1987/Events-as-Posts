@@ -61,7 +61,7 @@ function eap_settings_page_html() {
           ?>
           <script type="text/javascript">
             // reload the page
-            window.location.href = '?post_type=eap_event&page=eap_settings&tab=tab2';
+            window.location.reload();
           </script>
           <?php
         }
@@ -139,6 +139,13 @@ function eap_settings_init() {
       'eap_excerpt',
       __('Excerpt', 'events-as-posts'),
       'eap_excerpt_cb',
+      'eap_settings',
+      'eap_events_list_settings'
+  );
+  add_settings_field(
+      'eap_more',
+      __('Read more', 'events-as-posts'),
+      'eap_more_cb',
       'eap_settings',
       'eap_events_list_settings'
   );
@@ -264,7 +271,7 @@ function eap_events_list_cb() {
               everywhere on your site using a shortcode. <br> Copy and paste
               in your posts or pages the following shortcode to display
               a list of events: *', 'events-as-posts') ?> </p>
-  <span style="color:red;">[display_events]</span>
+  <span class="eap-options__shortcode">[display_events]</span>
   <p><i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i></p>
   <br>
   <?php
@@ -313,7 +320,7 @@ function eap_generate_shortcode_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings');
   // shortcode
-  $shortcode = '<span style="color:red;">';
+  $shortcode = '<span class="eap-options__shortcode">';
   // default
   if ( !$setting ) {
     $shortcode .= '[display_events]';
@@ -369,9 +376,19 @@ function eap_excerpt_cb() {
   }
   ?>
   <input type="checkbox" id="eap_excerpt-checkbox" name="eap_settings[excerpt]" value="true" <?php checked('true', $setting['excerpt']); ?>>
-  <label for="eap_excerpt-checkbox"><?php _e('Select to show the excerpt *', 'events-as-posts') ?></label>
-  <br><br>
-  <span><i><?php _e('* Independent of shortcode (it applies to all the lists)', 'events-as-posts') ?></i></span>
+  <?php
+}
+
+// display otption for read more button
+function eap_more_cb() {
+  // get option
+  $setting = get_option('eap_settings');
+  // to avoid notices
+  if (empty($setting['more'])) {
+    $setting['more'] = '';
+  }
+  ?>
+  <input type="checkbox" id="eap_more-checkbox" name="eap_settings[more]" value="true" <?php checked('true', $setting['more']); ?>>
   <?php
 }
 

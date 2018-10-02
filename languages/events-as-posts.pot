@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-10-02 08:42+0200\n"
+"POT-Creation-Date: 2018-10-02 23:58+0200\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -117,55 +117,59 @@ msgstr ""
 msgid "Excerpt"
 msgstr ""
 
-#: eap-options.php:163
+#: eap-options.php:147 event-content.php:40
+msgid "Read more"
+msgstr ""
+
+#: eap-options.php:170
 msgid "List styles"
 msgstr ""
 
-#: eap-options.php:171
+#: eap-options.php:178
 msgid "Layout"
 msgstr ""
 
-#: eap-options.php:178
+#: eap-options.php:185
 msgid "Background color"
 msgstr ""
 
-#: eap-options.php:185
+#: eap-options.php:192
 msgid "Title color"
 msgstr ""
 
-#: eap-options.php:192
+#: eap-options.php:199
 msgid "Title color mouse over"
 msgstr ""
 
-#: eap-options.php:199
+#: eap-options.php:206
 msgid "Category color"
 msgstr ""
 
-#: eap-options.php:206
+#: eap-options.php:213
 msgid "Date color"
 msgstr ""
 
-#: eap-options.php:213
+#: eap-options.php:220
 msgid "Time color"
 msgstr ""
 
-#: eap-options.php:220
+#: eap-options.php:227
 msgid "Location color"
 msgstr ""
 
-#: eap-options.php:227
+#: eap-options.php:234
 msgid "Location color mouse over"
 msgstr ""
 
-#: eap-options.php:234
+#: eap-options.php:241
 msgid "City color"
 msgstr ""
 
-#: eap-options.php:241
+#: eap-options.php:248
 msgid "Excerpt color"
 msgstr ""
 
-#: eap-options.php:263
+#: eap-options.php:270
 msgid ""
 "<b>Events as Posts</b> allows you to display a list of events\n"
 "              everywhere on your site using a shortcode. <br> Copy and "
@@ -175,54 +179,46 @@ msgid ""
 "              a list of events: *"
 msgstr ""
 
-#: eap-options.php:268
+#: eap-options.php:275
 msgid "* The above shortcode will only display future events"
 msgstr ""
 
-#: eap-options.php:283
+#: eap-options.php:290
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
 msgstr ""
 
-#: eap-options.php:293
+#: eap-options.php:300
 msgid ""
 "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr ""
 
-#: eap-options.php:303
+#: eap-options.php:310
 msgid "Future events"
 msgstr ""
 
-#: eap-options.php:305
+#: eap-options.php:312
 msgid "Past events"
 msgstr ""
 
-#: eap-options.php:307
+#: eap-options.php:314
 msgid "All"
 msgstr ""
 
-#: eap-options.php:372
-msgid "Select to show the excerpt *"
-msgstr ""
-
-#: eap-options.php:374
-msgid "* Independent of shortcode (it applies to all the lists)"
-msgstr ""
-
-#: eap-options.php:393
+#: eap-options.php:410
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: eap-options.php:396
+#: eap-options.php:413
 msgid "1 Column"
 msgstr ""
 
-#: eap-options.php:398
+#: eap-options.php:415
 msgid "2 Columns"
 msgstr ""
 
-#: eap-options.php:400
+#: eap-options.php:417
 msgid "3 Columns"
 msgstr ""
 
@@ -275,11 +271,11 @@ msgid "From"
 msgstr ""
 
 #: event-post-type.php:67 event-post-type.php:75
-msgid "Day:"
+msgid "Day"
 msgstr ""
 
 #: event-post-type.php:70 event-post-type.php:78
-msgid "Time:"
+msgid "Time"
 msgstr ""
 
 #: event-post-type.php:73
@@ -291,21 +287,21 @@ msgid "Location"
 msgstr ""
 
 #: event-post-type.php:131
-msgid "Add location:"
+msgid "Event location"
 msgstr ""
 
-#: event-post-type.php:135
-msgid "City:"
+#: event-post-type.php:136
+msgid "Link to location"
 msgstr ""
 
-#: event-post-type.php:140
-msgid "Link to location:"
+#: event-post-type.php:143
+msgid "City"
 msgstr ""
 
-#: event-post-type.php:195
+#: event-post-type.php:197
 msgid "Event date"
 msgstr ""
 
-#: event-post-type.php:196
+#: event-post-type.php:198
 msgid "Featured image"
 msgstr ""
