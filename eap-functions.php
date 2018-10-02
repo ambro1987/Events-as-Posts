@@ -86,7 +86,7 @@ function eap_display_events($atts) {
   $actual_date = date('Y\-m\-d');
   // Shortcode attributes
   extract(shortcode_atts(array(
-    'posts'          => '',
+    'posts'          => -1,
     'category'       => '',
     'order'          => 'ASC'
   ), $atts));
@@ -129,7 +129,7 @@ function eap_display_past_events($atts) {
   $actual_date = date('Y\-m\-d');
   // Shortcode attributes
   extract(shortcode_atts(array(
-    'posts'          => '',
+    'posts'          => -1,
     'category'       => '',
     'order'          => 'DESC'
   ), $atts));
@@ -176,7 +176,7 @@ function eap_display_all_events($atts) {
   ), $atts));
 
   $args = array (
-     'posts_per_page' => '-1',
+     'posts_per_page' => -1,
      'post_type'      => 'eap_event',
      'order'          => $order,
      'orderby'        => 'meta_value',

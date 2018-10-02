@@ -9,3 +9,5 @@
 * opción para evento online
 * enlace ciudad
 * meta font-size option
+* marcar como campos obligatorios los que... son campos obligatorios.
+* diferentes formatos de fecha

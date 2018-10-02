@@ -3,7 +3,7 @@
 Plugin Name:  Events as Posts
 Plugin URI:   https://wordpress.org/plugins/events-as-posts/
 Description:  A simple plugin that allows you to post events on your site
-Version:      0.2
+Version:      0.2.1
 Author:       Ambrogio Piredda
 Author URI:   https://profiles.wordpress.org/orbam7819
 Text Domain:  events-as-posts
