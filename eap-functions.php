@@ -307,12 +307,12 @@ function eap_events_style() {
       }
       ?>;
     }
-    /* meta color */
-    .eap__meta {
+    /* date color */
+    .eap__date {
       color:
       <?php
-      if ($setting['meta_color']) {
-        echo $setting['meta_color'];
+      if ($setting['date_color']) {
+        echo $setting['date_color'];
       } else {
         echo '#333';
       }
@@ -338,6 +338,17 @@ function eap_events_style() {
         echo $setting['loc_color'] . ' !important';
       } else {
         echo '#333 !important';
+      }
+      ?>;
+    }
+    /* city color */
+    .eap__city {
+      color:
+      <?php
+      if ($setting['city_color']) {
+        echo $setting['city_color'];
+      } else {
+        echo '#333';
       }
       ?>;
     }

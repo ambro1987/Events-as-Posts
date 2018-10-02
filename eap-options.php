@@ -60,6 +60,7 @@ function eap_settings_page_html() {
           delete_option('eap_settings_style');
           ?>
           <script type="text/javascript">
+            // reload the page
             window.location.href = '?post_type=eap_event&page=eap_settings&tab=tab2';
           </script>
           <?php
@@ -194,9 +195,9 @@ function eap_settings_style_init() {
       'eap_events_style' // slug-name of the section of the settings page in which to show the box
   );
   add_settings_field(
-      'eap_meta_color', // id
-      __('Meta color *', 'events-as-posts'), // field title
-      'eap_meta_color_cb', // callback
+      'eap_date_color', // id
+      __('Date color', 'events-as-posts'), // field title
+      'eap_date_color_cb', // callback
       'eap_settings_style', // slug-name of the settings page on which to show the section
       'eap_events_style' // slug-name of the section of the settings page in which to show the box
   );
@@ -211,6 +212,13 @@ function eap_settings_style_init() {
       'eap_loc_color', // id
       __('Location color', 'events-as-posts'), // field title
       'eap_loc_color_cb', // callback
+      'eap_settings_style', // slug-name of the settings page on which to show the section
+      'eap_events_style' // slug-name of the section of the settings page in which to show the box
+  );
+  add_settings_field(
+      'eap_city_color', // id
+      __('City color', 'events-as-posts'), // field title
+      'eap_city_color_cb', // callback
       'eap_settings_style', // slug-name of the settings page on which to show the section
       'eap_events_style' // slug-name of the section of the settings page in which to show the box
   );
@@ -406,13 +414,12 @@ function eap_cat_color_cb() {
   <?php
 }
 
-// display option for the meta color
-function eap_meta_color_cb() {
+// display option for the date color
+function eap_date_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[meta_color]" value="<?php echo isset( $setting['meta_color'] ) ? esc_attr( $setting['meta_color'] ) : '#333333'; ?>" data-default-color="#333333">
-  <p><i><?php _e('<b>*</b> Date, time and location', 'events-as-posts') ?></i></p>
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[date_color]" value="<?php echo isset( $setting['date_color'] ) ? esc_attr( $setting['date_color'] ) : '#333333'; ?>" data-default-color="#333333">
   <?php
 }
 
@@ -431,6 +438,15 @@ function eap_loc_color_cb() {
   $setting = get_option('eap_settings_style');
   ?>
   <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[loc_color]" value="<?php echo isset( $setting['loc_color'] ) ? esc_attr( $setting['loc_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <?php
+}
+
+// display option for the city color
+function eap_city_color_cb() {
+  // get the value of the setting
+  $setting = get_option('eap_settings_style');
+  ?>
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[city_color]" value="<?php echo isset( $setting['city_color'] ) ? esc_attr( $setting['city_color'] ) : '#333333'; ?>" data-default-color="#333333">
   <?php
 }
 
