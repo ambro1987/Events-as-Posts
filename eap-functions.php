@@ -285,14 +285,20 @@ function eap_events_style() {
       ?>;
     }
     /* title color */
-    .eap__title a,
-    .eap__title a:hover {
+    .eap__title a {
       color:
       <?php
       if ($setting['title_color']) {
-        echo $setting['title_color'];
-      } else {
-        echo '#333';
+        echo $setting['title_color'] . '!important';
+      }
+      ?>;
+    }
+    /* title color mouseover */
+    .eap__title a:hover {
+      color:
+      <?php
+      if ($setting['title_color_mouseover']) {
+        echo $setting['title_color_mouseover'] . '!important';
       }
       ?>;
     }
@@ -302,8 +308,6 @@ function eap_events_style() {
       <?php
       if ($setting['cat_color']) {
         echo $setting['cat_color'];
-      } else {
-        echo '#333';
       }
       ?>;
     }
@@ -313,8 +317,6 @@ function eap_events_style() {
       <?php
       if ($setting['date_color']) {
         echo $setting['date_color'];
-      } else {
-        echo '#333';
       }
       ?>;
     }
@@ -324,20 +326,24 @@ function eap_events_style() {
       <?php
       if ($setting['time_color']) {
         echo $setting['time_color'];
-      } else {
-        echo '#333';
       }
       ?>;
     }
     /* location color */
-    .eap__location,
-    .eap__location:hover {
+    .eap__location {
       color:
       <?php
       if ($setting['loc_color']) {
-        echo $setting['loc_color'] . ' !important';
-      } else {
-        echo '#333 !important';
+        echo $setting['loc_color'] . '!important';
+      }
+      ?>;
+    }
+    /* location color mouseover */
+    .eap__location:hover {
+      color:
+      <?php
+      if ($setting['loc_color_mouseover']) {
+        echo $setting['loc_color_mouseover'] . '!important';
       }
       ?>;
     }
@@ -347,8 +353,6 @@ function eap_events_style() {
       <?php
       if ($setting['city_color']) {
         echo $setting['city_color'];
-      } else {
-        echo '#333';
       }
       ?>;
     }
@@ -358,8 +362,6 @@ function eap_events_style() {
       <?php
       if ($setting['excerpt_color']) {
         echo $setting['excerpt_color'];
-      } else {
-        echo '#333';
       }
       ?>;
     }

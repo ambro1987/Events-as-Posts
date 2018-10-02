@@ -188,6 +188,13 @@ function eap_settings_style_init() {
       'eap_events_style' // slug-name of the section of the settings page in which to show the box
   );
   add_settings_field(
+      'eap_title_color_hover', // id
+      __('Title color mouse over', 'events-as-posts'), // field title
+      'eap_title_color_mouseover_cb', // callback
+      'eap_settings_style', // slug-name of the settings page on which to show the section
+      'eap_events_style' // slug-name of the section of the settings page in which to show the box
+  );
+  add_settings_field(
       'eap_cat_color', // id
       __('Category color', 'events-as-posts'), // field title
       'eap_cat_color_cb', // callback
@@ -212,6 +219,13 @@ function eap_settings_style_init() {
       'eap_loc_color', // id
       __('Location color', 'events-as-posts'), // field title
       'eap_loc_color_cb', // callback
+      'eap_settings_style', // slug-name of the settings page on which to show the section
+      'eap_events_style' // slug-name of the section of the settings page in which to show the box
+  );
+  add_settings_field(
+      'eap_loc_color_mouseover', // id
+      __('Location color mouse over', 'events-as-posts'), // field title
+      'eap_loc_color_mouseover_cb', // callback
       'eap_settings_style', // slug-name of the settings page on which to show the section
       'eap_events_style' // slug-name of the section of the settings page in which to show the box
   );
@@ -401,7 +415,16 @@ function eap_title_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[title_color]" value="<?php echo isset( $setting['title_color'] ) ? esc_attr( $setting['title_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[title_color]" value="<?php echo isset( $setting['title_color'] ) ? esc_attr( $setting['title_color'] ) : ''; ?>">
+  <?php
+}
+
+// display option for the title color when the mouse is over it
+function eap_title_color_mouseover_cb() {
+  // get the value of the setting
+  $setting = get_option('eap_settings_style');
+  ?>
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[title_color_mouseover]" value="<?php echo isset( $setting['title_color_mouseover'] ) ? esc_attr( $setting['title_color_mouseover'] ) : ''; ?>">
   <?php
 }
 
@@ -410,7 +433,7 @@ function eap_cat_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[cat_color]" value="<?php echo isset( $setting['cat_color'] ) ? esc_attr( $setting['cat_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[cat_color]" value="<?php echo isset( $setting['cat_color'] ) ? esc_attr( $setting['cat_color'] ) : ''; ?>">
   <?php
 }
 
@@ -419,7 +442,7 @@ function eap_date_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[date_color]" value="<?php echo isset( $setting['date_color'] ) ? esc_attr( $setting['date_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[date_color]" value="<?php echo isset( $setting['date_color'] ) ? esc_attr( $setting['date_color'] ) : ''; ?>">
   <?php
 }
 
@@ -428,7 +451,7 @@ function eap_time_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[time_color]" value="<?php echo isset( $setting['time_color'] ) ? esc_attr( $setting['time_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[time_color]" value="<?php echo isset( $setting['time_color'] ) ? esc_attr( $setting['time_color'] ) : ''; ?>">
   <?php
 }
 
@@ -437,7 +460,16 @@ function eap_loc_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[loc_color]" value="<?php echo isset( $setting['loc_color'] ) ? esc_attr( $setting['loc_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[loc_color]" value="<?php echo isset( $setting['loc_color'] ) ? esc_attr( $setting['loc_color'] ) : ''; ?>">
+  <?php
+}
+
+// display option for the location color when the mouse is over it
+function eap_loc_color_mouseover_cb() {
+  // get the value of the setting
+  $setting = get_option('eap_settings_style');
+  ?>
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[loc_color_mouseover]" value="<?php echo isset( $setting['loc_color_mouseover'] ) ? esc_attr( $setting['loc_color_mouseover'] ) : ''; ?>">
   <?php
 }
 
@@ -446,7 +478,7 @@ function eap_city_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[city_color]" value="<?php echo isset( $setting['city_color'] ) ? esc_attr( $setting['city_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[city_color]" value="<?php echo isset( $setting['city_color'] ) ? esc_attr( $setting['city_color'] ) : ''; ?>">
   <?php
 }
 
@@ -455,6 +487,6 @@ function eap_excerpt_color_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings_style');
   ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[excerpt_color]" value="<?php echo isset( $setting['excerpt_color'] ) ? esc_attr( $setting['excerpt_color'] ) : '#333333'; ?>" data-default-color="#333333">
+  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[excerpt_color]" value="<?php echo isset( $setting['excerpt_color'] ) ? esc_attr( $setting['excerpt_color'] ) : ''; ?>">
   <?php
 }

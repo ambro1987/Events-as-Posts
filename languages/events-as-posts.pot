@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-10-02 02:00+0200\n"
+"POT-Creation-Date: 2018-10-02 08:42+0200\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -134,30 +134,38 @@ msgid "Title color"
 msgstr ""
 
 #: eap-options.php:192
-msgid "Category color"
+msgid "Title color mouse over"
 msgstr ""
 
 #: eap-options.php:199
-msgid "Date color"
+msgid "Category color"
 msgstr ""
 
 #: eap-options.php:206
-msgid "Time color"
+msgid "Date color"
 msgstr ""
 
 #: eap-options.php:213
-msgid "Location color"
+msgid "Time color"
 msgstr ""
 
 #: eap-options.php:220
-msgid "City color"
+msgid "Location color"
 msgstr ""
 
 #: eap-options.php:227
+msgid "Location color mouse over"
+msgstr ""
+
+#: eap-options.php:234
+msgid "City color"
+msgstr ""
+
+#: eap-options.php:241
 msgid "Excerpt color"
 msgstr ""
 
-#: eap-options.php:249
+#: eap-options.php:263
 msgid ""
 "<b>Events as Posts</b> allows you to display a list of events\n"
 "              everywhere on your site using a shortcode. <br> Copy and "
@@ -167,54 +175,54 @@ msgid ""
 "              a list of events: *"
 msgstr ""
 
-#: eap-options.php:254
+#: eap-options.php:268
 msgid "* The above shortcode will only display future events"
 msgstr ""
 
-#: eap-options.php:269
+#: eap-options.php:283
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
 msgstr ""
 
-#: eap-options.php:279
+#: eap-options.php:293
 msgid ""
 "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr ""
 
-#: eap-options.php:289
+#: eap-options.php:303
 msgid "Future events"
 msgstr ""
 
-#: eap-options.php:291
+#: eap-options.php:305
 msgid "Past events"
 msgstr ""
 
-#: eap-options.php:293
+#: eap-options.php:307
 msgid "All"
 msgstr ""
 
-#: eap-options.php:358
+#: eap-options.php:372
 msgid "Select to show the excerpt *"
 msgstr ""
 
-#: eap-options.php:360
+#: eap-options.php:374
 msgid "* Independent of shortcode (it applies to all the lists)"
 msgstr ""
 
-#: eap-options.php:379
+#: eap-options.php:393
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: eap-options.php:382
+#: eap-options.php:396
 msgid "1 Column"
 msgstr ""
 
-#: eap-options.php:384
+#: eap-options.php:398
 msgid "2 Columns"
 msgstr ""
 
-#: eap-options.php:386
+#: eap-options.php:400
 msgid "3 Columns"
 msgstr ""
 
