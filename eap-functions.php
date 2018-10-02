@@ -232,7 +232,7 @@ function eap_events_style() {
         grid-template-columns: 1fr;
       }
       .eap__title {
-        margin: 0 0 .8rem !important;
+        margin: 0 0 .6rem !important;
       }
       @media all and (min-width: 576px) {
         .eap__event {
@@ -249,7 +249,7 @@ function eap_events_style() {
     ?>
     <style>
       .eap__title {
-        margin: .6rem 0 .8rem;
+        margin: .6rem 0 .6rem;
       }
       @media all and (min-width: 576px) {
         .eap__list {
@@ -269,7 +269,7 @@ function eap_events_style() {
         }
       }
       .eap__title {
-        margin: .6rem 0 .8rem;
+        margin: .6rem 0 .6rem;
       }
     </style>
     <?php

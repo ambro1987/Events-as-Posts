@@ -95,4 +95,3 @@ if (!$city) {
   <?php echo $comma_loc ?>
   <span class="eap__city"><?php echo $city ?></span>
 </div>
-<br>

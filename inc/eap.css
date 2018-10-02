@@ -7,13 +7,16 @@
 }
 .eap__category {
   display: block;
-  margin-bottom: .4rem;
+  margin-bottom: .8rem;
 }
 .eap__img img {
   width: 100%;
 }
-.eap__more {
+.eap__meta {
   margin-bottom: 1.2rem;
+}
+.eap__more {
+  margin: 1.2rem 0 1.8rem;
 }
 
 /* you can add your styles here */
