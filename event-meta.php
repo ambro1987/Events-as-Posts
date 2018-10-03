@@ -94,4 +94,7 @@ if (!$city) {
   <?php endif; ?>
   <?php echo $comma_loc ?>
   <span class="eap__city"><?php echo $city ?></span>
+  <p>
+    <?php do_action( 'eap_additional_info', get_the_ID() ); ?>
+  </p>
 </div>

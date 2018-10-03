@@ -404,7 +404,7 @@ function eap_more_text_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings');
   ?>
-  <input type="text" name="eap_settings[more_text]" value="<?php echo isset( $setting['more_text'] ) ? esc_attr( $setting['more_text'] ) : _e('Read more', 'events-as-posts'); ?>">
+  <input type="text" name="eap_settings[more_text]" value="<?php echo isset( $setting['more_text'] ) ? esc_attr( $setting['more_text'] ) : '' ?>">
   <?php
 }
 
