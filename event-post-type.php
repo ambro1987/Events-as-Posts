@@ -128,7 +128,7 @@
    $eap_stored_meta = get_post_meta( $post->ID );
    ?>
    <p>
-     <label for="eap__location" class=""><?php _e( 'Event location', 'events-as-posts' )?></label>
+     <label for="eap__location"><?php _e( 'Event location', 'events-as-posts' )?></label>
      <br>
      <input type="text" required maxlength="80" name="eap_location" id="eap__location" value="<?php if ( isset ( $eap_stored_meta['eap_location'] ) ) echo $eap_stored_meta['eap_location'][0]; ?>" />
    </p>
@@ -140,7 +140,7 @@
      <input type="url" name="eap_link_location" id="eap__link-location" value="<?php if ( isset ( $eap_stored_meta['eap_link_location'] ) ) echo $eap_stored_meta['eap_link_location'][0]; ?>" />
    </p>
    <p>
-     <label for="eap__city" class=""><?php _e( 'City', 'events-as-posts' )?></label>
+     <label for="eap__city"><?php _e( 'City', 'events-as-posts' )?></label>
      <br>
      <input type="text" maxlength="80" name="eap_city" id="eap__city" value="<?php if ( isset ( $eap_stored_meta['eap_city'] ) ) echo $eap_stored_meta['eap_city'][0]; ?>" />
    </p>

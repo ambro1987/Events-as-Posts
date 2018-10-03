@@ -3,7 +3,7 @@
 Contributors: orbam7819
 Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
-Requires at least: 4.0.24
+Requires at least: 4.8
 Tested up to: 4.9.8
 Stable tag: 0.3
 Requires PHP: 7.0
