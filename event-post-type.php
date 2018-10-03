@@ -142,7 +142,7 @@
    <p>
      <label for="eap__city" class=""><?php _e( 'City', 'events-as-posts' )?></label>
      <br>
-     <input type="text" maxlength="40" name="eap_city" id="eap__city" value="<?php if ( isset ( $eap_stored_meta['eap_city'] ) ) echo $eap_stored_meta['eap_city'][0]; ?>" />
+     <input type="text" maxlength="80" name="eap_city" id="eap__city" value="<?php if ( isset ( $eap_stored_meta['eap_city'] ) ) echo $eap_stored_meta['eap_city'][0]; ?>" />
    </p>
   <?php
   }

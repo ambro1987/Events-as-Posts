@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-10-02 23:58+0200\n"
+"POT-Creation-Date: 2018-10-03 08:19+0200\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -117,59 +117,63 @@ msgstr ""
 msgid "Excerpt"
 msgstr ""
 
-#: eap-options.php:147 event-content.php:40
+#: eap-options.php:147 eap-options.php:407 event-content.php:47
 msgid "Read more"
 msgstr ""
 
-#: eap-options.php:170
+#: eap-options.php:154
+msgid "Read more text"
+msgstr ""
+
+#: eap-options.php:177
 msgid "List styles"
 msgstr ""
 
-#: eap-options.php:178
+#: eap-options.php:185
 msgid "Layout"
 msgstr ""
 
-#: eap-options.php:185
+#: eap-options.php:192
 msgid "Background color"
 msgstr ""
 
-#: eap-options.php:192
+#: eap-options.php:199
 msgid "Title color"
 msgstr ""
 
-#: eap-options.php:199
+#: eap-options.php:206
 msgid "Title color mouse over"
 msgstr ""
 
-#: eap-options.php:206
+#: eap-options.php:213
 msgid "Category color"
 msgstr ""
 
-#: eap-options.php:213
+#: eap-options.php:220
 msgid "Date color"
 msgstr ""
 
-#: eap-options.php:220
+#: eap-options.php:227
 msgid "Time color"
 msgstr ""
 
-#: eap-options.php:227
+#: eap-options.php:234
 msgid "Location color"
 msgstr ""
 
-#: eap-options.php:234
+#: eap-options.php:241
 msgid "Location color mouse over"
 msgstr ""
 
-#: eap-options.php:241
+#: eap-options.php:248
 msgid "City color"
 msgstr ""
 
-#: eap-options.php:248
+#: eap-options.php:255
 msgid "Excerpt color"
 msgstr ""
 
-#: eap-options.php:270
+#: eap-options.php:277
 msgid ""
 "<b>Events as Posts</b> allows you to display a list of events\n"
 "              everywhere on your site using a shortcode. <br> Copy and "
@@ -179,47 +183,52 @@ msgid ""
 "              a list of events: *"
 msgstr ""
 
-#: eap-options.php:275
+#: eap-options.php:282
 msgid "* The above shortcode will only display future events"
 msgstr ""
 
-#: eap-options.php:290
+#: eap-options.php:297
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
 msgstr ""
 
-#: eap-options.php:300
+#: eap-options.php:307
 msgid ""
 "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr ""
 
-#: eap-options.php:310
+#: eap-options.php:317
 msgid "Future events"
 msgstr ""
 
-#: eap-options.php:312
+#: eap-options.php:319
 msgid "Past events"
 msgstr ""
 
-#: eap-options.php:314
+#: eap-options.php:321
 msgid "All"
 msgstr ""
 
-#: eap-options.php:410
+#: eap-options.php:426
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: eap-options.php:413
+#: eap-options.php:429
 msgid "1 Column"
 msgstr ""
 
-#: eap-options.php:415
+#: eap-options.php:431
 msgid "2 Columns"
 msgstr ""
 
-#: eap-options.php:417
+#: eap-options.php:433
 msgid "3 Columns"
+msgstr ""
+
+#: event-content.php:43
+#, php-format
+msgid "%s"
 msgstr ""
 
 #: event-post-type.php:18 event-post-type.php:20

@@ -70,7 +70,7 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 == Changelog ==
 
 = 0.3 &mdash; 3 of October, 2018 =
-* New: Read more button option for list of events
+* New: Read more link option for list of events
 * New: Admin stylesheet
 * Tweak: Location fields when adding or editing an event
 
