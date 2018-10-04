@@ -7,4 +7,4 @@
 * meta font-size option
 * marcar como campos obligatorios los que... son campos obligatorios.
 * diferentes formatos de fecha
-* texto para el read more
+* icono

@@ -70,8 +70,7 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 == Changelog ==
 
 = 0.? =
-* New: Read more text option
-* New: Additional info action hook under event meta
+* New: Action hook for additional info under event meta
 
 = 0.3 &mdash; 3 of October, 2018 =
 * New: Read more link option for list of events

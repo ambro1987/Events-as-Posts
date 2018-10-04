@@ -37,17 +37,7 @@ $setting = get_option('eap_settings');
       if ( !empty($setting['more']) == 'true' ) {
         ?>
         <div class="eap__more">
-          <?php
-          if ( !empty($setting['more_text']) ) {
-            ?>
-            <a href="<?php the_permalink(); ?>"><?php printf( __('%s', 'events-as-posts'), $setting['more_text']); ?></a>
-            <?php
-          } else {
-            ?>
-            <a href="<?php the_permalink(); ?>"><?php _e('Read more', 'events-as-posts'); ?></a>
-            <?php
-          }
-          ?>
+          <a href="<?php the_permalink(); ?>"><?php _e('Read more', 'events-as-posts'); ?></a>
         </div>
         <?php
       }

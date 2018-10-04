@@ -149,13 +149,6 @@ function eap_settings_init() {
       'eap_settings',
       'eap_events_list_settings'
   );
-  add_settings_field(
-      'eap_more_text',
-      __('Read more text', 'events-as-posts'),
-      'eap_more_text_cb',
-      'eap_settings',
-      'eap_events_list_settings'
-  );
 
   // register a new setting
   register_setting(
@@ -396,15 +389,6 @@ function eap_more_cb() {
   }
   ?>
   <input type="checkbox" id="eap_more-checkbox" name="eap_settings[more]" value="true" <?php checked('true', $setting['more']); ?>>
-  <?php
-}
-
-// display read more text option
-function eap_more_text_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings');
-  ?>
-  <input type="text" name="eap_settings[more_text]" value="<?php echo isset( $setting['more_text'] ) ? esc_attr( $setting['more_text'] ) : '' ?>">
   <?php
 }
 
