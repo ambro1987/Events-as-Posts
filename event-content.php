@@ -15,7 +15,7 @@ $setting = get_option('eap_settings');
       // get event categories
       $category = get_the_category();
       ?>
-      <span class="eap__category">
+      <p class="eap__category">
         <?php
         // display categories
         for ($i = 0;$i < sizeof($category);$i++) {
@@ -26,7 +26,7 @@ $setting = get_option('eap_settings');
           }
         }
         ?>
-      </span>
+      </p>
       <?php include ( plugin_dir_path( __FILE__ ) . 'event-meta.php' ); ?>
     </header>
     <main class="eap__excerpt">

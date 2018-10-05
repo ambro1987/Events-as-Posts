@@ -298,6 +298,7 @@ function eap_events_style() {
         echo $setting['title_color'] . '!important';
       }
       ?>;
+      transition: 120ms linear;
     }
     /* title color mouseover */
     .eap__title a:hover {
@@ -343,6 +344,7 @@ function eap_events_style() {
         echo $setting['loc_color'] . '!important';
       }
       ?>;
+      transition: 120ms linear;
     }
     /* location color mouseover */
     .eap__location:hover {

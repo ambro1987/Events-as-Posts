@@ -5,8 +5,10 @@ $from_time = get_post_meta( get_the_ID(), 'eap_from_time', true );
 $until_date = get_post_meta( get_the_ID(), 'eap_until_day', true );
 $until_time = get_post_meta( get_the_ID(), 'eap_until_time', true );
 $location = get_post_meta( get_the_ID(), 'eap_location', true );
-$city = get_post_meta( get_the_ID(), 'eap_city', true );
 $link_location = get_post_meta( get_the_ID(), 'eap_link_location', true );
+$city = get_post_meta( get_the_ID(), 'eap_city', true );
+$country = get_post_meta( get_the_ID(), 'eap_country', true );
+$add_info = get_post_meta( get_the_ID(), 'eap_add_info', true );
 
 // format 'from date'
 $from_date = eap_format_date($from_date);
@@ -30,28 +32,27 @@ if (!$until_time) {
 
 // separation mark '-' between from day/time and until day/time
 $separation_mark = ' – ';
-// comma between location and city and after year
-$comma_dt = ', '; // dt = datetime
-$comma_loc = ', ';
+// comma after year
+$comma = ', '; // dt = datetime
 
 // logic for commas and separation mark...
 
 // if until date AND until time are not set
 if ( !$until_date && ($until_time == '') ) {
   $separation_mark = '';
-  $comma_dt = '';
+  $comma = '';
   // if until date is set AND until time is not
 } elseif ( $until_date && ($until_time == '') ) {
   // if dates are NOT the same day
   if ($until_date != $from_date) {
-    $comma_dt = '';
+    $comma = '';
     // if dates ARE the same day
   } elseif ($until_date == $from_date) {
     for ( $i = 0; $i < sizeof( $until_date ); $i++ ) {
       $until_date[$i] = '';
     }
     $separation_mark = '';
-    $comma_dt = '';
+    $comma = '';
   }
   // until date AND until time are both set
 } elseif ( $until_date && ($until_time != '') ) {
@@ -60,7 +61,7 @@ if ( !$until_date && ($until_time == '') ) {
     for ( $i = 0; $i < sizeof( $until_date ); $i++ ) {
       $until_date[$i] = '';
     }
-    $comma_dt = '';
+    $comma = '';
   }
   // until date is NOT set AND until time is set
 } elseif ( !$until_date && ($until_time != '') ) {
@@ -68,20 +69,25 @@ if ( !$until_date && ($until_time == '') ) {
     $separation_mark = '';
     $until_time = '';
   }
-  $comma_dt = '';
+  $comma = '';
 }
-// if the city is not set it doesn't display the comma
-if (!$city) {
-  $comma_loc = '';
+
+// put a comma in front of it if true
+if ($city) {
+  $city = ', ' . $city;
+}
+if ($country) {
+  $country = ', ' . $country;
 }
 ?>
 
+<!-- event meta -->
 <div class="eap__meta">
   <span class="eap__date"><?php echo $from_date[0] . ' ' . $from_date[1] . ' ' . $from_date[2] ?></span><span class="eap__time"><?php echo $from_time ?></span><?php echo $separation_mark ?>
   <span class="eap__date">
     <?php
     if ($until_date) {
-      echo $until_date[0] . ' ' . $until_date[1] . ' ' . $until_date[2] . $comma_dt;
+      echo $until_date[0] . ' ' . $until_date[1] . ' ' . $until_date[2] . $comma;
     }
     ?>
   </span>
@@ -92,9 +98,12 @@ if (!$city) {
   <?php else : ?>
     <span class="eap__location"><?php echo $location ?></span>
   <?php endif; ?>
-  <?php echo $comma_loc ?>
+  <!-- <?php echo $comma_loc ?> -->
   <span class="eap__city"><?php echo $city ?></span>
-  <p class="eap__additional-info">
-    <?php do_action( 'eap_additional_info', get_the_ID() ); ?>
-  </p>
+  <span class="eap__country"><?php echo $country ?></span>
 </div>
+
+<!-- additional information -->
+<p class="eap__add-info">
+  <?php echo $add_info; ?>
+</p>

@@ -21,7 +21,7 @@ It also allows you to display **lists of events** everywhere on your site using 
 Other features include:
 
 * 3 layouts for the list of events (1, 2, and 3 columns)
-* Settings for text color of location, date, time and categories
+* Settings for text color of title, location, date, time and categories
 * A stylesheet to iclude your own custom styles
 
 **Languages**
@@ -61,16 +61,11 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 == Screenshots ==
 
 1. Event post with date, time and location
-2. Add a new event as if where a normal post
-3. Order events by date in admin menu
-4. List of events settings
-5. List of events
-
 
 == Changelog ==
 
 = 0.? =
-* New: Action hook for additional info under event meta
+* New: 'Country' and 'Additional information' fields
 
 = 0.3 &mdash; 3 of October, 2018 =
 * New: Read more link option for list of events
