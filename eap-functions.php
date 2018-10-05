@@ -275,8 +275,6 @@ function eap_events_style() {
     <?php
   }
 
-  /* colors */
-
   ?>
   <style>
     /* background color */
@@ -287,89 +285,6 @@ function eap_events_style() {
         echo $setting['bg_color'];
       } else {
         echo '#f4f4f4';
-      }
-      ?>;
-    }
-    /* title color */
-    .eap__title a {
-      color:
-      <?php
-      if ($setting['title_color']) {
-        echo $setting['title_color'] . '!important';
-      }
-      ?>;
-      transition: 120ms linear;
-    }
-    /* title color mouseover */
-    .eap__title a:hover {
-      color:
-      <?php
-      if ($setting['title_color_mouseover']) {
-        echo $setting['title_color_mouseover'] . '!important';
-      }
-      ?>;
-    }
-    /* category color */
-    .eap__category {
-      color:
-      <?php
-      if ($setting['cat_color']) {
-        echo $setting['cat_color'];
-      }
-      ?>;
-    }
-    /* date color */
-    .eap__date {
-      color:
-      <?php
-      if ($setting['date_color']) {
-        echo $setting['date_color'];
-      }
-      ?>;
-    }
-    /* time color */
-    .eap__time {
-      color:
-      <?php
-      if ($setting['time_color']) {
-        echo $setting['time_color'];
-      }
-      ?>;
-    }
-    /* location color */
-    .eap__location {
-      color:
-      <?php
-      if ($setting['loc_color']) {
-        echo $setting['loc_color'] . '!important';
-      }
-      ?>;
-      transition: 120ms linear;
-    }
-    /* location color mouseover */
-    .eap__location:hover {
-      color:
-      <?php
-      if ($setting['loc_color_mouseover']) {
-        echo $setting['loc_color_mouseover'] . '!important';
-      }
-      ?>;
-    }
-    /* city color */
-    .eap__city {
-      color:
-      <?php
-      if ($setting['city_color']) {
-        echo $setting['city_color'];
-      }
-      ?>;
-    }
-    /* excerpt color */
-    .eap__excerpt {
-      color:
-      <?php
-      if ($setting['excerpt_color']) {
-        echo $setting['excerpt_color'];
       }
       ?>;
     }

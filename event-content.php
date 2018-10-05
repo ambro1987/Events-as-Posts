@@ -12,21 +12,25 @@ $setting = get_option('eap_settings');
     <header class="eap__header">
       <h2 class="eap__title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
       <?php
-      // get event categories
-      $category = get_the_category();
-      ?>
-      <p class="eap__category">
-        <?php
-        // display categories
-        for ($i = 0;$i < sizeof($category);$i++) {
-          echo $category[$i]->name;
-          // if has more than one category it displays a comma after each category apart the last one
-          if (sizeof($category) > 1 && (sizeof($category) != ($i + 1))) {
-            echo ', ';
-          }
-        }
+      if (!empty($setting['cat']) == 'true') {
+        // get event categories
+        $category = get_the_category();
         ?>
-      </p>
+        <p class="eap__category">
+          <?php
+          // display categories
+          for ($i = 0;$i < sizeof($category);$i++) {
+            echo $category[$i]->name;
+            // if has more than one category it displays a comma after each category apart the last one
+            if (sizeof($category) > 1 && (sizeof($category) != ($i + 1))) {
+              echo ', ';
+            }
+          }
+          ?>
+        </p>
+        <?php
+      }
+      ?>
       <?php include ( plugin_dir_path( __FILE__ ) . 'event-meta.php' ); ?>
     </header>
     <main class="eap__excerpt">
@@ -36,9 +40,9 @@ $setting = get_option('eap_settings');
       }
       if ( !empty($setting['more']) == 'true' ) {
         ?>
-        <div class="eap__more">
+        <p class="eap__more">
           <a href="<?php the_permalink(); ?>"><?php _e('Read more', 'events-as-posts'); ?></a>
-        </div>
+        </p>
         <?php
       }
       ?>

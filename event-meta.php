@@ -71,18 +71,10 @@ if ( !$until_date && ($until_time == '') ) {
   }
   $comma = '';
 }
-
-// put a comma in front of it if true
-if ($city) {
-  $city = ', ' . $city;
-}
-if ($country) {
-  $country = ', ' . $country;
-}
 ?>
 
 <!-- event meta -->
-<div class="eap__meta">
+<p class="eap__meta">
   <span class="eap__date"><?php echo $from_date[0] . ' ' . $from_date[1] . ' ' . $from_date[2] ?></span><span class="eap__time"><?php echo $from_time ?></span><?php echo $separation_mark ?>
   <span class="eap__date">
     <?php
@@ -99,9 +91,19 @@ if ($country) {
     <span class="eap__location"><?php echo $location ?></span>
   <?php endif; ?>
   <!-- <?php echo $comma_loc ?> -->
-  <span class="eap__city"><?php echo $city ?></span>
-  <span class="eap__country"><?php echo $country ?></span>
-</div>
+  <?php
+  if ($city) {
+    ?>
+    <span>, </span><span class="eap__city"><?php echo $city ?></span>
+    <?php
+  }
+  if ($country) {
+    ?>
+    <span>, </span><span class="eap__country"><?php echo $country ?></span>
+    <?php
+  }
+  ?>
+</p>
 
 <!-- additional information -->
 <p class="eap__add-info">

@@ -1,8 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Events as Posts 0.1\n"
-"POT-Creation-Date: 2018-10-03 08:19+0200\n"
+"Project-Id-Version: Events as Posts 0.4\n"
+"POT-Creation-Date: 2018-10-05 11:35+0200\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -70,11 +70,11 @@ msgid "There are no events"
 msgstr ""
 
 #: eap-options.php:23
-msgid "List"
+msgid "General"
 msgstr ""
 
 #: eap-options.php:24
-msgid "Styles"
+msgid "Style"
 msgstr ""
 
 #: eap-options.php:55
@@ -89,10 +89,6 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: eap-options.php:98
-msgid "List of events"
-msgstr ""
-
 #: eap-options.php:104
 msgid "List settings"
 msgstr ""
@@ -102,7 +98,7 @@ msgid "Number of events"
 msgstr ""
 
 #: eap-options.php:119
-msgid "Categories"
+msgid "Events by categories"
 msgstr ""
 
 #: eap-options.php:126
@@ -114,19 +110,19 @@ msgid "Shortcode"
 msgstr ""
 
 #: eap-options.php:140
-msgid "Excerpt"
+msgid "Display excerpt"
 msgstr ""
 
-#: eap-options.php:147 eap-options.php:407 event-content.php:47
-msgid "Read more"
+#: eap-options.php:147
+msgid "Display read more link"
 msgstr ""
 
 #: eap-options.php:154
-msgid "Read more text"
+msgid "Display categories"
 msgstr ""
 
 #: eap-options.php:177
-msgid "List styles"
+msgid "List style"
 msgstr ""
 
 #: eap-options.php:185
@@ -137,43 +133,7 @@ msgstr ""
 msgid "Background color"
 msgstr ""
 
-#: eap-options.php:199
-msgid "Title color"
-msgstr ""
-
-#: eap-options.php:206
-msgid "Title color mouse over"
-msgstr ""
-
-#: eap-options.php:213
-msgid "Category color"
-msgstr ""
-
-#: eap-options.php:220
-msgid "Date color"
-msgstr ""
-
-#: eap-options.php:227
-msgid "Time color"
-msgstr ""
-
-#: eap-options.php:234
-msgid "Location color"
-msgstr ""
-
-#: eap-options.php:241
-msgid "Location color mouse over"
-msgstr ""
-
-#: eap-options.php:248
-msgid "City color"
-msgstr ""
-
-#: eap-options.php:255
-msgid "Excerpt color"
-msgstr ""
-
-#: eap-options.php:277
+#: eap-options.php:214
 msgid ""
 "<b>Events as Posts</b> allows you to display a list of events\n"
 "              everywhere on your site using a shortcode. <br> Copy and "
@@ -183,52 +143,51 @@ msgid ""
 "              a list of events: *"
 msgstr ""
 
-#: eap-options.php:282
+#: eap-options.php:219
 msgid "* The above shortcode will only display future events"
 msgstr ""
 
-#: eap-options.php:297
+#: eap-options.php:234
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
 msgstr ""
 
-#: eap-options.php:307
+#: eap-options.php:244
 msgid ""
 "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr ""
 
-#: eap-options.php:317
+#: eap-options.php:254
 msgid "Future events"
 msgstr ""
 
-#: eap-options.php:319
+#: eap-options.php:256
 msgid "Past events"
 msgstr ""
 
-#: eap-options.php:321
+#: eap-options.php:258
 msgid "All"
 msgstr ""
 
-#: eap-options.php:426
+#: eap-options.php:367
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: eap-options.php:429
+#: eap-options.php:370
 msgid "1 Column"
 msgstr ""
 
-#: eap-options.php:431
+#: eap-options.php:372
 msgid "2 Columns"
 msgstr ""
 
-#: eap-options.php:433
+#: eap-options.php:374
 msgid "3 Columns"
 msgstr ""
 
-#: event-content.php:43
-#, php-format
-msgid "%s"
+#: event-content.php:44
+msgid "Read more"
 msgstr ""
 
 #: event-post-type.php:18 event-post-type.php:20
@@ -271,46 +230,54 @@ msgstr ""
 msgid "No events found."
 msgstr ""
 
-#: event-post-type.php:53
+#: event-post-type.php:55
 msgid "Date"
 msgstr ""
 
-#: event-post-type.php:65
-msgid "From"
-msgstr ""
-
-#: event-post-type.php:67 event-post-type.php:75
-msgid "Day"
-msgstr ""
-
-#: event-post-type.php:70 event-post-type.php:78
-msgid "Time"
-msgstr ""
-
-#: event-post-type.php:73
-msgid "Until"
-msgstr ""
-
-#: event-post-type.php:118
+#: event-post-type.php:61
 msgid "Location"
 msgstr ""
 
-#: event-post-type.php:131
+#: event-post-type.php:67
+msgid "Additional information"
+msgstr ""
+
+#: event-post-type.php:81
+msgid "From"
+msgstr ""
+
+#: event-post-type.php:83 event-post-type.php:91
+msgid "Day"
+msgstr ""
+
+#: event-post-type.php:86 event-post-type.php:94
+msgid "Time"
+msgstr ""
+
+#: event-post-type.php:89
+msgid "Until"
+msgstr ""
+
+#: event-post-type.php:106
 msgid "Event location"
 msgstr ""
 
-#: event-post-type.php:136
+#: event-post-type.php:111
 msgid "Link to location"
 msgstr ""
 
-#: event-post-type.php:143
+#: event-post-type.php:118
 msgid "City"
 msgstr ""
 
-#: event-post-type.php:197
+#: event-post-type.php:123
+msgid "Country"
+msgstr ""
+
+#: event-post-type.php:214
 msgid "Event date"
 msgstr ""
 
-#: event-post-type.php:198
+#: event-post-type.php:215
 msgid "Featured image"
 msgstr ""

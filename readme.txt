@@ -5,7 +5,7 @@ Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.8
 Tested up to: 4.9.8
-Stable tag: 0.3
+Stable tag: 0.4
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -17,17 +17,6 @@ A simple plugin that allows you to post events on your site
 **Events as Posts** is a simple plugin that allows you to post events as if they were normal posts, but with added fields like date and location.
 
 It also allows you to display **lists of events** everywhere on your site using a shortcode. You can choose if you want to display future, past or all the events, and also the number of events and of which category.
-
-Other features include:
-
-* 3 layouts for the list of events (1, 2, and 3 columns)
-* Settings for text color of title, location, date, time and categories
-* A stylesheet to iclude your own custom styles
-
-**Languages**
-
-* English
-* Spanish
 
 == Installation ==
 
@@ -64,13 +53,15 @@ Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC
 
 == Changelog ==
 
-= 0.? =
+= 0.4 &mdash; 5 of October, 2018 =
 * New: 'Country' and 'Additional information' fields
+* New: 'Display categories' option for list of events
+* Tweak: Improved settings page and removed options for colors (apart from background color) in style tab
 
 = 0.3 &mdash; 3 of October, 2018 =
-* New: Read more link option for list of events
+* New: 'Read more link' option for list of events
 * New: Admin stylesheet
-* Tweak: Location fields when adding or editing an event
+* Tweak: Improved location fields when adding or editing an event
 
 = 0.2.1 &mdash; 2 of October, 2018 =
 * Fix: Display all the future or all the past events independently of posts per page in 'Settings' -> 'Reading'

@@ -20,8 +20,8 @@ function eap_settings_page_html() {
       <?php settings_errors();
       ?>
       <h2 class="nav-tab-wrapper">
-         <a href="?post_type=eap_event&page=eap_settings&tab=tab1" class="nav-tab <?php echo $tab == 'tab1' ? 'nav-tab-active' : ''; ?>"><?php _e('List', 'events-as-posts'); ?></a>
-         <a href="?post_type=eap_event&page=eap_settings&tab=tab2" class="nav-tab <?php echo $tab == 'tab2' ? 'nav-tab-active' : ''; ?>"><?php _e('Styles', 'events-as-posts'); ?></a>
+         <a href="?post_type=eap_event&page=eap_settings&tab=tab1" class="nav-tab <?php echo $tab == 'tab1' ? 'nav-tab-active' : ''; ?>"><?php _e('General', 'events-as-posts'); ?></a>
+         <a href="?post_type=eap_event&page=eap_settings&tab=tab2" class="nav-tab <?php echo $tab == 'tab2' ? 'nav-tab-active' : ''; ?>"><?php _e('Style', 'events-as-posts'); ?></a>
       </h2>
 
       <?php
@@ -51,20 +51,20 @@ function eap_settings_page_html() {
           ?>
         </form>
         <!-- reset button -->
-        <form action="" method="post">
+        <!-- <form action="" method="post">
           <input type="submit" name="reset" title="<?php _e('Reset default values', 'events-as-posts'); ?>" value="<?php _e('Reset', 'events-as-posts'); ?>" class="button button-secondary">
-        </form>
+        </form> -->
         <?php
         // deletes all options if the reset button is pressed
-        if (isset($_POST['reset'])) {
-          delete_option('eap_settings_style');
+        // if (isset($_POST['reset'])) {
+        //   delete_option('eap_settings_style');
           ?>
-          <script type="text/javascript">
+          <!-- <script type="text/javascript">
             // reload the page
             window.location.reload();
-          </script>
+          </script> -->
           <?php
-        }
+        // }
       }
       ?>
   </div>
@@ -95,7 +95,7 @@ function eap_settings_init() {
   // register a new section
   add_settings_section(
       'eap_events_list', // id
-      __('List of events', 'events-as-posts'), // section title
+      '', // section title
       'eap_events_list_cb', // callback
       'eap_settings' // slug-name of the settings page
   );
@@ -116,7 +116,7 @@ function eap_settings_init() {
   );
   add_settings_field(
       'eap_categories',
-      __('Categories', 'events-as-posts'),
+      __('Events by categories', 'events-as-posts'),
       'eap_categories_cb',
       'eap_settings',
       'eap_events_list_settings'
@@ -137,15 +137,22 @@ function eap_settings_init() {
   );
   add_settings_field(
       'eap_excerpt',
-      __('Excerpt', 'events-as-posts'),
+      __('Display excerpt', 'events-as-posts'),
       'eap_excerpt_cb',
       'eap_settings',
       'eap_events_list_settings'
   );
   add_settings_field(
       'eap_more',
-      __('Read more', 'events-as-posts'),
+      __('Display read more link', 'events-as-posts'),
       'eap_more_cb',
+      'eap_settings',
+      'eap_events_list_settings'
+  );
+  add_settings_field(
+      'eap_cat',
+      __('Display categories', 'events-as-posts'),
+      'eap_cat_cb',
       'eap_settings',
       'eap_events_list_settings'
   );
@@ -167,7 +174,7 @@ function eap_settings_style_init() {
   // register a new section
   add_settings_section(
       'eap_events_style', // id
-      __('List styles', 'events-as-posts'), // section title
+      __('List style', 'events-as-posts'), // section title
       'eap_events_style_cb', // callback
       'eap_settings_style' // slug-name of the settings page
   );
@@ -184,69 +191,6 @@ function eap_settings_style_init() {
       'eap_bg_color', // id
       __('Background color', 'events-as-posts'), // field title
       'eap_bg_color_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_title_color', // id
-      __('Title color', 'events-as-posts'), // field title
-      'eap_title_color_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_title_color_hover', // id
-      __('Title color mouse over', 'events-as-posts'), // field title
-      'eap_title_color_mouseover_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_cat_color', // id
-      __('Category color', 'events-as-posts'), // field title
-      'eap_cat_color_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_date_color', // id
-      __('Date color', 'events-as-posts'), // field title
-      'eap_date_color_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_time_color', // id
-      __('Time color', 'events-as-posts'), // field title
-      'eap_time_color_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_loc_color', // id
-      __('Location color', 'events-as-posts'), // field title
-      'eap_loc_color_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_loc_color_mouseover', // id
-      __('Location color mouse over', 'events-as-posts'), // field title
-      'eap_loc_color_mouseover_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_city_color', // id
-      __('City color', 'events-as-posts'), // field title
-      'eap_city_color_cb', // callback
-      'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
-  );
-  add_settings_field(
-      'eap_excerpt_color', // id
-      __('Excerpt color', 'events-as-posts'), // field title
-      'eap_excerpt_color_cb', // callback
       'eap_settings_style', // slug-name of the settings page on which to show the section
       'eap_events_style' // slug-name of the section of the settings page in which to show the box
   );
@@ -267,7 +211,7 @@ add_action('admin_init', 'eap_settings_style_init');
  // display the list of events section
 function eap_events_list_cb() {
   ?>
-  <p><?php _e('<b>Events as Posts</b> allows you to display a list of events
+  <p class="eap-options__about"><?php _e('<b>Events as Posts</b> allows you to display a list of events
               everywhere on your site using a shortcode. <br> Copy and paste
               in your posts or pages the following shortcode to display
               a list of events: *', 'events-as-posts') ?> </p>
@@ -366,7 +310,7 @@ function eap_generate_shortcode_cb() {
   echo $shortcode;
 }
 
-// display otption for the excerpt
+// display excerpt otption
 function eap_excerpt_cb() {
   // get option
   $setting = get_option('eap_settings');
@@ -379,7 +323,7 @@ function eap_excerpt_cb() {
   <?php
 }
 
-// display otption for read more button
+// display read more link otption
 function eap_more_cb() {
   // get option
   $setting = get_option('eap_settings');
@@ -389,6 +333,19 @@ function eap_more_cb() {
   }
   ?>
   <input type="checkbox" id="eap_more-checkbox" name="eap_settings[more]" value="true" <?php checked('true', $setting['more']); ?>>
+  <?php
+}
+
+// display category otption
+function eap_cat_cb() {
+  // get option
+  $setting = get_option('eap_settings');
+  // to avoid notices
+  if (empty($setting['cat'])) {
+    $setting['cat'] = '';
+  }
+  ?>
+  <input type="checkbox" id="eap_more-checkbox" name="eap_settings[cat]" value="true" <?php checked('true', $setting['cat']); ?>>
   <?php
 }
 
@@ -424,86 +381,5 @@ function eap_bg_color_cb() {
   $setting = get_option('eap_settings_style');
   ?>
   <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[bg_color]" value="<?php echo isset( $setting['bg_color'] ) ? esc_attr( $setting['bg_color'] ) : '#f4f4f4'; ?>" data-default-color="#f4f4f4">
-  <?php
-}
-
-// display option for the title color
-function eap_title_color_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[title_color]" value="<?php echo isset( $setting['title_color'] ) ? esc_attr( $setting['title_color'] ) : ''; ?>">
-  <?php
-}
-
-// display option for the title color when the mouse is over it
-function eap_title_color_mouseover_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[title_color_mouseover]" value="<?php echo isset( $setting['title_color_mouseover'] ) ? esc_attr( $setting['title_color_mouseover'] ) : ''; ?>">
-  <?php
-}
-
-// display option for the category color
-function eap_cat_color_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[cat_color]" value="<?php echo isset( $setting['cat_color'] ) ? esc_attr( $setting['cat_color'] ) : ''; ?>">
-  <?php
-}
-
-// display option for the date color
-function eap_date_color_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[date_color]" value="<?php echo isset( $setting['date_color'] ) ? esc_attr( $setting['date_color'] ) : ''; ?>">
-  <?php
-}
-
-// display option for the time color
-function eap_time_color_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[time_color]" value="<?php echo isset( $setting['time_color'] ) ? esc_attr( $setting['time_color'] ) : ''; ?>">
-  <?php
-}
-
-// display option for the location color
-function eap_loc_color_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[loc_color]" value="<?php echo isset( $setting['loc_color'] ) ? esc_attr( $setting['loc_color'] ) : ''; ?>">
-  <?php
-}
-
-// display option for the location color when the mouse is over it
-function eap_loc_color_mouseover_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[loc_color_mouseover]" value="<?php echo isset( $setting['loc_color_mouseover'] ) ? esc_attr( $setting['loc_color_mouseover'] ) : ''; ?>">
-  <?php
-}
-
-// display option for the city color
-function eap_city_color_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[city_color]" value="<?php echo isset( $setting['city_color'] ) ? esc_attr( $setting['city_color'] ) : ''; ?>">
-  <?php
-}
-
-// display option for excerpt color
-function eap_excerpt_color_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[excerpt_color]" value="<?php echo isset( $setting['excerpt_color'] ) ? esc_attr( $setting['excerpt_color'] ) : ''; ?>">
   <?php
 }
