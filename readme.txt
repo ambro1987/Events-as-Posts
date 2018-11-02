@@ -1,6 +1,7 @@
 === Events as Posts ===
 
 Contributors: orbam7819
+Author URI: https://ambrogiopiredda.com
 Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.8
@@ -40,8 +41,7 @@ Double check that you have written the category name correctly and, if you have 
 
 = I chose to display the excerpt in a list of events and it's showing in all the lists, how can it be? =
 
-The setting that allows you to show the excerpt on lists of events is not related to the shortcode
-and if selected it will show the excerpt on all the lists.
+The setting that allows you to show the excerpt on lists of events is not related to the shortcode and if selected it will show the excerpt on all the lists.
 
 = Can I change the order of how events on the list are displayed? =
 

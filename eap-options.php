@@ -100,12 +100,26 @@ function eap_settings_init() {
       'eap_settings' // slug-name of the settings page
   );
   add_settings_section(
+      'eap_events_settings', // id
+      __('Events', 'events-as-posts'), // section title
+      'eap_events_settings_cb', // callback
+      'eap_settings' // slug-name of the settings page
+  );
+  add_settings_section(
       'eap_events_list_settings', // id
-      __('List settings', 'events-as-posts'), // section title
+      __('List of events', 'events-as-posts'), // section title
       'eap_events_list_settings_cb', // callback
       'eap_settings' // slug-name of the settings page
   );
 
+  // register new fields in the "eap_events_settings" section
+  add_settings_field(
+      'eap_date_format',
+      __('Date format', 'events-as-posts'),
+      'eap_date_format_cb',
+      'eap_settings',
+      'eap_events_settings'
+  );
   // register new fields in the "eap_events_list_settings" section
   add_settings_field(
       'eap_number_of_events', // id
@@ -208,7 +222,7 @@ add_action('admin_init', 'eap_settings_style_init');
  * List of events callback functions
  */
 
- // display the list of events section
+// display the list of events section
 function eap_events_list_cb() {
   ?>
   <p class="eap-options__about"><?php _e('<b>Events as Posts</b> allows you to display a list of events
@@ -220,9 +234,20 @@ function eap_events_list_cb() {
   <br>
   <?php
 }
+
+// events settings section
+function eap_events_settings_cb() {
+  // write something here if you want
+}
+
 // list settings section
 function eap_events_list_settings_cb() {
   // write something here if you want
+}
+
+// date format option
+function eap_date_format_cb() {
+    // add code here
 }
 
 // display input for selecting the number of events in the list
