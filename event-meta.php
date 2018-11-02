@@ -9,15 +9,8 @@ $link_location = get_post_meta( get_the_ID(), 'eap_link_location', true );
 $city = get_post_meta( get_the_ID(), 'eap_city', true );
 $country = get_post_meta( get_the_ID(), 'eap_country', true );
 $add_info = get_post_meta( get_the_ID(), 'eap_add_info', true );
+$setting = get_option( 'eap_settings' );
 
-// format 'from date'
-$from_date = eap_format_date($from_date);
-$from_date[1] = eap_make_month_translatable($from_date[1]);
-// if 'until date' is set format 'until date'
-if ($until_date) {
-  $until_date = eap_format_date($until_date);
-  $until_date[1] = eap_make_month_translatable($until_date[1]);
-}
 // to avoid notices
 if (!$from_time) {
   $from_time = '';
@@ -75,11 +68,11 @@ if ( !$until_date && ($until_time == '') ) {
 
 <!-- event meta -->
 <p class="eap__meta">
-  <span class="eap__date"><?php echo $from_date[0] . ' ' . $from_date[1] . ' ' . $from_date[2] ?></span><span class="eap__time"><?php echo $from_time ?></span><?php echo $separation_mark ?>
+  <span class="eap__date"><?php echo date_i18n( $setting['date_format'], strtotime( $from_date ) ); ?></span><span class="eap__time"><?php echo $from_time ?></span><?php echo $separation_mark ?>
   <span class="eap__date">
     <?php
     if ($until_date) {
-      echo $until_date[0] . ' ' . $until_date[1] . ' ' . $until_date[2] . $comma;
+      echo date_i18n( $setting['date_format'], strtotime( $until_date ) ) . $comma;
     }
     ?>
   </span>

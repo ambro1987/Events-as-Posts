@@ -1,64 +1,6 @@
 <?php
 
 /**
- * Format the event date
- */
-
-function eap_format_date($date) {
-  // format event date
-  $date = date('j F, Y', strtotime($date)); // strtotime transform date to unix time
-  // split the date into an array with day, month and year
-  $date = preg_split('/ /', $date);
-  // strips the month from the comma at the end
-  preg_match('/[a-z]+/i', $date[1], $match);
-  $date[1] = $match[0];
-
-  // returns the array with the three values
-  return $date;
-}
-
-function eap_make_month_translatable($month) {
-  switch ($month) {
-    case 'January':
-      $month = __('January', 'events-as-posts');
-      break;
-    case 'February':
-      $month = __('February', 'events-as-posts');
-      break;
-    case 'March':
-      $month = __('March', 'events-as-posts');
-      break;
-    case 'Abril':
-      $month = __('Abril', 'events-as-posts');
-      break;
-    case 'May':
-      $month = __('May', 'events-as-posts');
-      break;
-    case 'June':
-      $month = __('June', 'events-as-posts');
-      break;
-    case 'July':
-      $month = __('July', 'events-as-posts');
-      break;
-    case 'August':
-      $month = __('August', 'events-as-posts');
-      break;
-    case 'September':
-      $month = __('September', 'events-as-posts');
-      break;
-    case 'October':
-      $month = __('October', 'events-as-posts');
-      break;
-    case 'November':
-      $month = __('November', 'events-as-posts');
-      break;
-    case 'December':
-      $month = __('December', 'events-as-posts');
-  }
-  return $month;
-}
-
-/**
  * Add event meta to the content
  */
 

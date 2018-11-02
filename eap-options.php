@@ -247,7 +247,26 @@ function eap_events_list_settings_cb() {
 
 // date format option
 function eap_date_format_cb() {
-    // add code here
+    // get the value of the setting
+    $setting = get_option('eap_settings');
+    if ( ! isset( $setting['date_format'] ) ) {
+        $setting['date_format'] = 'j F, Y';
+    }
+    ?>
+    <p class="eap-options__date-format">
+        <label>
+        <input type="radio" name="eap_settings[date_format]" value="j F, Y" <?php checked('j F, Y', $setting['date_format']); ?> checked />
+        <span><?php echo date_i18n('j F, Y'); ?></span>
+        <code>j F, Y</code>
+        </label>
+        <br />
+        <label>
+        <input type="radio" name="eap_settings[date_format]" value="Y-m-d" <?php checked('Y-m-d', $setting['date_format']); ?> />
+        <span><?php echo date_i18n('Y-m-d'); ?></span>
+        <code>Y-m-d</code>
+        </label>
+    </p>
+    <?php
 }
 
 // display input for selecting the number of events in the list

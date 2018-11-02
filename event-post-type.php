@@ -220,23 +220,20 @@
  // display the content of the event date column
  function eap_event_columns_content($column_name, $post_ID) {
    if ($column_name == 'event_date') {
+
+     $setting = get_option( 'eap_settings' );
+
      // get event date
      $from_date = get_post_meta( $post_ID, 'eap_from_day', true);
      $until_date = get_post_meta( $post_ID, 'eap_until_day', true);
 
-     // format the date
-     $from_date = eap_format_date($from_date);
-     $from_date[1] = eap_make_month_translatable($from_date[1]);
-     //output the date [0] = day, etc.
-     echo $from_date[0] . ' ' . $from_date[1] . ', ' . $from_date[2];
+     echo date_i18n( $setting['date_format'], strtotime( $from_date ) );
 
      if ($until_date) {
-       // format the date
-       $until_date = eap_format_date($until_date);
-       $until_date[1] = eap_make_month_translatable($until_date[1]);
+
        if ($until_date != $from_date) {
          //output until date [0] = day, etc.
-         echo ' - ' . $until_date[0] . ' ' . $until_date[1] . ', ' . $until_date[2];
+         echo ' – ' . date_i18n( $setting['date_format'], strtotime( $until_date ) );
        }
      }
    }

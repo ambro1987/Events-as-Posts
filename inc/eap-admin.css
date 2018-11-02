@@ -1,3 +1,16 @@
+.eap-options__date-format label {
+    margin:.25em 0 .5em;
+    line-height: 1.4em;
+    display:inline-block;
+}
+.eap-options__date-format span {
+    display: inline-block;
+    min-width: 10em;
+}
+.eap-options__date-format code {
+    padding: 3px 5px 2px;
+    margin: 0 1px
+}
 .eap-options__shortcode {
   color: red;
 }
