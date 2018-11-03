@@ -12,11 +12,11 @@ $add_info = get_post_meta( get_the_ID(), 'eap_add_info', true );
 $setting = get_option( 'eap_settings' );
 
 // to avoid notices
-if (!$from_time) {
+if ( ! $from_time ) {
   $from_time = '';
 } else {
   // add a comma in before if it's set
-  $from_time = ', ' . $from_time;
+  $from_time = ' | ' . $from_time;
 }
 
 if (!$until_time) {
@@ -26,35 +26,35 @@ if (!$until_time) {
 // separation mark '-' between from day/time and until day/time
 $separation_mark = ' – ';
 // comma after year
-$comma = ', '; // dt = datetime
+$bar = ' | '; // dt = datetime
 
 // logic for commas and separation mark...
 
 // if until date AND until time are not set
 if ( !$until_date && ($until_time == '') ) {
   $separation_mark = '';
-  $comma = '';
+  $bar = '';
   // if until date is set AND until time is not
 } elseif ( $until_date && ($until_time == '') ) {
   // if dates are NOT the same day
   if ($until_date != $from_date) {
-    $comma = '';
+    $bar = '';
     // if dates ARE the same day
   } elseif ($until_date == $from_date) {
-    for ( $i = 0; $i < sizeof( $until_date ); $i++ ) {
-      $until_date[$i] = '';
-    }
+
+      $until_date = '';
+
     $separation_mark = '';
-    $comma = '';
+    $bar = '';
   }
   // until date AND until time are both set
 } elseif ( $until_date && ($until_time != '') ) {
   // if same day
   if ($until_date == $from_date) {
-    for ( $i = 0; $i < sizeof( $until_date ); $i++ ) {
-      $until_date[$i] = '';
-    }
-    $comma = '';
+
+      $until_date = '';
+    
+    $bar = '';
   }
   // until date is NOT set AND until time is set
 } elseif ( !$until_date && ($until_time != '') ) {
@@ -62,7 +62,7 @@ if ( !$until_date && ($until_time == '') ) {
     $separation_mark = '';
     $until_time = '';
   }
-  $comma = '';
+  $bar = '';
 }
 ?>
 
@@ -72,7 +72,7 @@ if ( !$until_date && ($until_time == '') ) {
   <span class="eap__date">
     <?php
     if ($until_date) {
-      echo date_i18n( $setting['date_format'], strtotime( $until_date ) ) . $comma;
+      echo date_i18n( $setting['date_format'], strtotime( $until_date ) ) . $bar;
     }
     ?>
   </span>
@@ -83,7 +83,7 @@ if ( !$until_date && ($until_time == '') ) {
   <?php else : ?>
     <span class="eap__location"><?php echo $location ?></span>
   <?php endif; ?>
-  <!-- <?php echo $comma_loc ?> -->
+  <!-- <?php echo $bar_loc ?> -->
   <?php
   if ($city) {
     ?>

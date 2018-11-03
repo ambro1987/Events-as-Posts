@@ -225,11 +225,11 @@ add_action('admin_init', 'eap_settings_style_init');
 // display the list of events section
 function eap_events_list_cb() {
   ?>
-  <p class="eap-options__about"><?php _e('<b>Events as Posts</b> allows you to display a list of events
+  <p class="eap-option__about"><?php _e('<b>Events as Posts</b> allows you to display a list of events
               everywhere on your site using a shortcode. <br> Copy and paste
               in your posts or pages the following shortcode to display
               a list of events: *', 'events-as-posts') ?> </p>
-  <span class="eap-options__shortcode">[display_events]</span>
+  <span class="eap-option__shortcode">[display_events]</span>
   <p><i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i></p>
   <br>
   <?php
@@ -249,22 +249,28 @@ function eap_events_list_settings_cb() {
 function eap_date_format_cb() {
     // get the value of the setting
     $setting = get_option('eap_settings');
-    if ( ! isset( $setting['date_format'] ) ) {
-        $setting['date_format'] = 'j F, Y';
-    }
     ?>
-    <p class="eap-options__date-format">
-        <label>
-        <input type="radio" name="eap_settings[date_format]" value="j F, Y" <?php checked('j F, Y', $setting['date_format']); ?> checked />
-        <span><?php echo date_i18n('j F, Y'); ?></span>
-        <code>j F, Y</code>
-        </label>
-        <br />
-        <label>
-        <input type="radio" name="eap_settings[date_format]" value="Y-m-d" <?php checked('Y-m-d', $setting['date_format']); ?> />
-        <span><?php echo date_i18n('Y-m-d'); ?></span>
-        <code>Y-m-d</code>
-        </label>
+    <p class="eap-option__date-format">
+        <?php
+        if ( ! isset( $setting['date_format'] ) ) {
+
+            $user = wp_get_current_user();
+
+            if ( $user->locale == 'en_US' ) {
+
+                $setting['date_format'] = 'F j, Y';
+
+            } else {
+
+                $setting['date_format'] = 'j F, Y';
+            }
+
+        }
+        ?>
+
+        <input type="text" name="eap_settings[date_format]" value="<?php echo $setting['date_format']; ?>" pattern="[-dDjFmMnYylS,./\s]+" required >
+        <p><i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> d, D, j, l, S, F, m, M, n, Y, y</i></p>
+        <p><i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/en/function.date.php" target="_blank"><?php _e( 'PHP: date - Manual', 'events-as-posts' ); ?></a></i></p>
     </p>
     <?php
 }
@@ -294,12 +300,23 @@ function eap_period_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings');
   ?>
-  <input type="radio" name="eap_settings[period]" value="future" <?php checked('future', $setting['period']); ?> checked>
-  <label for="eap_settings[period]"><?php _e('Future events', 'events-as-posts') ?></label><br>
-	<input type="radio" name="eap_settings[period]" value="past" <?php checked('past', $setting['period']); ?>>
-  <label for="eap_settings[period]"><?php _e('Past events', 'events-as-posts') ?></label><br>
-  <input type="radio" name="eap_settings[period]" value="all" <?php checked('all', $setting['period']); ?>>
-  <label for="eap_settings[period]"><?php _e('All', 'events-as-posts') ?></label><br>
+    <label for="eap-period__future">
+        <input id="eap-period__future" type="radio" name="eap_settings[period]" value="future" <?php checked('future', $setting['period']); ?> checked>
+        <span><?php _e('Future events', 'events-as-posts') ?></span>
+    </label>
+    <br>
+
+    <label for="eap-period__past">
+        <input id="eap-period__past" type="radio" name="eap_settings[period]" value="past" <?php checked('past', $setting['period']); ?>>
+        <span><?php _e('Past events', 'events-as-posts') ?></span>
+    </label>
+    <br>
+
+    <label for="eap-period__all">
+        <input id="eap-period__all" type="radio" name="eap_settings[period]" value="all" <?php checked('all', $setting['period']); ?>>
+        <span><?php _e('All', 'events-as-posts') ?></span>
+    </label>
+    <br>
   <?php
 }
 
@@ -308,7 +325,7 @@ function eap_generate_shortcode_cb() {
   // get the value of the setting
   $setting = get_option('eap_settings');
   // shortcode
-  $shortcode = '<span class="eap-options__shortcode">';
+  $shortcode = '<span class="eap-option__shortcode">';
   // default
   if ( !$setting ) {
     $shortcode .= '[display_events]';
@@ -405,18 +422,31 @@ function eap_events_style_cb() {
 
 // display options for list layout
 function eap_layout_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings_style');
-  ?>
-  <p><i><?php _e('Select the layout for the list of events', 'events-as-posts') ?></i></p>
-  <br>
-  <input type="radio" name="eap_settings_style[layout]" value="1" <?php checked('1', $setting['layout']); ?> checked>
-  <label for="eap_settings_style[layout]"><?php _e('1 Column', 'events-as-posts') ?></label><br>
-	<input type="radio" name="eap_settings_style[layout]" value="2" <?php checked('2', $setting['layout']); ?>>
-  <label for="eap_settings_style[layout]"><?php _e('2 Columns', 'events-as-posts') ?></label><br>
-  <input type="radio" name="eap_settings_style[layout]" value="3" <?php checked('3', $setting['layout']); ?>>
-  <label for="eap_settings_style[layout]"><?php _e('3 Columns', 'events-as-posts') ?></label><br>
-  <?php
+
+    // get the value of the setting
+    $setting = get_option('eap_settings_style');
+    ?>
+    <p><i><?php _e('Select the layout for the list of events', 'events-as-posts') ?></i></p>
+    <br>
+
+    <label for="eap-layout__1-col">
+        <input id="eap-layout__1-col" type="radio" name="eap_settings_style[layout]" value="1" <?php checked('1', $setting['layout']); ?> checked>
+        <span><?php _e('1 Column', 'events-as-posts') ?></span>
+    </label>
+    <br>
+
+    <label for="eap-layout__2-col">
+        <input id="eap-layout__2-col" type="radio" name="eap_settings_style[layout]" value="2" <?php checked('2', $setting['layout']); ?>>
+        <span><?php _e('2 Columns', 'events-as-posts') ?></span>
+    </label>
+    <br>
+
+    <label for="eap-layout__3-col">
+        <input id="eap-layout__3-col" type="radio" name="eap_settings_style[layout]" value="3" <?php checked('3', $setting['layout']); ?>>
+        <span><?php _e('3 Columns', 'events-as-posts') ?></span>
+    </label>
+    <br>
+    <?php
 }
 
 // display option for the background color
