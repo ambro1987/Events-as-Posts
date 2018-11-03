@@ -41,10 +41,18 @@ require ( plugin_dir_path( __FILE__ ) . 'eap-options.php' );
   */
 
  function eap_install() {
-   // trigger our function that registers the custom post type
-   eap_create_event_post_type();
-   // clear the permalinks after the post type has been registered
-   flush_rewrite_rules();
+     // trigger our function that registers the custom post type
+     eap_create_event_post_type();
+     // clear the permalinks after the post type has been registered
+     flush_rewrite_rules();
+
+     update_option( 'eap_settings', array(
+         'date_format'      => 'F j, Y',
+         'time_format'      => 'g:i a',
+         'number_of_events' => 0,
+         'categories'       => '',
+         'period'           => 'future',
+     ));
  }
  register_activation_hook( __FILE__, 'eap_install' );
 

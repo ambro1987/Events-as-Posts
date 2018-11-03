@@ -92,23 +92,17 @@ add_action('admin_menu', 'eap_settings_page');
  */
 
 function eap_settings_init() {
-  // register a new section
+
+    add_settings_section(
+        'eap_date_settings', // id
+        __('<span class="dashicons dashicons-calendar-alt"></span> Date settings', 'events-as-posts'), // section title
+        'eap_date_settings_cb', // callback
+        'eap_settings' // slug-name of the settings page
+    );
   add_settings_section(
-      'eap_events_list', // id
-      '', // section title
-      'eap_events_list_cb', // callback
-      'eap_settings' // slug-name of the settings page
-  );
-  add_settings_section(
-      'eap_events_settings', // id
-      __('Events', 'events-as-posts'), // section title
-      'eap_events_settings_cb', // callback
-      'eap_settings' // slug-name of the settings page
-  );
-  add_settings_section(
-      'eap_events_list_settings', // id
-      __('List of events', 'events-as-posts'), // section title
-      'eap_events_list_settings_cb', // callback
+      'eap_list_settings', // id
+      __('<span class="dashicons dashicons-editor-ul"></span> List settings', 'events-as-posts'), // section title
+      'eap_list_settings_cb', // callback
       'eap_settings' // slug-name of the settings page
   );
 
@@ -118,7 +112,14 @@ function eap_settings_init() {
       __('Date format', 'events-as-posts'),
       'eap_date_format_cb',
       'eap_settings',
-      'eap_events_settings'
+      'eap_date_settings'
+  );
+  add_settings_field(
+      'eap_time_format',
+      __('Time format', 'events-as-posts'),
+      'eap_time_format_cb',
+      'eap_settings',
+      'eap_date_settings'
   );
   // register new fields in the "eap_events_list_settings" section
   add_settings_field(
@@ -126,55 +127,55 @@ function eap_settings_init() {
       __('Number of events', 'events-as-posts'), // field title
       'eap_number_of_events_cb', // callback
       'eap_settings', // slug-name of the settings page on which to show the section
-      'eap_events_list_settings' // slug-name of the section of the settings page in which to show the box
+      'eap_list_settings' // slug-name of the section of the settings page in which to show the box
   );
   add_settings_field(
       'eap_categories',
       __('Events by categories', 'events-as-posts'),
       'eap_categories_cb',
       'eap_settings',
-      'eap_events_list_settings'
+      'eap_list_settings'
   );
   add_settings_field(
       'eap_period',
       __('Period', 'events-as-posts'),
       'eap_period_cb',
       'eap_settings',
-      'eap_events_list_settings'
+      'eap_list_settings'
   );
   add_settings_field(
       'eap_shortcode',
       __('Shortcode', 'events-as-posts'),
       'eap_generate_shortcode_cb',
       'eap_settings',
-      'eap_events_list_settings'
+      'eap_list_settings'
   );
   add_settings_field(
       'eap_excerpt',
       __('Display excerpt', 'events-as-posts'),
       'eap_excerpt_cb',
       'eap_settings',
-      'eap_events_list_settings'
+      'eap_list_settings'
   );
   add_settings_field(
       'eap_more',
       __('Display read more link', 'events-as-posts'),
       'eap_more_cb',
       'eap_settings',
-      'eap_events_list_settings'
+      'eap_list_settings'
   );
   add_settings_field(
       'eap_cat',
       __('Display categories', 'events-as-posts'),
       'eap_cat_cb',
       'eap_settings',
-      'eap_events_list_settings'
+      'eap_list_settings'
   );
 
   // register a new setting
   register_setting(
     'eap_settings', // group name
-    'eap_settings' // option name
+    'eap_settings'
   );
 }
 add_action('admin_init', 'eap_settings_init');
@@ -187,9 +188,9 @@ add_action('admin_init', 'eap_settings_init');
 function eap_settings_style_init() {
   // register a new section
   add_settings_section(
-      'eap_events_style', // id
-      __('List style', 'events-as-posts'), // section title
-      'eap_events_style_cb', // callback
+      'eap_list_style', // id
+      __('<span class="dashicons dashicons-editor-ul"></span> List style', 'events-as-posts'), // section title
+      'eap_list_style_cb', // callback
       'eap_settings_style' // slug-name of the settings page
   );
 
@@ -199,14 +200,14 @@ function eap_settings_style_init() {
       __('Layout', 'events-as-posts'), // field title
       'eap_layout_cb', // callback
       'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
+      'eap_list_style' // slug-name of the section of the settings page in which to show the box
   );
   add_settings_field(
       'eap_bg_color', // id
       __('Background color', 'events-as-posts'), // field title
       'eap_bg_color_cb', // callback
       'eap_settings_style', // slug-name of the settings page on which to show the section
-      'eap_events_style' // slug-name of the section of the settings page in which to show the box
+      'eap_list_style' // slug-name of the section of the settings page in which to show the box
   );
 
   // register a new setting
@@ -222,27 +223,22 @@ add_action('admin_init', 'eap_settings_style_init');
  * List of events callback functions
  */
 
-// display the list of events section
-function eap_events_list_cb() {
-  ?>
-  <p class="eap-option__about"><?php _e('<b>Events as Posts</b> allows you to display a list of events
-              everywhere on your site using a shortcode. <br> Copy and paste
-              in your posts or pages the following shortcode to display
-              a list of events: *', 'events-as-posts') ?> </p>
-  <span class="eap-option__shortcode">[display_events]</span>
-  <p><i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i></p>
-  <br>
-  <?php
-}
-
 // events settings section
-function eap_events_settings_cb() {
-  // write something here if you want
+function eap_date_settings_cb() {
+    ?>
+    <hr />
+    <?php
 }
 
 // list settings section
-function eap_events_list_settings_cb() {
-  // write something here if you want
+function eap_list_settings_cb() {
+    ?>
+    <hr />
+    <p class="eap-option__about"><?php _e('<b>Events as Posts</b> allows you to display a list of events everywhere on your site using a shortcode. Copy and paste in your posts or pages the following shortcode to display a list of events: *', 'events-as-posts') ?> </p>
+    <span class="eap-option__shortcode">[display_events]</span>
+    <p><i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i></p>
+    <br />
+    <?php
 }
 
 // date format option
@@ -251,26 +247,22 @@ function eap_date_format_cb() {
     $setting = get_option('eap_settings');
     ?>
     <p class="eap-option__date-format">
-        <?php
-        if ( ! isset( $setting['date_format'] ) ) {
-
-            $user = wp_get_current_user();
-
-            if ( $user->locale == 'en_US' ) {
-
-                $setting['date_format'] = 'F j, Y';
-
-            } else {
-
-                $setting['date_format'] = 'j F, Y';
-            }
-
-        }
-        ?>
-
         <input type="text" name="eap_settings[date_format]" value="<?php echo $setting['date_format']; ?>" pattern="[-dDjFmMnYylS,./\s]+" required >
         <p><i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> d, D, j, l, S, F, m, M, n, Y, y</i></p>
-        <p><i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/en/function.date.php" target="_blank"><?php _e( 'PHP: date - Manual', 'events-as-posts' ); ?></a></i></p>
+        <p><i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/function.date.php" target="_blank"><?php _e( 'PHP: date - Manual', 'events-as-posts' ); ?></a></i></p>
+    </p>
+    <?php
+}
+
+// time format option
+function eap_time_format_cb() {
+    // get the value of the setting
+    $setting = get_option('eap_settings');
+    ?>
+    <p class="eap-option__date-format">
+        <input type="text" name="eap_settings[time_format]" value="<?php echo $setting['time_format']; ?>" pattern="[aAgGhHi:\s]+" required >
+        <p><i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> a, A, g, G, h, H, i</i></p>
+        <p><i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/function.date.php" target="_blank"><?php _e( 'PHP: date - Manual', 'events-as-posts' ); ?></a></i></p>
     </p>
     <?php
 }
@@ -301,19 +293,19 @@ function eap_period_cb() {
   $setting = get_option('eap_settings');
   ?>
     <label for="eap-period__future">
-        <input id="eap-period__future" type="radio" name="eap_settings[period]" value="future" <?php checked('future', $setting['period']); ?> checked>
+        <input id="eap-period__future" type="radio" name="eap_settings[period]" value="future" <?php if ( isset ( $setting['period'] ) ) checked('future', $setting['period']); ?> checked>
         <span><?php _e('Future events', 'events-as-posts') ?></span>
     </label>
     <br>
 
     <label for="eap-period__past">
-        <input id="eap-period__past" type="radio" name="eap_settings[period]" value="past" <?php checked('past', $setting['period']); ?>>
+        <input id="eap-period__past" type="radio" name="eap_settings[period]" value="past" <?php if ( isset ( $setting['period'] ) ) checked('past', $setting['period']); ?>>
         <span><?php _e('Past events', 'events-as-posts') ?></span>
     </label>
     <br>
 
     <label for="eap-period__all">
-        <input id="eap-period__all" type="radio" name="eap_settings[period]" value="all" <?php checked('all', $setting['period']); ?>>
+        <input id="eap-period__all" type="radio" name="eap_settings[period]" value="all" <?php if ( isset ( $setting['period'] ) ) checked('all', $setting['period']); ?>>
         <span><?php _e('All', 'events-as-posts') ?></span>
     </label>
     <br>
@@ -322,14 +314,11 @@ function eap_period_cb() {
 
 // display the shortcode for the event list
 function eap_generate_shortcode_cb() {
-  // get the value of the setting
-  $setting = get_option('eap_settings');
+
+    $setting = get_option('eap_settings');
   // shortcode
   $shortcode = '<span class="eap-option__shortcode">';
-  // default
-  if ( !$setting ) {
-    $shortcode .= '[display_events]';
-  }
+
   // generates shortcode for future events
   if ( $setting['period'] == 'future' ) {
     if ( $setting['number_of_events'] == 0 && !$setting['categories'] ) {
@@ -375,12 +364,8 @@ function eap_generate_shortcode_cb() {
 function eap_excerpt_cb() {
   // get option
   $setting = get_option('eap_settings');
-  // to avoid notices
-  if (empty($setting['excerpt'])) {
-    $setting['excerpt'] = '';
-  }
   ?>
-  <input type="checkbox" id="eap_excerpt-checkbox" name="eap_settings[excerpt]" value="true" <?php checked('true', $setting['excerpt']); ?>>
+  <input type="checkbox" id="eap_excerpt-checkbox" name="eap_settings[excerpt]" value="true" <?php if ( isset ( $setting['excerpt'] ) ) checked('true', $setting['excerpt']); ?>>
   <?php
 }
 
@@ -388,12 +373,8 @@ function eap_excerpt_cb() {
 function eap_more_cb() {
   // get option
   $setting = get_option('eap_settings');
-  // to avoid notices
-  if (empty($setting['more'])) {
-    $setting['more'] = '';
-  }
   ?>
-  <input type="checkbox" id="eap_more-checkbox" name="eap_settings[more]" value="true" <?php checked('true', $setting['more']); ?>>
+  <input type="checkbox" id="eap_more-checkbox" name="eap_settings[more]" value="true" <?php if ( isset ( $setting['more'] ) ) checked('true', $setting['more']); ?>>
   <?php
 }
 
@@ -401,12 +382,8 @@ function eap_more_cb() {
 function eap_cat_cb() {
   // get option
   $setting = get_option('eap_settings');
-  // to avoid notices
-  if (empty($setting['cat'])) {
-    $setting['cat'] = '';
-  }
   ?>
-  <input type="checkbox" id="eap_more-checkbox" name="eap_settings[cat]" value="true" <?php checked('true', $setting['cat']); ?>>
+  <input type="checkbox" id="eap_more-checkbox" name="eap_settings[cat]" value="true" <?php if ( isset ( $setting['cat'] ) ) checked('true', $setting['cat']); ?>>
   <?php
 }
 
@@ -416,7 +393,7 @@ function eap_cat_cb() {
 */
 
 // list style section
-function eap_events_style_cb() {
+function eap_list_style_cb() {
   // write something here if you want
 }
 

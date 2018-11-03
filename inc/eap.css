@@ -1,9 +1,9 @@
 .eap__list {
   display: grid;
-  grid-gap: 1.6rem;
+  grid-gap: 1.6em;
 }
 .eap__event {
-  padding: 1rem;
+  padding: 1em;
 }
 .eap__img img {
   width: 100%;

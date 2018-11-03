@@ -174,13 +174,13 @@ function eap_events_style() {
         grid-template-columns: 1fr;
       }
       .eap__title {
-        margin: 0 0 .6rem !important;
+        margin: 0 0 .6em !important;
       }
       @media all and (min-width: 576px) {
         .eap__event {
           display: grid;
           grid-template-columns: 1fr 2fr;
-          grid-gap: 1.6rem;
+          grid-gap: 1.6em;
         }
       }
     </style>
@@ -191,7 +191,7 @@ function eap_events_style() {
     ?>
     <style>
       .eap__title {
-        margin: .6rem 0 .6rem;
+        margin: .6em 0 .6em;
       }
       @media all and (min-width: 576px) {
         .eap__list {
@@ -211,7 +211,7 @@ function eap_events_style() {
         }
       }
       .eap__title {
-        margin: .6rem 0 .6rem;
+        margin: .6em 0 .6em;
       }
     </style>
     <?php
