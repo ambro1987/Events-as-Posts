@@ -87,7 +87,7 @@ function eap_setting_errors( $setting ) {
     } else {
 
         $type = 'updated';
-        $message = 'Settings saved.';
+        $message = __( 'Settings saved.', 'events-as-posts' );
     }
 
     add_settings_error(
