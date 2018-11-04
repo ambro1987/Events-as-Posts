@@ -3,7 +3,7 @@
 // activation hook
 function eap_activation() {
 
-    update_option( 'eap_actual_version', EAP_VERSION );
+    update_option( 'eap_version', EAP_VERSION );
 
     // registers custom post type
     eap_create_event_post_type();
@@ -36,16 +36,16 @@ function eap_deactivation() {
 register_deactivation_hook( __FILE__, 'eap_deactivation' );
 
 
-// check actual plugin version
-function eap_check_actual_version() {
+// check actual version of the plugin
+function eap_check_version() {
 
     // updates actual version if different
-    if ( EAP_VERSION !== get_option( 'eap_actual_version' ) ) {
+    if ( EAP_VERSION !== get_option( 'eap_version' ) ) {
 
         eap_activation();
     }
 }
-add_action( 'plugins_loaded', 'eap_check_actual_version' );
+add_action( 'plugins_loaded', 'eap_check_version' );
 
 
 // front-end stylesheet
