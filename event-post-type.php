@@ -70,7 +70,7 @@ function eap_create_add_info_metabox() {
 add_action( 'add_meta_boxes', 'eap_create_add_info_metabox' );
 
 
-// output date metabox
+// date metabox
 function eap_date_metabox_callback( $post ) {
 
     wp_nonce_field( basename( __FILE__ ), 'eap_nonce' );
@@ -159,7 +159,7 @@ function eap_add_info_metabox_callback( $post ) {
 }
 
 
-// save metabox data
+// save metaboxes data
 function eap_metaboxes_save( $post_id ) {
         // checks save status
         $is_autosave = wp_is_post_autosave( $post_id );
@@ -173,36 +173,84 @@ function eap_metaboxes_save( $post_id ) {
 
         /* checks for input and sanitizes/saves if needed */
 
-        // date input
-        if( isset( $_POST[ 'eap_from_day' ] ) ) {
+        $setting = get_option( 'eap_settings' );
+
+        // from day
+        if ( isset( $_POST[ 'eap_from_day' ] ) ) {
+
             update_post_meta( $post_id, 'eap_from_day', sanitize_text_field( $_POST[ 'eap_from_day'] ) );
+
+            if ( $_POST[ 'eap_from_day' ] != '' ) {
+
+                update_post_meta( $post_id, 'eap_from_day_custom_format', sanitize_text_field( date_i18n( $setting['date_format'], strtotime( $_POST[ 'eap_from_day'] ) ) ) );
+
+            } else {
+
+                update_post_meta( $post_id, 'eap_from_day_custom_format', '' );
+            }
         }
-        if( isset( $_POST[ 'eap_from_time' ] ) ) {
+
+        // from time
+        if ( isset( $_POST[ 'eap_from_time' ] ) ) {
+
             update_post_meta( $post_id, 'eap_from_time', sanitize_text_field( $_POST[ 'eap_from_time'] ) );
+
+            if ( $_POST[ 'eap_from_time' ] != '' ) {
+
+                update_post_meta( $post_id, 'eap_from_time_custom_format', sanitize_text_field( date_i18n( $setting['time_format'], strtotime( $_POST[ 'eap_from_time'] ) ) ) );
+
+            } else {
+
+                update_post_meta( $post_id, 'eap_from_time_custom_format', '' );
+            }
         }
-        if( isset( $_POST[ 'eap_until_day' ] ) ) {
+
+        // until day
+        if ( isset( $_POST[ 'eap_until_day' ] ) ) {
+
             update_post_meta( $post_id, 'eap_until_day', sanitize_text_field( $_POST[ 'eap_until_day'] ) );
+
+            if ( $_POST[ 'eap_until_day' ] != '' ) {
+
+                update_post_meta( $post_id, 'eap_until_day_custom_format', sanitize_text_field( date_i18n( $setting['date_format'], strtotime( $_POST[ 'eap_until_day'] ) ) ) );
+
+            } else {
+
+                update_post_meta( $post_id, 'eap_until_day_custom_format', '' );
+            }
         }
-        if( isset( $_POST[ 'eap_until_time' ] ) ) {
+
+        // until time
+        if ( isset( $_POST[ 'eap_until_time' ] ) ) {
+
             update_post_meta( $post_id, 'eap_until_time', sanitize_text_field( $_POST[ 'eap_until_time'] ) );
+
+            if ( $_POST[ 'eap_until_time' ] != '' ) {
+
+                update_post_meta( $post_id, 'eap_until_time_custom_format', sanitize_text_field( date_i18n( $setting['time_format'], strtotime( $_POST[ 'eap_until_time'] ) ) ) );
+
+            } else {
+
+                update_post_meta( $post_id, 'eap_until_time_custom_format', '' );
+            }
         }
 
         // location input
-        if( isset( $_POST[ 'eap_location' ] ) ) {
+        if ( isset( $_POST[ 'eap_location' ] ) ) {
             update_post_meta( $post_id, 'eap_location', sanitize_text_field( $_POST[ 'eap_location' ] ) );
         }
-        if( isset( $_POST[ 'eap_link_location' ] ) ) {
+        if ( isset( $_POST[ 'eap_link_location' ] ) ) {
             update_post_meta( $post_id, 'eap_link_location', sanitize_text_field( $_POST[ 'eap_link_location' ] ) );
         }
-        if( isset( $_POST[ 'eap_city' ] ) ) {
+        if ( isset( $_POST[ 'eap_city' ] ) ) {
             update_post_meta( $post_id, 'eap_city', sanitize_text_field( $_POST[ 'eap_city' ] ) );
         }
-        if( isset( $_POST[ 'eap_country' ] ) ) {
+        if ( isset( $_POST[ 'eap_country' ] ) ) {
             update_post_meta( $post_id, 'eap_country', sanitize_text_field( $_POST[ 'eap_country' ] ) );
         }
 
         // additional information input
-        if( isset( $_POST[ 'eap_add_info' ] ) ) {
+        if ( isset( $_POST[ 'eap_add_info' ] ) ) {
             update_post_meta( $post_id, 'eap_add_info', sanitize_text_field( $_POST[ 'eap_add_info'] ) );
         }
 }

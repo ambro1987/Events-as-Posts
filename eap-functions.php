@@ -21,9 +21,11 @@ add_filter( 'the_content', 'eap_add_meta_to_event_content' );
 // display future events
 function eap_display_events( $atts ) {
 
+    $date_format = 'Y\-m\-d';
+
     ob_start();
 
-    $actual_date = date( 'Y\-m\-d' );
+    $date = date( $date_format );
 
     // shortcode attributes
     extract( shortcode_atts( array(
@@ -41,7 +43,7 @@ function eap_display_events( $atts ) {
         'category_name'  => $category,
         'meta_query'     => array(
             'key' => 'eap_from_day',
-            'value' => $actual_date,
+            'value' => $date,
             'compare' => '>='
         ),
     );
@@ -80,9 +82,11 @@ function eap_display_events( $atts ) {
 // display past events
 function eap_display_past_events( $atts ) {
 
+    $date_format = 'Y\-m\-d';
+
     ob_start();
 
-    $actual_date = date( 'Y\-m\-d' );
+    $date = date( $date_format );
 
     // shortcode attributes
     extract( shortcode_atts( array(
@@ -100,7 +104,7 @@ function eap_display_past_events( $atts ) {
         'category_name'  => $category,
         'meta_query'     => array(
             'key' => 'eap_from_day',
-            'value' => $actual_date,
+            'value' => $date,
             'compare' => '<'
         ),
     );
