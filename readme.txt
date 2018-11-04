@@ -35,7 +35,7 @@ It also allows you to display **lists of events** everywhere on your site using 
 
 == Frequently Asked Questions ==
 
-= When I choose to display events by category they are not showing. =
+= When I choose to display events by category they are not showing =
 
 Double check that you have written the category name correctly and, if you have more than one category, that you have separated them with a comma.
 
