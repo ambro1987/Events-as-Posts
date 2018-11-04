@@ -1,4 +1,95 @@
 <?php
+
+// activation hook
+function eap_activation() {
+
+    update_option( 'eap_actual_version', EAP_VERSION );
+
+    // registers custom post type
+    eap_create_event_post_type();
+
+    // clear the permalinks after the post type has been registered
+    flush_rewrite_rules();
+
+    if ( get_option( 'eap_settings' ) === false ) {
+
+        // default settings
+        update_option( 'eap_settings', array(
+            'date_format'      => 'F j, Y',
+            'time_format'      => 'g:i a',
+            'number_of_events' => 0,
+            'categories'       => '',
+            'period'           => 'future',
+        ));
+    }
+}
+register_activation_hook( __FILE__, 'eap_activation' );
+
+
+// deactivation hook
+function eap_deactivation() {
+    // unregister the post type, so the rules are no longer in memory
+    unregister_post_type( 'eap_event' );
+    // clear the permalinks to remove our post type's rules from the database
+    flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'eap_deactivation' );
+
+
+// check actual plugin version
+function eap_check_actual_version() {
+
+    // updates actual version if different
+    if ( EAP_VERSION !== get_option( 'eap_actual_version' ) ) {
+
+        eap_activation();
+    }
+}
+add_action( 'plugins_loaded', 'eap_check_actual_version' );
+
+
+// front-end stylesheet
+function eap_load_plugin_stylesheet() {
+
+    $plugin_url = plugin_dir_url( __FILE__ );
+
+    wp_enqueue_style( 'eap_stylesheet', $plugin_url . '/inc/eap.css' );
+}
+add_action( 'wp_enqueue_scripts', 'eap_load_plugin_stylesheet' );
+
+
+// admin stylesheet
+function eap_wp_admin_style() {
+
+    wp_register_style( 'eap_wp_admin_css', plugin_dir_url( __FILE__ ) . '/inc/eap-admin.css', false );
+    wp_enqueue_style( 'eap_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'eap_wp_admin_style' );
+
+
+// wp-color-picker and admin script
+function eap_add_color_picker( $hook ) {
+
+    if( is_admin() ) {
+        // Add the color picker css file
+        wp_enqueue_style( 'wp-color-picker' );
+        // Include our custom jQuery file with WordPress Color Picker dependency
+        wp_enqueue_script( 'custom-script-handle', plugins_url( '/inc/eap.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+    }
+}
+add_action( 'admin_enqueue_scripts', 'eap_add_color_picker' );
+
+
+// load textdomain
+function eap_load_textdomain() {
+
+    $plugin_dir = basename(dirname( __FILE__ ) ) . '/languages';
+
+    load_plugin_textdomain( 'events-as-posts', false, $plugin_dir );
+}
+add_action( 'plugins_loaded', 'eap_load_textdomain' );
+
+
 // add meta to content
 function eap_add_meta_to_event_content( $content ) {
 

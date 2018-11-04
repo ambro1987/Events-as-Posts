@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.4\n"
-"POT-Creation-Date: 2018-10-05 11:35+0200\n"
+"POT-Creation-Date: 2018-11-04 23:12+0100\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -17,267 +17,311 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: eap-functions.php:23
-msgid "January"
-msgstr ""
-
-#: eap-functions.php:26
-msgid "February"
-msgstr ""
-
-#: eap-functions.php:29
-msgid "March"
-msgstr ""
-
-#: eap-functions.php:32
-msgid "Abril"
-msgstr ""
-
-#: eap-functions.php:35
-msgid "May"
-msgstr ""
-
-#: eap-functions.php:38
-msgid "June"
-msgstr ""
-
-#: eap-functions.php:41
-msgid "July"
-msgstr ""
-
-#: eap-functions.php:44
-msgid "August"
-msgstr ""
-
-#: eap-functions.php:47
-msgid "September"
-msgstr ""
-
-#: eap-functions.php:50
-msgid "October"
-msgstr ""
-
-#: eap-functions.php:53
-msgid "November"
-msgstr ""
-
-#: eap-functions.php:56
-msgid "December"
-msgstr ""
-
-#: eap-functions.php:119 eap-functions.php:162 eap-functions.php:199
+#: eap-functions.php:161 eap-functions.php:222 eap-functions.php:273
 msgid "There are no events"
 msgstr ""
 
-#: eap-options.php:23
-msgid "General"
+#: event-content.php:52
+msgid "Read more"
 msgstr ""
 
-#: eap-options.php:24
-msgid "Style"
+#: event-post-type.php:16 event-post-type.php:18
+msgid "Events"
 msgstr ""
 
-#: eap-options.php:55
-msgid "Reset default values"
+#: event-post-type.php:17 event-post-type.php:19
+msgid "Event"
 msgstr ""
 
-#: eap-options.php:55
-msgid "Reset"
+#: event-post-type.php:20
+msgid "Add event"
 msgstr ""
 
-#: eap-options.php:81 eap-options.php:82
-msgid "Settings"
+#: event-post-type.php:22
+msgid "Add new event"
 msgstr ""
 
-#: eap-options.php:104
-msgid "List settings"
+#: event-post-type.php:23
+msgid "New event"
 msgstr ""
 
-#: eap-options.php:112
-msgid "Number of events"
+#: event-post-type.php:24
+msgid "Edit event"
 msgstr ""
 
-#: eap-options.php:119
-msgid "Events by categories"
+#: event-post-type.php:25
+msgid "View event"
 msgstr ""
 
-#: eap-options.php:126
-msgid "Period"
+#: event-post-type.php:26
+msgid "All events"
 msgstr ""
 
-#: eap-options.php:133
-msgid "Shortcode"
+#: event-post-type.php:27
+msgid "Search events"
 msgstr ""
 
-#: eap-options.php:140
-msgid "Display excerpt"
+#: event-post-type.php:28
+msgid "No events found."
 msgstr ""
 
-#: eap-options.php:147
-msgid "Display read more link"
+#: event-post-type.php:52
+msgid "Date"
 msgstr ""
 
-#: eap-options.php:154
-msgid "Display categories"
+#: event-post-type.php:60
+msgid "Location"
 msgstr ""
 
-#: eap-options.php:177
-msgid "List style"
+#: event-post-type.php:68
+msgid "Additional information"
 msgstr ""
 
-#: eap-options.php:185
-msgid "Layout"
+#: event-post-type.php:82
+msgid "From"
 msgstr ""
 
-#: eap-options.php:192
-msgid "Background color"
+#: event-post-type.php:85 event-post-type.php:96
+msgid "Day"
 msgstr ""
 
-#: eap-options.php:214
+#: event-post-type.php:88 event-post-type.php:99
+msgid "Time"
+msgstr ""
+
+#: event-post-type.php:93
+msgid "Until"
+msgstr ""
+
+#: event-post-type.php:116
+msgid "Event location"
+msgstr ""
+
+#: event-post-type.php:123
+msgid "Link to location"
+msgstr ""
+
+#: event-post-type.php:132
+msgid "City"
+msgstr ""
+
+#: event-post-type.php:139
+msgid "Country"
+msgstr ""
+
+#: event-post-type.php:283
+msgid "Event date"
+msgstr ""
+
+#: event-post-type.php:284
+msgid "Featured image"
+msgstr ""
+
+#: settings/eap-display-settings.php:15
 msgid ""
-"<b>Events as Posts</b> allows you to display a list of events\n"
-"              everywhere on your site using a shortcode. <br> Copy and "
-"paste\n"
-"              in your posts or pages the following shortcode to "
-"display\n"
-"              a list of events: *"
+"<b>Events as Posts</b> allows you to display a list of events "
+"everywhere on your site using a shortcode. Copy and paste in your "
+"posts or pages the following shortcode to display a list of events: *"
 msgstr ""
 
-#: eap-options.php:219
+#: settings/eap-display-settings.php:19
 msgid "* The above shortcode will only display future events"
 msgstr ""
 
-#: eap-options.php:234
+#: settings/eap-display-settings.php:30
+msgid ""
+"Use the following meta keys if you want to use events's metadata with "
+"other plugins: "
+msgstr ""
+
+#: settings/eap-display-settings.php:32
+msgid "starting date of the event ( Y-m-d format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:33
+msgid "starting date of the event ( settings' format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:34
+msgid "starting time of the event ( H:i format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:35
+msgid "starting time of the event ( settings's format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:36
+msgid "ending date of the event ( Y-m-d format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:37
+msgid "ending date of the event ( settings' format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:38
+msgid "ending time of the event ( H:i format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:39
+msgid "ending time of the event ( settings's format )"
+msgstr ""
+
+#: settings/eap-display-settings.php:40
+msgid "location of the event"
+msgstr ""
+
+#: settings/eap-display-settings.php:41
+msgid "link to event's location"
+msgstr ""
+
+#: settings/eap-display-settings.php:42
+msgid "event's city"
+msgstr ""
+
+#: settings/eap-display-settings.php:43
+msgid "event's country"
+msgstr ""
+
+#: settings/eap-display-settings.php:44
+msgid "additional information about the event"
+msgstr ""
+
+#: settings/eap-display-settings.php:49
+msgid ""
+"If you're going to use 'M' or 'F' as a date format for the month, "
+"which display the month in letters (short and long form), the month "
+"name will be stored in the database in the language of the user who "
+"created or updated the event."
+msgstr ""
+
+#: settings/eap-display-settings.php:66
+#: settings/eap-display-settings.php:85
+msgid "Valid characters: "
+msgstr ""
+
+#: settings/eap-display-settings.php:69
+#: settings/eap-display-settings.php:88
+msgid "Reference: "
+msgstr ""
+
+#: settings/eap-display-settings.php:105
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
 msgstr ""
 
-#: eap-options.php:244
+#: settings/eap-display-settings.php:119
 msgid ""
 "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr ""
 
-#: eap-options.php:254
+#: settings/eap-display-settings.php:134
 msgid "Future events"
 msgstr ""
 
-#: eap-options.php:256
+#: settings/eap-display-settings.php:141
 msgid "Past events"
 msgstr ""
 
-#: eap-options.php:258
+#: settings/eap-display-settings.php:148
 msgid "All"
 msgstr ""
 
-#: eap-options.php:367
+#: settings/eap-display-settings.php:272
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: eap-options.php:370
+#: settings/eap-display-settings.php:279
 msgid "1 Column"
 msgstr ""
 
-#: eap-options.php:372
+#: settings/eap-display-settings.php:286
 msgid "2 Columns"
 msgstr ""
 
-#: eap-options.php:374
+#: settings/eap-display-settings.php:293
 msgid "3 Columns"
 msgstr ""
 
-#: event-content.php:44
-msgid "Read more"
+#: settings/eap-register-settings.php:7
+msgid ""
+"<span class=\"dashicons dashicons-calendar-alt\"></span> Date settings"
 msgstr ""
 
-#: event-post-type.php:18 event-post-type.php:20
-msgid "Events"
+#: settings/eap-register-settings.php:13
+msgid ""
+"<span class=\"dashicons dashicons-editor-ul\"></span> List settings"
 msgstr ""
 
-#: event-post-type.php:19 event-post-type.php:21
-msgid "Event"
+#: settings/eap-register-settings.php:19
+msgid ""
+"<span class=\"dashicons dashicons-media-code\"></span> Events meta"
 msgstr ""
 
-#: event-post-type.php:22
-msgid "Add event"
+#: settings/eap-register-settings.php:26
+msgid "Date format"
 msgstr ""
 
-#: event-post-type.php:24
-msgid "Add new event"
+#: settings/eap-register-settings.php:33
+msgid "Time format"
 msgstr ""
 
-#: event-post-type.php:25
-msgid "New event"
+#: settings/eap-register-settings.php:40
+msgid "Number of events"
 msgstr ""
 
-#: event-post-type.php:26
-msgid "Edit event"
+#: settings/eap-register-settings.php:47
+msgid "Events by categories"
 msgstr ""
 
-#: event-post-type.php:27
-msgid "View event"
+#: settings/eap-register-settings.php:54
+msgid "Period"
 msgstr ""
 
-#: event-post-type.php:28
-msgid "All events"
+#: settings/eap-register-settings.php:61
+msgid "Shortcode"
 msgstr ""
 
-#: event-post-type.php:29
-msgid "Search events"
+#: settings/eap-register-settings.php:68
+msgid "Display excerpt"
 msgstr ""
 
-#: event-post-type.php:30
-msgid "No events found."
+#: settings/eap-register-settings.php:75
+msgid "Display read more link"
 msgstr ""
 
-#: event-post-type.php:55
-msgid "Date"
+#: settings/eap-register-settings.php:82
+msgid "Display categories"
 msgstr ""
 
-#: event-post-type.php:61
-msgid "Location"
+#: settings/eap-register-settings.php:101
+msgid "<span class=\"dashicons dashicons-editor-ul\"></span> List style"
 msgstr ""
 
-#: event-post-type.php:67
-msgid "Additional information"
+#: settings/eap-register-settings.php:108
+msgid "Layout"
 msgstr ""
 
-#: event-post-type.php:81
-msgid "From"
+#: settings/eap-register-settings.php:115
+msgid "Background color"
 msgstr ""
 
-#: event-post-type.php:83 event-post-type.php:91
-msgid "Day"
+#: settings/eap-settings-page.php:25
+msgid "General"
 msgstr ""
 
-#: event-post-type.php:86 event-post-type.php:94
-msgid "Time"
+#: settings/eap-settings-page.php:26
+msgid "Style"
 msgstr ""
 
-#: event-post-type.php:89
-msgid "Until"
+#: settings/eap-settings-page.php:72
+msgid "Date format not valid: "
 msgstr ""
 
-#: event-post-type.php:106
-msgid "Event location"
+#: settings/eap-settings-page.php:81
+msgid "Time format not valid: "
 msgstr ""
 
-#: event-post-type.php:111
-msgid "Link to location"
-msgstr ""
-
-#: event-post-type.php:118
-msgid "City"
-msgstr ""
-
-#: event-post-type.php:123
-msgid "Country"
-msgstr ""
-
-#: event-post-type.php:214
-msgid "Event date"
-msgstr ""
-
-#: event-post-type.php:215
-msgid "Featured image"
+#: settings/eap-settings-page.php:109 settings/eap-settings-page.php:110
+msgid "Settings"
 msgstr ""

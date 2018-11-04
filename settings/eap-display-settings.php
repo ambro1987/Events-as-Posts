@@ -11,7 +11,7 @@ function eap_list_settings_cb() {
     ?>
     <hr />
 
-    <p class="eap-option__about">
+    <p>
         <?php _e( '<b>Events as Posts</b> allows you to display a list of events everywhere on your site using a shortcode. Copy and paste in your posts or pages the following shortcode to display a list of events: *', 'events-as-posts' ) ?>
     </p>
     <span class="eap-option__shortcode">[display_events]</span>
@@ -19,6 +19,35 @@ function eap_list_settings_cb() {
         <i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i>
     </p>
     <br />
+    <?php
+}
+
+function eap_event_meta_settings_cb() {
+    ?>
+    <hr />
+
+    <p>
+        <?php _e( 'Use the following meta keys if you want to use events\'s metadata with other plugins: ', 'events-as-posts' ); ?>
+        <ul>
+            <li><b>eap_from_day: </b><?php _e( 'starting date of the event ( Y-m-d format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_from_day_custom_format: </b><?php _e( 'starting date of the event ( settings\' format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_from_time: </b><?php _e( 'starting time of the event ( H:i format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_from_time_custom_format: </b><?php _e( 'starting time of the event ( settings\'s format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_until_day: </b><?php _e( 'ending date of the event ( Y-m-d format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_until_day_custom_format: </b><?php _e( 'ending date of the event ( settings\' format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_until_time: </b><?php _e( 'ending time of the event ( H:i format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_from_time_custom_format: </b><?php _e( 'ending time of the event ( settings\'s format )', 'events-as-posts' ); ?></li>
+            <li><b>eap_location: </b><?php _e( 'location of the event', 'events-as-posts' ); ?></li>
+            <li><b>eap_link_location: </b><?php _e( 'link to event\'s location', 'events-as-posts' ); ?></li>
+            <li><b>eap_city: </b><?php _e( 'event\'s city', 'events-as-posts' ); ?></li>
+            <li><b>eap_country: </b><?php _e( 'event\'s country', 'events-as-posts' ); ?></li>
+            <li><b>eap_add_info: </b><?php _e( 'additional information about the event', 'events-as-posts' ); ?></li>
+        </ul>
+    </p>
+
+    <p>
+        <?php _e( 'If you\'re going to use \'M\' or \'F\' as a date format for the month, which display the month in letters (short and long form), the month name will be stored in the database in the language of the user who created or updated the event.', 'events-as-posts' ); ?>
+    </p>
     <?php
 }
 
@@ -37,7 +66,7 @@ function eap_date_format_cb() {
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> d, D, j, l, S, F, m, M, n, Y, y</i>
         </p>
         <p>
-            <i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/function.date.php" target="_blank"><?php _e( 'PHP: date - Manual', 'events-as-posts' ); ?></a></i>
+            <i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/function.date.php" target="_blank">PHP: date - Manual</a></i>
         </p>
     </p>
     <?php
@@ -56,7 +85,7 @@ function eap_time_format_cb() {
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> a, A, g, G, h, H, i</i>
         </p>
         <p>
-            <i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/function.date.php" target="_blank"><?php _e( 'PHP: date - Manual', 'events-as-posts' ); ?></a></i>
+            <i><?php _e( 'Reference: ', 'events-as-posts' )?><a href="https://secure.php.net/manual/function.date.php" target="_blank">PHP: date - Manual</a></i>
         </p>
     </p>
     <?php
@@ -223,6 +252,8 @@ function eap_cat_cb() {
     ?>
 
     <input type="checkbox" id="eap_more-checkbox" name="eap_settings[cat]" value="true" <?php if ( isset ( $setting['cat'] ) ) checked( 'true', $setting['cat'] ); ?> />
+    <br />
+    <br />
     <?php
 }
 

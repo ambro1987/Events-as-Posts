@@ -1,6 +1,6 @@
 === Events as Posts ===
 
-Contributors: orbam7819
+Contributors: orbam7819, zanychew
 Author URI: https://ambrogiopiredda.com
 Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
@@ -15,7 +15,7 @@ A simple plugin that allows you to post events on your site
 
 == Description ==
 
-**Events as Posts** is a simple plugin that allows you to post events as if they were normal posts, but with added fields like date and location.
+**Events as Posts** is a simple plugin that allows you to post events as if they were normal posts, but with added fields like date, time and location.
 
 It also allows you to display **lists of events** everywhere on your site using a shortcode. You can choose if you want to display future, past or all the events, and also the number of events and of which category.
 
@@ -47,28 +47,53 @@ The setting that allows you to show the excerpt on lists of events is not relate
 
 Yes, just add to the shortcode `order="ASC"` for ascendent order or `order="DESC"` for descendent order.
 
+= Using events' metadata with other plugins =
+
+Use the following meta keys:
+
+* eap_from_day: starting date of the event ( Y-m-d format )
+* eap_from_day_custom_format: starting date of the event ( settings' format )
+* eap_from_time: starting time of the event ( H:i format )
+* eap_from_time_custom_format: starting time of the event ( settings' format )
+* eap_until_day: ending date of the event ( Y-m-d format )
+* eap_until_day_custom_format: ending date of the event ( settings' format )
+* eap_until_time: ending time of the event ( H:i format )
+* eap_until_time_custom_format: ending time of the event ( settings' format )
+* eap_location: location of the event
+* eap_link_location: link to event's location
+* eap_city: event's city
+* eap_country: event's country
+* eap_add_info: additional information about the event
+
+If you're going to use 'M' or 'F' as a date format for the month, which display the month in letters (short and long form), the month name will be stored in the database in the language of the user who created or updated the event.
+
 == Screenshots ==
 
 1. Event post with date, time and location
 
 == Changelog ==
 
+= 0.5 &mdash; 5 of November, 2018 =
+* Added date and time format options.
+* Added date and time custom format meta keys to use with other plugins
+* General improvements in the plugin and the code
+
 = 0.4 &mdash; 5 of October, 2018 =
-* New: 'Country' and 'Additional information' fields
-* New: 'Display categories' option for list of events
-* Tweak: Improved settings page and removed options for colors (apart from background color) in style tab
+* Added 'Country' and 'Additional information' fields
+* Added 'Display categories' option for list of events
+* Improved settings page and removed options for colors ( apart from background color ) in style tab
 
 = 0.3 &mdash; 3 of October, 2018 =
-* New: 'Read more link' option for list of events
-* New: Admin stylesheet
-* Tweak: Improved location fields when adding or editing an event
+* Added 'Read more link' option for list of events
+* Added admin stylesheet
+* Improved location fields when adding or editing an event
 
 = 0.2.1 &mdash; 2 of October, 2018 =
-* Fix: Display all the future or all the past events independently of posts per page in 'Settings' -> 'Reading'
+* Display all the future or all the past events independently of posts per page in 'Settings' -> 'Reading'
 
 = 0.2 &mdash; 2 of October, 2018 =
-* New: Display event's 'Until' date (if present) in 'Date' column in 'Events' -> 'All events'
-* Fix: List of events responsive
+* Added event's 'Until' date ( if present ) in 'Date' column in 'Events' -> 'All events'
+* List of events responsive
 
 = 0.1 &mdash; 15 of September, 2018 =
 * First release.

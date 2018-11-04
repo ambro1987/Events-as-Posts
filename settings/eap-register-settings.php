@@ -14,6 +14,12 @@ function eap_settings_init() {
         'eap_list_settings_cb',
         'eap_settings'
     );
+    add_settings_section(
+        'eap_event_meta_settings',
+        __( '<span class="dashicons dashicons-media-code"></span> Events meta', 'events-as-posts' ),
+        'eap_event_meta_settings_cb',
+        'eap_settings'
+    );
 
     add_settings_field(
         'eap_date_format',

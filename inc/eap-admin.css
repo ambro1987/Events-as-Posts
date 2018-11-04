@@ -4,9 +4,6 @@
 .eap-option__shortcode {
   color: red;
 }
-.eap-option__about {
-  margin-top: 1.6em;
-}
 .eap-post-event label,
 .eap-post-event input {
   vertical-align: middle;

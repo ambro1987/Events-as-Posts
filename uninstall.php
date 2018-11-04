@@ -8,3 +8,4 @@ if ( !defined('WP_UNINSTALL_PLUGIN' ) ) {
 // delete options
 delete_option( 'eap_settings' );
 delete_option( 'eap_settings_style' );
+delete_option( 'eap_actual_version' );
