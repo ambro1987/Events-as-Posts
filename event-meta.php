@@ -25,19 +25,30 @@ $comma = '<span class="eap__comma">, </span>'
     <span class="eap__date"><?php if ( $until_date && ( $until_date != $from_date ) ) echo $sepmark_date . date_i18n( $setting['date_format'], strtotime( $until_date ) ); ?></span>
     <span class="eap__time">
         <?php
-        if ( $until_time ) {
+        if ( ! empty( $until_time ) ) {
 
-            if ( $from_date != $until_date ) {
+            if ( $until_date ) {
 
-                echo $sepmark_time;
+                if ( $until_date != $from_date ) {
 
+                    echo $sepmark_time;
+
+                } else {
+
+                    echo $sepmark_date;
+                }
+
+                echo date( $setting['time_format'], strtotime( $until_date . $until_time ) );
+
+            // until date not set
             } else {
 
-                echo $sepmark_date;
+                if ( $from_time && ( $from_time != $until_time ) ) {
+
+                    echo $sepmark_date;
+                    echo date( $setting['time_format'], strtotime( $until_date . $until_time ) );
+                }
             }
-
-            echo date( $setting['time_format'], strtotime( $until_date . $until_time ) );
-
         }
         ?>
     </span>
@@ -60,4 +71,6 @@ $comma = '<span class="eap__comma">, </span>'
 </p>
 
 <!-- additional info -->
-<p class="eap__add-info"><?php if ( ! empty ( $add_info ) ) echo $add_info; ?></p>
+<p class="eap__add-info">
+    <?php if ( ! empty ( $add_info ) ) echo $add_info; ?>
+</p>
