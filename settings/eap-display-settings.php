@@ -260,8 +260,15 @@ function eap_cat_cb() {
 
 // list style section
 function eap_list_style_cb() {
-  // write something here if you want
+    // write something here if you want
 }
+
+
+// custom css section
+function eap_custom_css_cb() {
+    // write something here if you want
+}
+
 
 // layout option
 function eap_layout_cb() {
@@ -305,4 +312,10 @@ function eap_bg_color_cb() {
 
     <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[bg_color]" value="<?php echo isset( $setting['bg_color'] ) ? esc_attr( $setting['bg_color'] ) : '#f4f4f4'; ?>" data-default-color="#f4f4f4" />
     <?php
+}
+
+
+// list css
+function eap_list_css_cb() {
+
 }

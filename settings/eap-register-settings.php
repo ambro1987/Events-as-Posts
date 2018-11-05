@@ -102,6 +102,12 @@ function eap_settings_style_init() {
         'eap_list_style_cb',
         'eap_settings_style'
     );
+    add_settings_section(
+        'eap_custom_css',
+        __( '<span class="dashicons dashicons-edit"></span> Custom CSS', 'events-as-posts' ),
+        'eap_custom_css_cb',
+        'eap_settings_style'
+    );
 
     add_settings_field(
         'eap_layout',
@@ -116,6 +122,13 @@ function eap_settings_style_init() {
         'eap_bg_color_cb',
         'eap_settings_style',
         'eap_list_style'
+    );
+    add_settings_field(
+        'eap_list_css',
+        __( 'List', 'events-as-posts' ),
+        'eap_list_css_cb',
+        'eap_settings_style',
+        'eap_custom_css'
     );
 
     register_setting(
