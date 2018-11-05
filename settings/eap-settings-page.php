@@ -59,12 +59,15 @@ function eap_settings_page_html() {
 
 
 // settings errors
-function eap_setting_errors( $setting ) {
+function eap_settings_errors( $setting ) {
 
     $prev_valid_setting = get_option( 'eap_settings' );
 
     $message = null;
     $type = null;
+
+
+    /* eap_settings validation */
 
     if ( preg_match( '/[^-dDjFmMnYylS,.\/\s]+/' , $setting['date_format'] ) ) {
 
@@ -90,8 +93,20 @@ function eap_setting_errors( $setting ) {
         $message = __( 'Settings saved.', 'events-as-posts' );
     }
 
+
+    /* eap_settings_style validation */
+
+    if ( ! empty( $setting['custom_css'] ) ) {
+
+        $setting['custom_css'] = wp_strip_all_tags( $setting['custom_css'] );
+
+        $type = 'updated';
+        $message = __( 'Settings saved.', 'events-as-posts' );
+    }
+
+    // add settings errors
     add_settings_error(
-        'eap_setting_errors',
+        'eap_settings_errors',
         esc_attr( 'settings-updated' ),
         $message,
         $type
@@ -105,12 +120,12 @@ function eap_setting_errors( $setting ) {
 function eap_settings_page() {
 
     add_submenu_page(
-        'edit.php?post_type=eap_event', // slug name for the parent menu
-        __( 'Settings', 'events-as-posts' ), // page title
-        __( 'Settings', 'events-as-posts' ), // menu title
-        'manage_options', // capability
-        'eap_settings', // slug name to refer to this menu
-        'eap_settings_page_html' // function to be called to output the content for this page
+        'edit.php?post_type=eap_event',
+        __( 'Settings', 'events-as-posts' ),
+        __( 'Settings', 'events-as-posts' ),
+        'manage_options',
+        'eap_settings',
+        'eap_settings_page_html'
     );
 }
 add_action( 'admin_menu', 'eap_settings_page' );

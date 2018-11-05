@@ -86,7 +86,7 @@ function eap_settings_init() {
     );
 
     $args = array(
-        'sanitize_callback' => 'eap_setting_errors',
+        'sanitize_callback' => 'eap_settings_errors',
     );
     register_setting( 'eap_settings', 'eap_settings', $args );
 }
@@ -103,9 +103,9 @@ function eap_settings_style_init() {
         'eap_settings_style'
     );
     add_settings_section(
-        'eap_custom_css',
+        'eap_custom_css_section',
         __( '<span class="dashicons dashicons-edit"></span> Custom CSS', 'events-as-posts' ),
-        'eap_custom_css_cb',
+        'eap_custom_css_section_cb',
         'eap_settings_style'
     );
 
@@ -118,22 +118,29 @@ function eap_settings_style_init() {
     );
     add_settings_field(
         'eap_bg_color',
-        __( 'Background color', 'events-as-posts' ),
+        __( 'List background color', 'events-as-posts' ),
         'eap_bg_color_cb',
         'eap_settings_style',
         'eap_list_style'
     );
     add_settings_field(
-        'eap_list_css',
-        __( 'List', 'events-as-posts' ),
-        'eap_list_css_cb',
+        'eap_event_bg_color',
+        __( 'Event background color', 'events-as-posts' ),
+        'eap_event_bg_color_cb',
         'eap_settings_style',
-        'eap_custom_css'
+        'eap_list_style'
+    );
+    add_settings_field(
+        'eap_custom_css',
+        'CSS',
+        'eap_custom_css_cb',
+        'eap_settings_style',
+        'eap_custom_css_section'
     );
 
-    register_setting(
-        'eap_settings_style',
-        'eap_settings_style'
+    $args = array(
+        'sanitize_callback' => 'eap_settings_errors',
     );
+    register_setting( 'eap_settings_style', 'eap_settings_style', $args );
 }
 add_action( 'admin_init', 'eap_settings_style_init' );

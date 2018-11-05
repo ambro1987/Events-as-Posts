@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.4\n"
-"POT-Creation-Date: 2018-11-04 23:46+0100\n"
+"POT-Creation-Date: 2018-11-05 15:34+0100\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: eap-functions.php:161 eap-functions.php:222 eap-functions.php:273
+#: eap-functions.php:192 eap-functions.php:253 eap-functions.php:304
 msgid "There are no events"
 msgstr ""
 
@@ -227,19 +227,23 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: settings/eap-display-settings.php:272
+#: settings/eap-display-settings.php:270
+msgid "Override default values or add new ones"
+msgstr ""
+
+#: settings/eap-display-settings.php:281
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: settings/eap-display-settings.php:279
+#: settings/eap-display-settings.php:288
 msgid "1 Column"
 msgstr ""
 
-#: settings/eap-display-settings.php:286
+#: settings/eap-display-settings.php:295
 msgid "2 Columns"
 msgstr ""
 
-#: settings/eap-display-settings.php:293
+#: settings/eap-display-settings.php:302
 msgid "3 Columns"
 msgstr ""
 
@@ -298,12 +302,20 @@ msgstr ""
 msgid "<span class=\"dashicons dashicons-editor-ul\"></span> List style"
 msgstr ""
 
-#: settings/eap-register-settings.php:108
+#: settings/eap-register-settings.php:107
+msgid "<span class=\"dashicons dashicons-edit\"></span> Custom CSS"
+msgstr ""
+
+#: settings/eap-register-settings.php:114
 msgid "Layout"
 msgstr ""
 
-#: settings/eap-register-settings.php:115
-msgid "Background color"
+#: settings/eap-register-settings.php:121
+msgid "List background color"
+msgstr ""
+
+#: settings/eap-register-settings.php:128
+msgid "Event background color"
 msgstr ""
 
 #: settings/eap-settings-page.php:25
@@ -314,18 +326,18 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: settings/eap-settings-page.php:72
+#: settings/eap-settings-page.php:75
 msgid "Date format not valid: "
 msgstr ""
 
-#: settings/eap-settings-page.php:81
+#: settings/eap-settings-page.php:84
 msgid "Time format not valid: "
 msgstr ""
 
-#: settings/eap-settings-page.php:90
+#: settings/eap-settings-page.php:93 settings/eap-settings-page.php:104
 msgid "Settings saved."
 msgstr ""
 
-#: settings/eap-settings-page.php:109 settings/eap-settings-page.php:110
+#: settings/eap-settings-page.php:124 settings/eap-settings-page.php:125
 msgid "Settings"
 msgstr ""

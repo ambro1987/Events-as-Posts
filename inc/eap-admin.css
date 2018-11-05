@@ -1,8 +1,11 @@
-.eap-option__date-format input {
+.eap-setting__date-format input {
     max-width: 56px;
 }
-.eap-option__shortcode {
+.eap-setting__shortcode {
   color: red;
+}
+.eap-setting__custom-css {
+    padding: .6em;
 }
 .eap-post-event label,
 .eap-post-event input {

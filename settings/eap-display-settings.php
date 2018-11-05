@@ -14,7 +14,7 @@ function eap_list_settings_cb() {
     <p>
         <?php _e( '<b>Events as Posts</b> allows you to display a list of events everywhere on your site using a shortcode. Copy and paste in your posts or pages the following shortcode to display a list of events: *', 'events-as-posts' ) ?>
     </p>
-    <span class="eap-option__shortcode">[display_events]</span>
+    <span class="eap-setting__shortcode">[display_events]</span>
     <p>
         <i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i>
     </p>
@@ -60,7 +60,7 @@ function eap_date_format_cb() {
     $setting = get_option( 'eap_settings' );
     ?>
 
-    <p class="eap-option__date-format">
+    <p class="eap-setting__date-format">
         <input type="text" name="eap_settings[date_format]" value="<?php echo $setting['date_format']; ?>" required /> <!-- pattern="[-dDjFmMnYylS,./\s]+" -->
         <p>
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> d, D, j, l, S, F, m, M, n, Y, y</i>
@@ -79,7 +79,7 @@ function eap_time_format_cb() {
     $setting = get_option( 'eap_settings' );
     ?>
 
-    <p class="eap-option__date-format">
+    <p class="eap-setting__date-format">
         <input type="text" name="eap_settings[time_format]" value="<?php echo $setting['time_format']; ?>" required /> <!-- pattern="[aAgGhHi:\s]+"  -->
         <p>
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> a, A, g, G, h, H, i</i>
@@ -157,7 +157,7 @@ function eap_generate_shortcode_cb() {
 
     $setting = get_option( 'eap_settings' );
 
-    $shortcode = '<span class="eap-option__shortcode">';
+    $shortcode = '<span class="eap-setting__shortcode">';
 
     // shortcode for future events
     if ( $setting['period'] == 'future' ) {
@@ -265,8 +265,10 @@ function eap_list_style_cb() {
 
 
 // custom css section
-function eap_custom_css_cb() {
-    // write something here if you want
+function eap_custom_css_section_cb() {
+    ?>
+    <p><?php _e( 'Override default values or add new ones', 'events-as-posts' ); ?></p>
+    <?php
 }
 
 
@@ -304,18 +306,34 @@ function eap_layout_cb() {
 }
 
 
-// background color option
+// list background color
 function eap_bg_color_cb() {
 
     $setting = get_option( 'eap_settings_style' );
     ?>
 
-    <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[bg_color]" value="<?php echo isset( $setting['bg_color'] ) ? esc_attr( $setting['bg_color'] ) : '#f4f4f4'; ?>" data-default-color="#f4f4f4" />
+    <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[bg_color]" value="<?php echo isset( $setting['bg_color'] ) ? esc_attr( $setting['bg_color'] ) : ''; ?>" />
     <?php
 }
 
 
-// list css
-function eap_list_css_cb() {
+// event background color
+function eap_event_bg_color_cb() {
 
+    $setting = get_option( 'eap_settings_style' );
+    ?>
+
+    <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[event_bg_color]" value="<?php echo isset( $setting['event_color'] ) ? esc_attr( $setting['event_color'] ) : '#f4f4f4'; ?>" data-default-color="#f4f4f4" />
+    <?php
+}
+
+
+// custom css
+function eap_custom_css_cb() {
+
+    $setting = get_option( 'eap_settings_style' );
+    ?>
+
+    <textarea class="eap-setting__custom-css" name="eap_settings_style[custom_css]" rows="8" cols="40"><?php if ( isset( $setting['custom_css'] ) ) echo $setting['custom_css']; ?></textarea>
+    <?php
 }

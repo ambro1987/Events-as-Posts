@@ -6,7 +6,7 @@ Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.8
 Tested up to: 4.9.8
-Stable tag: 0.5
+Stable tag: 0.5.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -73,7 +73,10 @@ If you're going to use 'M' or 'F' as a date format for the month, which display 
 
 == Changelog ==
 
-= 0.5 &mdash; 5 of November, 2018 =
+= 0.5.1 &mdash; 5 of November, 2018 =
+* Added custom css option
+
+= 0.5 &mdash; 4 of November, 2018 =
 * Added date and time format options.
 * Added date and time custom format meta keys to use with other plugins
 * General improvements in the plugin and the code
