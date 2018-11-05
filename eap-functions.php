@@ -5,33 +5,26 @@ function eap_activation() {
 
     update_option( 'eap_version', EAP_VERSION );
 
-    // registers custom post type
-    eap_create_event_post_type();
-
-    // clear the permalinks after the post type has been registered
-    flush_rewrite_rules();
-
-
     /* eap_settings updating process */
 
     // eap_settings option default values
-	$eap_settings_default = array(
+    $eap_settings_default = array(
         'date_format'      => 'F j, Y',
         'time_format'      => 'g:i a',
         'number_of_events' => 0,
         'categories'       => '',
         'period'           => 'future',
-	);
+    );
 
     // eap settings option defined by the user
-	$eap_settings_user = get_option( 'eap_settings' );
+    $eap_settings_user = get_option( 'eap_settings' );
 
     if ( $eap_settings_user === false ) {
 
         $eap_settings_user = array();
     }
 
-	update_option( 'eap_settings', array_merge( $eap_settings_default, $eap_settings_user ) );
+    update_option( 'eap_settings', array_merge( $eap_settings_default, $eap_settings_user ) );
 
 
     /* eap_settings_style updating process */
@@ -39,20 +32,26 @@ function eap_activation() {
     $custom_css = '/* events as posts custom css */&#13;&#13;.eap__list {&#13;&#13;}&#13;.eap__event {&#13;&#13;}';
 
     // eap_settings_style option default values
-	$eap_settings_style_default = array(
+    $eap_settings_style_default = array(
         'event_bg_color'    => '#f4f4f4',
         'custom_css'        => $custom_css,
-	);
+    );
 
     // eap settings option defined by the user
-	$eap_settings_style_user = get_option( 'eap_settings_style' );
+    $eap_settings_style_user = get_option( 'eap_settings_style' );
 
     if ( $eap_settings_style_user === false ) {
 
         $eap_settings_style_user = array();
     }
 
-	update_option( 'eap_settings_style', array_merge( $eap_settings_style_default, $eap_settings_style_user ) );
+    update_option( 'eap_settings_style', array_merge( $eap_settings_style_default, $eap_settings_style_user ) );
+    
+    // registers custom post type
+    eap_create_event_post_type();
+
+    // clear the permalinks after the post type has been registered
+    flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'eap_activation' );
 
