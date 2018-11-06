@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Events as Posts 0.4\n"
-"POT-Creation-Date: 2018-11-05 15:34+0100\n"
+"POT-Creation-Date: 2018-11-06 11:42+0100\n"
 "PO-Revision-Date: 2018-09-11 17:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ambrogio Piredda\n"
@@ -204,46 +204,54 @@ msgstr ""
 msgid "Reference: "
 msgstr ""
 
-#: settings/eap-display-settings.php:105
+#: settings/eap-display-settings.php:102
+msgid "Display calendar icon before date"
+msgstr ""
+
+#: settings/eap-display-settings.php:117
+msgid "Display clock icon before time"
+msgstr ""
+
+#: settings/eap-display-settings.php:135
 msgid ""
 "Select the number of events you want to display or <b>0</b> (zero) to "
 "display all"
 msgstr ""
 
-#: settings/eap-display-settings.php:119
+#: settings/eap-display-settings.php:149
 msgid ""
 "Separate the categories with a comma (category 1, category 2, etc.)"
 msgstr ""
 
-#: settings/eap-display-settings.php:134
+#: settings/eap-display-settings.php:164
 msgid "Future events"
 msgstr ""
 
-#: settings/eap-display-settings.php:141
+#: settings/eap-display-settings.php:171
 msgid "Past events"
 msgstr ""
 
-#: settings/eap-display-settings.php:148
+#: settings/eap-display-settings.php:178
 msgid "All"
 msgstr ""
 
-#: settings/eap-display-settings.php:270
+#: settings/eap-display-settings.php:300
 msgid "Override default values or add new ones"
 msgstr ""
 
-#: settings/eap-display-settings.php:281
+#: settings/eap-display-settings.php:311
 msgid "Select the layout for the list of events"
 msgstr ""
 
-#: settings/eap-display-settings.php:288
+#: settings/eap-display-settings.php:318
 msgid "1 Column"
 msgstr ""
 
-#: settings/eap-display-settings.php:295
+#: settings/eap-display-settings.php:325
 msgid "2 Columns"
 msgstr ""
 
-#: settings/eap-display-settings.php:302
+#: settings/eap-display-settings.php:332
 msgid "3 Columns"
 msgstr ""
 
@@ -271,50 +279,58 @@ msgid "Time format"
 msgstr ""
 
 #: settings/eap-register-settings.php:40
-msgid "Number of events"
+msgid "Date icon"
 msgstr ""
 
 #: settings/eap-register-settings.php:47
-msgid "Events by categories"
+msgid "Time icon"
 msgstr ""
 
 #: settings/eap-register-settings.php:54
-msgid "Period"
+msgid "Number of events"
 msgstr ""
 
 #: settings/eap-register-settings.php:61
-msgid "Shortcode"
+msgid "Events by categories"
 msgstr ""
 
 #: settings/eap-register-settings.php:68
-msgid "Display excerpt"
+msgid "Period"
 msgstr ""
 
 #: settings/eap-register-settings.php:75
-msgid "Display read more link"
+msgid "Shortcode"
 msgstr ""
 
 #: settings/eap-register-settings.php:82
+msgid "Display excerpt"
+msgstr ""
+
+#: settings/eap-register-settings.php:89
+msgid "Display read more link"
+msgstr ""
+
+#: settings/eap-register-settings.php:96
 msgid "Display categories"
 msgstr ""
 
-#: settings/eap-register-settings.php:101
+#: settings/eap-register-settings.php:115
 msgid "<span class=\"dashicons dashicons-editor-ul\"></span> List style"
 msgstr ""
 
-#: settings/eap-register-settings.php:107
+#: settings/eap-register-settings.php:121
 msgid "<span class=\"dashicons dashicons-edit\"></span> Custom CSS"
 msgstr ""
 
-#: settings/eap-register-settings.php:114
+#: settings/eap-register-settings.php:128
 msgid "Layout"
 msgstr ""
 
-#: settings/eap-register-settings.php:121
+#: settings/eap-register-settings.php:135
 msgid "List background color"
 msgstr ""
 
-#: settings/eap-register-settings.php:128
+#: settings/eap-register-settings.php:142
 msgid "Event background color"
 msgstr ""
 
@@ -326,18 +342,18 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: settings/eap-settings-page.php:75
-msgid "Date format not valid: "
-msgstr ""
-
-#: settings/eap-settings-page.php:84
-msgid "Time format not valid: "
-msgstr ""
-
-#: settings/eap-settings-page.php:93 settings/eap-settings-page.php:104
+#: settings/eap-settings-page.php:67
 msgid "Settings saved."
 msgstr ""
 
-#: settings/eap-settings-page.php:124 settings/eap-settings-page.php:125
+#: settings/eap-settings-page.php:73
+msgid "Date format not valid: "
+msgstr ""
+
+#: settings/eap-settings-page.php:82
+msgid "Time format not valid: "
+msgstr ""
+
+#: settings/eap-settings-page.php:115 settings/eap-settings-page.php:116
 msgid "Settings"
 msgstr ""
