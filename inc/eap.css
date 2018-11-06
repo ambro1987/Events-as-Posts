@@ -11,5 +11,8 @@
 .eap__time-icon {
     margin-right: 2px;
 }
+.no-wrap {
+    white-space: nowrap;
+}
 
 /* you can add your styles here */

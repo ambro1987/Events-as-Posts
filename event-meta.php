@@ -22,60 +22,68 @@ $sepmark_time = '<span class="eap__sepmark-time"> | </span>';
 $comma = '<span class="eap__comma">, </span>'
 ?>
 
-<!-- display event meta -->
+<!-- event meta -->
 <p class="eap__meta">
-    <span class="eap__date"><?php if ( isset( $setting['date_icon'] ) ) echo $date_icon . ' '; ?><?php echo date_i18n( $setting['date_format'], strtotime( $from_date ) ); ?></span>
-
-    <!-- from time -->
-    <span class="eap__time">
+    <?php
+    // from date
+    if ( $from_date ) {
+        ?>
+        <span class="eap__date no-wrap"><?php if ( isset( $setting['date_icon'] ) ) echo $date_icon . ' '; ?><?php echo date_i18n( $setting['date_format'], strtotime( $from_date ) ); ?></span>
         <?php
-        if ( $from_time ) {
+    }
 
-            echo $sepmark_time;
+    // from time
+    if ( $from_time ) {
 
+        echo $sepmark_time;
+        ?>
+        <span class="eap__time no-wrap">
+            <?php
             if ( isset( $setting['time_icon'] ) ) {
 
                 echo $time_icon;
             }
 
             echo date( $setting['time_format'], strtotime( $from_date . $from_time ) );
-        }
-        ?>
-    </span>
-
-    <!-- until date -->
-    <span class="eap__date">
+            ?>
+        </span>
         <?php
-        if ( $until_date && ( $until_date != $from_date ) ) {
+    }
 
-            echo $sepmark_date;
+    // until date
+    if ( $until_date && ( $until_date != $from_date ) ) {
 
+        echo $sepmark_date;
+        ?>
+        <span class="eap__date no-wrap">
+            <?php
             if ( isset( $setting['date_icon'] ) ) {
 
                 echo $date_icon . ' ';
             }
 
             echo date_i18n( $setting['date_format'], strtotime( $until_date ) );
-        }
-    ?>
-    </span>
-
-    <!-- until time -->
-    <span class="eap__time">
+            ?>
+        </span>
         <?php
-        if ( ! empty( $until_time ) ) {
+    }
 
-            if ( $until_date ) {
+    // until time
+    if ( $until_time ) {
 
-                if ( $until_date != $from_date ) {
+        if ( $until_date ) {
 
-                    echo $sepmark_time;
+            if ( $until_date != $from_date ) {
 
-                } else {
+                echo $sepmark_time;
 
-                    echo $sepmark_date;
-                }
+            } else {
 
+                echo $sepmark_date;
+            }
+            ?>
+            <span class="eap__time no-wrap">
+                <?php
                 // time icon
                 if ( isset( $setting['time_icon'] ) && ( $from_date != $until_date ) ) {
 
@@ -83,38 +91,68 @@ $comma = '<span class="eap__comma">, </span>'
                 }
 
                 echo date( $setting['time_format'], strtotime( $until_date . $until_time ) );
+                ?>
+            </span>
+            <?php
 
-            // until date not set
-            } else {
+        // until date not set
+        } else {
 
-                if ( $from_time && ( $from_time != $until_time ) ) {
+            if ( $from_time && ( $from_time != $until_time ) ) {
 
-                    echo $sepmark_date;
+                echo $sepmark_date;
+                ?>
+                <span class="eap__time no-wrap">
+                    <?php
                     echo date( $setting['time_format'], strtotime( $until_date . $until_time ) );
-                }
+                    ?>
+                </span>
+                <?php
             }
         }
-        ?>
-    </span>
+    }
+    ?>
+
     <br>
 
-    <!-- location -->
-    <?php if ( $link_location ) : ?>
-
+    <?php
+    // location
+    if ( $link_location ) {
+        ?>
         <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a>
+        <?php
 
-    <?php else : ?>
-
+    } else {
+        ?>
         <span class="eap__location"><?php echo $location ?></span>
+        <?php
+    }
 
-    <?php endif; ?>
+    // city
+    if ( $city ) {
 
-    <!-- city and country -->
-    <span class="eap__city"><?php if ( ! empty ( $city ) ) echo $comma . $city ?></span>
-    <span class="eap__country"><?php if ( ! empty ( $country ) ) echo $comma . $country ?></span>
+        echo $comma;
+        ?>
+        <span class="eap__city"><?php echo $city; ?></span>
+        <?php
+    }
+
+    // country
+    if ( $country ) {
+
+        echo $comma;
+        ?>
+        <span class="eap__country"><?php echo $country; ?></span>
+        <?php
+    }
+    ?>
 </p>
 
-<!-- additional info -->
-<p class="eap__add-info">
-    <?php if ( ! empty ( $add_info ) ) echo $add_info; ?>
-</p>
+<?php
+// additional information
+if ( $add_info ) {
+    ?>
+    <!-- additional information -->
+    <p class="eap__add-info"><?php echo $add_info; ?></p>
+    <?php
+}
