@@ -28,7 +28,16 @@ $comma = '<span class="eap__comma">, </span>'
     // from date
     if ( $from_date ) {
         ?>
-        <span class="eap__date no-wrap"><?php if ( isset( $setting['date_icon'] ) ) echo $date_icon . ' '; ?><?php echo date_i18n( $setting['date_format'], strtotime( $from_date ) ); ?></span>
+        <span class="eap__date no-wrap">
+            <?php
+            if ( isset( $setting['date_icon'] ) ) {
+
+                echo $date_icon . ' ';
+            }
+
+            echo date_i18n( $setting['date_format'], strtotime( $from_date ) );
+            ?>
+        </span>
         <?php
     }
 
@@ -41,7 +50,7 @@ $comma = '<span class="eap__comma">, </span>'
             <?php
             if ( isset( $setting['time_icon'] ) ) {
 
-                echo $time_icon;
+                echo $time_icon . ' ';
             }
 
             echo date( $setting['time_format'], strtotime( $from_date . $from_time ) );
@@ -87,7 +96,7 @@ $comma = '<span class="eap__comma">, </span>'
                 // time icon
                 if ( isset( $setting['time_icon'] ) && ( $from_date != $until_date ) ) {
 
-                    echo $time_icon;
+                    echo $time_icon . ' ';
                 }
 
                 echo date( $setting['time_format'], strtotime( $until_date . $until_time ) );
