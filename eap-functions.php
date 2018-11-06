@@ -33,6 +33,7 @@ function eap_activation() {
 
     // eap_settings_style option default values
     $eap_settings_style_default = array(
+        'layout'            => '1',
         'event_bg_color'    => '#f4f4f4',
         'custom_css'        => $custom_css,
     );
@@ -46,7 +47,7 @@ function eap_activation() {
     }
 
     update_option( 'eap_settings_style', array_merge( $eap_settings_style_default, $eap_settings_style_user ) );
-    
+
     // registers custom post type
     eap_create_event_post_type();
 

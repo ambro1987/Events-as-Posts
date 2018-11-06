@@ -284,7 +284,7 @@ function eap_layout_cb() {
 
     <!-- 1 column -->
     <label for="eap-layout__1-col">
-        <input id="eap-layout__1-col" type="radio" name="eap_settings_style[layout]" value="1" <?php checked( '1', $setting['layout'] ); ?> checked />
+        <input id="eap-layout__1-col" type="radio" name="eap_settings_style[layout]" value="1" <?php checked( '1', $setting['layout'] ); ?> />
         <span><?php _e('1 Column', 'events-as-posts') ?></span>
     </label>
     <br>
