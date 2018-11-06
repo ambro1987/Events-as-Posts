@@ -92,6 +92,36 @@ function eap_time_format_cb() {
 }
 
 
+// date icon
+function eap_date_icon_cb() {
+
+    $setting = get_option( 'eap_settings' );
+    ?>
+    <p class="eap-post-event">
+        <input type="checkbox" name="eap_settings[date_icon]" id="eap__date-icon" value="true" <?php if ( isset ( $setting['date_icon'] ) ) checked( 'true', $setting['date_icon'] ); ?> />
+        <label for="eap__date-icon"><?php _e( 'Display calendar icon before date', 'events-as-posts' ); ?></label>
+        <br>
+
+    </p>
+    <?php
+}
+
+
+// time icon
+function eap_time_icon_cb() {
+
+    $setting = get_option( 'eap_settings' );
+    ?>
+    <p class="eap-post-event">
+        <input type="checkbox" name="eap_settings[time_icon]" id="eap__time-icon" value="true" <?php if ( isset ( $setting['time_icon'] ) ) checked( 'true', $setting['time_icon'] ); ?> />
+        <label for="eap__time-icon"><?php _e( 'Display clock icon before time', 'events-as-posts' ); ?></label>
+        <br>
+
+    </p>
+    <?php
+}
+
+
 /* list settings */
 
 // number of events option

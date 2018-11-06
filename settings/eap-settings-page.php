@@ -63,12 +63,10 @@ function eap_settings_errors( $setting ) {
 
     $prev_valid_setting = get_option( 'eap_settings' );
 
-    $message = null;
-    $type = null;
+    $type = 'updated';
+    $message = __( 'Settings saved.', 'events-as-posts' );
 
-
-    /* eap_settings validation */
-
+    // settings validation
     if ( preg_match( '/[^-dDjFmMnYylS,.\/\s]+/' , $setting['date_format'] ) ) {
 
         $type = 'error';
@@ -87,21 +85,14 @@ function eap_settings_errors( $setting ) {
         // set the previous valid setting
         $setting['time_format'] = $prev_valid_setting['time_format'];
 
-    } else {
+    } elseif ( ! empty( $setting['categories'] ) ) {
 
-        $type = 'updated';
-        $message = __( 'Settings saved.', 'events-as-posts' );
-    }
+        $setting['categories'] = wp_strip_all_tags( $setting['categories'] );
 
-
-    /* eap_settings_style validation */
-
-    if ( ! empty( $setting['custom_css'] ) ) {
+    } elseif ( ! empty( $setting['custom_css'] ) ) {
 
         $setting['custom_css'] = wp_strip_all_tags( $setting['custom_css'] );
 
-        $type = 'updated';
-        $message = __( 'Settings saved.', 'events-as-posts' );
     }
 
     // add settings errors

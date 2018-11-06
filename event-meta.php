@@ -11,6 +11,10 @@ $country = get_post_meta( get_the_ID(), 'eap_country', true );
 $add_info = get_post_meta( get_the_ID(), 'eap_add_info', true );
 $setting = get_option( 'eap_settings' );
 
+// date and time icons
+$date_icon = '<span class="dashicons dashicons-calendar-alt eap__date-icon"></span>';
+$time_icon = '<span class="dashicons dashicons-clock eap__time-icon"></span>';
+
 // separation mark '–' between from day/time and until day/time
 $sepmark_date = '<span class="eap__sepmark-date"> – </span>';
 // separation mark between date and time
@@ -20,9 +24,43 @@ $comma = '<span class="eap__comma">, </span>'
 
 <!-- display event meta -->
 <p class="eap__meta">
-    <span class="eap__date"><?php echo date_i18n( $setting['date_format'], strtotime( $from_date ) ); ?></span>
-    <span class="eap__time"><?php if ( $from_time ) echo $sepmark_time . date( $setting['time_format'], strtotime( $from_date . $from_time ) ); ?>
-    <span class="eap__date"><?php if ( $until_date && ( $until_date != $from_date ) ) echo $sepmark_date . date_i18n( $setting['date_format'], strtotime( $until_date ) ); ?></span>
+    <span class="eap__date"><?php if ( isset( $setting['date_icon'] ) ) echo $date_icon . ' '; ?><?php echo date_i18n( $setting['date_format'], strtotime( $from_date ) ); ?></span>
+
+    <!-- from time -->
+    <span class="eap__time">
+        <?php
+        if ( $from_time ) {
+
+            echo $sepmark_time;
+
+            if ( isset( $setting['time_icon'] ) ) {
+
+                echo $time_icon;
+            }
+
+            echo date( $setting['time_format'], strtotime( $from_date . $from_time ) );
+        }
+        ?>
+    </span>
+
+    <!-- until date -->
+    <span class="eap__date">
+        <?php
+        if ( $until_date && ( $until_date != $from_date ) ) {
+
+            echo $sepmark_date;
+
+            if ( isset( $setting['date_icon'] ) ) {
+
+                echo $date_icon . ' ';
+            }
+
+            echo date_i18n( $setting['date_format'], strtotime( $until_date ) );
+        }
+    ?>
+    </span>
+
+    <!-- until time -->
     <span class="eap__time">
         <?php
         if ( ! empty( $until_time ) ) {
@@ -36,6 +74,12 @@ $comma = '<span class="eap__comma">, </span>'
                 } else {
 
                     echo $sepmark_date;
+                }
+
+                // time icon
+                if ( isset( $setting['time_icon'] ) && ( $from_date != $until_date ) ) {
+
+                    echo $time_icon;
                 }
 
                 echo date( $setting['time_format'], strtotime( $until_date . $until_time ) );

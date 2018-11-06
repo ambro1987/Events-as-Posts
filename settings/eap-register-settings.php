@@ -36,6 +36,20 @@ function eap_settings_init() {
         'eap_date_settings'
     );
     add_settings_field(
+        'eap_date_icon',
+        __( 'Date icon', 'events-as-posts' ),
+        'eap_date_icon_cb',
+        'eap_settings',
+        'eap_date_settings'
+    );
+    add_settings_field(
+        'eap_time_icon',
+        __( 'Time icon', 'events-as-posts' ),
+        'eap_time_icon_cb',
+        'eap_settings',
+        'eap_date_settings'
+    );
+    add_settings_field(
         'eap_number_of_events',
         __( 'Number of events', 'events-as-posts' ),
         'eap_number_of_events_cb',
