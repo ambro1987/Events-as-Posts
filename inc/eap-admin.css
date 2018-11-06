@@ -1,34 +1,12 @@
-.eap-setting__date-format input {
+.eap-settings__date-settings input {
     max-width: 56px;
 }
-.eap-setting__shortcode {
+.eap-settings__shortcode {
   color: red;
 }
-.eap-setting__custom-css {
+.eap-settings__custom-css textarea {
     padding: .6em;
 }
-.eap-post-event label,
-.eap-post-event input {
-  vertical-align: middle;
-  display: inline-block;
-}
-.eap-post-event__day::before {
-  content: "\f508";
-}
-.eap-post-event__time::before {
-  content: "\f469";
-}
-.eap-post-event__location::before {
-  content: "\f230";
-}
-.eap-post-event label::before {
-  font: 400 20px/1 dashicons;
-  speak: none;
-  display: inline-block;
-  margin-left: -1px;
-  padding-right: 3px;
-  vertical-align: top;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #72777c;
+.eap-add-event__custom-field .dashicons {
+    vertical-align: middle;
 }

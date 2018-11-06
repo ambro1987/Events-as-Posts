@@ -81,22 +81,22 @@ function eap_date_metabox_callback( $post ) {
     <!-- from date and time -->
     <h4><?php _e( 'From', 'events-as-posts' ) ?></h4>
 
-    <p class="eap-post-event">
-        <label for="eap__from-day" class="eap-post-event__day"><?php _e( 'Day', 'events-as-posts' )?></label>
+    <p class="eap-add-event__custom-field">
+        <label for="eap__from-day"><span class="dashicons dashicons-calendar-alt"></span> <?php _e( 'Day', 'events-as-posts' )?></label>
         <input type="date" required name="eap_from_day" id="eap__from-day" value="<?php if ( isset ( $eap_stored_meta['eap_from_day'] ) ) echo $eap_stored_meta['eap_from_day'][0]; ?>" />
         <br>
-        <label for="eap__from-time" class="eap-post-event__time"><?php _e( 'Time', 'events-as-posts' )?></label>
+        <label for="eap__from-time"><span class="dashicons dashicons-clock"></span> <?php _e( 'Time', 'events-as-posts' )?></label>
         <input type="time" name="eap_from_time" id="eap__from-time" value="<?php if ( isset ( $eap_stored_meta['eap_from_time'] ) ) echo $eap_stored_meta['eap_from_time'][0]; ?>" />
     </p>
 
     <!-- until date and time -->
     <h4><?php _e('Until', 'events-as-posts') ?></h4>
 
-    <p class="eap-post-event">
-        <label for="eap__until-day" class="eap-post-event__day"><?php _e( 'Day', 'events-as-posts' )?></label>
+    <p class="eap-add-event__custom-field">
+        <label for="eap__until-day"><span class="dashicons dashicons-calendar-alt"></span> <?php _e( 'Day', 'events-as-posts' )?></label>
         <input type="date" name="eap_until_day" id="eap__until-day" value="<?php if ( isset ( $eap_stored_meta['eap_until_day'] ) ) echo $eap_stored_meta['eap_until_day'][0]; ?>" />
         <br>
-        <label for="eap__until-time" class="eap-post-event__time"><?php _e( 'Time', 'events-as-posts' )?></label>
+        <label for="eap__until-time"><span class="dashicons dashicons-clock"></span> <?php _e( 'Time', 'events-as-posts' )?></label>
         <input type="time" name="eap_until_time" id="eap__until-time" value="<?php if ( isset ( $eap_stored_meta['eap_until_time'] ) ) echo $eap_stored_meta['eap_until_time'][0]; ?>" />
     </p>
 <?php
@@ -112,14 +112,14 @@ function eap_location_metabox_callback( $post ) {
     ?>
 
     <!-- event location -->
-    <p class="eap-post-event">
-        <label for="eap__location" class="eap-post-event__location"><?php _e( 'Event location', 'events-as-posts' )?></label>
+    <p class="eap-add-event__custom-field">
+        <label for="eap__location"><?php _e( 'Event location', 'events-as-posts' )?></label>
         <br>
         <input type="text" required maxlength="60" name="eap_location" id="eap__location" value="<?php if ( isset ( $eap_stored_meta['eap_location'] ) ) echo $eap_stored_meta['eap_location'][0]; ?>" />
     </p>
 
     <!-- link to location -->
-    <p class="eap-post-event">
+    <p class="eap-add-event__custom-field">
         <label for="eap__link-location"><?php _e( 'Link to location', 'events-as-posts' )?></label>
         <span> | </span>
         <a href="https://www.google.com/maps" target="_blank">Google Maps</a>
@@ -128,14 +128,14 @@ function eap_location_metabox_callback( $post ) {
     </p>
 
     <!-- city -->
-    <p class="eap-post-event">
+    <p class="eap-add-event__custom-field">
         <label for="eap__city"><?php _e( 'City', 'events-as-posts' )?></label>
         <br>
         <input type="text" maxlength="40" name="eap_city" id="eap__city" value="<?php if ( isset ( $eap_stored_meta['eap_city'] ) ) echo $eap_stored_meta['eap_city'][0]; ?>" />
     </p>
 
     <!-- country -->
-    <p class="eap-post-event">
+    <p class="eap-add-event__custom-field">
         <label for="eap__country"><?php _e( 'Country', 'events-as-posts' )?></label>
         <br>
         <input type="text" maxlength="40" name="eap_country" id="eap__country" value="<?php if ( isset ( $eap_stored_meta['eap_country'] ) ) echo $eap_stored_meta['eap_country'][0]; ?>" />

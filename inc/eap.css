@@ -11,5 +11,8 @@
 .no-wrap {
     white-space: nowrap;
 }
+.eap__meta .dashicons {
+    vertical-align: middle;
+}
 
 /* you can add your styles here */

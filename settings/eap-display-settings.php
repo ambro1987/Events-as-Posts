@@ -14,7 +14,11 @@ function eap_list_settings_cb() {
     <p>
         <?php _e( '<b>Events as Posts</b> allows you to display a list of events everywhere on your site using a shortcode. Copy and paste in your posts or pages the following shortcode to display a list of events: *', 'events-as-posts' ) ?>
     </p>
-    <span class="eap-setting__shortcode">[display_events]</span>
+
+    <p>
+        <span class="eap-settings__shortcode">[display_events]</span>
+    </p>
+
     <p>
         <i><?php _e('* The above shortcode will only display future events', 'events-as-posts') ?></i>
     </p>
@@ -60,7 +64,7 @@ function eap_date_format_cb() {
     $setting = get_option( 'eap_settings' );
     ?>
 
-    <p class="eap-setting__date-format">
+    <p class="eap-settings__date-settings">
         <input type="text" name="eap_settings[date_format]" value="<?php echo $setting['date_format']; ?>" required /> <!-- pattern="[-dDjFmMnYylS,./\s]+" -->
         <p>
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> d, D, j, l, S, F, m, M, n, Y, y</i>
@@ -79,7 +83,7 @@ function eap_time_format_cb() {
     $setting = get_option( 'eap_settings' );
     ?>
 
-    <p class="eap-setting__date-format">
+    <p class="eap-settings__date-settings">
         <input type="text" name="eap_settings[time_format]" value="<?php echo $setting['time_format']; ?>" required /> <!-- pattern="[aAgGhHi:\s]+"  -->
         <p>
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> a, A, g, G, h, H, i</i>
@@ -97,11 +101,9 @@ function eap_date_icon_cb() {
 
     $setting = get_option( 'eap_settings' );
     ?>
-    <p class="eap-post-event">
+    <p>
         <input type="checkbox" name="eap_settings[date_icon]" id="eap__date-icon" value="true" <?php if ( isset ( $setting['date_icon'] ) ) checked( 'true', $setting['date_icon'] ); ?> />
         <label for="eap__date-icon"><?php _e( 'Display calendar icon before date', 'events-as-posts' ); ?></label>
-        <br>
-
     </p>
     <?php
 }
@@ -112,11 +114,9 @@ function eap_time_icon_cb() {
 
     $setting = get_option( 'eap_settings' );
     ?>
-    <p class="eap-post-event">
+    <p>
         <input type="checkbox" name="eap_settings[time_icon]" id="eap__time-icon" value="true" <?php if ( isset ( $setting['time_icon'] ) ) checked( 'true', $setting['time_icon'] ); ?> />
         <label for="eap__time-icon"><?php _e( 'Display clock icon before time', 'events-as-posts' ); ?></label>
-        <br>
-
     </p>
     <?php
 }
@@ -187,7 +187,7 @@ function eap_generate_shortcode_cb() {
 
     $setting = get_option( 'eap_settings' );
 
-    $shortcode = '<span class="eap-setting__shortcode">';
+    $shortcode = '<span class="eap-settings__shortcode">';
 
     // shortcode for future events
     if ( $setting['period'] == 'future' ) {
@@ -363,7 +363,8 @@ function eap_custom_css_cb() {
 
     $setting = get_option( 'eap_settings_style' );
     ?>
-
-    <textarea class="eap-setting__custom-css" name="eap_settings_style[custom_css]" rows="8" cols="40"><?php if ( isset( $setting['custom_css'] ) ) echo $setting['custom_css']; ?></textarea>
+    <div class="eap-settings__custom-css">
+        <textarea name="eap_settings_style[custom_css]" rows="8" cols="40"><?php if ( isset( $setting['custom_css'] ) ) echo $setting['custom_css']; ?></textarea>
+    </div>
     <?php
 }

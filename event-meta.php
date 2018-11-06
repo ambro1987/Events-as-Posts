@@ -12,8 +12,8 @@ $add_info = get_post_meta( get_the_ID(), 'eap_add_info', true );
 $setting = get_option( 'eap_settings' );
 
 // date and time icons
-$date_icon = '<span class="dashicons dashicons-calendar-alt eap__date-icon"></span>';
-$time_icon = '<span class="dashicons dashicons-clock eap__time-icon"></span>';
+$date_icon = '<span class="dashicons dashicons-calendar-alt"></span>';
+$time_icon = '<span class="dashicons dashicons-clock"></span>';
 
 // separation mark '–' between from day/time and until day/time
 $sepmark_date = '<span class="eap__sepmark-date"> – </span>';
