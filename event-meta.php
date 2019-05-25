@@ -127,16 +127,30 @@ $comma = ', ';
     <?php
     // location
     if ( $link_location ) {
-        ?>
-        <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a>
-        <?php
-
-        if ( $city ) {
-            echo $comma . $city;
-        }
-
-        if ( $country ) {
-            echo $comma . $country;
+        
+        if ( $city && ( ! $country ) ) {
+            
+            ?>
+            <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a><?php echo $comma . $city; ?>
+            <?php
+        
+        } elseif ( $country && ( ! $city ) ) {
+            
+            ?>
+            <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a><?php echo $comma . $country; ?>
+            <?php
+        
+        } elseif ( $city && $country ) {
+            
+            ?>
+            <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a><?php echo $comma . $city . $comma . $country; ?>
+            <?php
+        
+        } else {
+            
+            ?>
+            <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a>
+            <?php
         }
 
     } else {
