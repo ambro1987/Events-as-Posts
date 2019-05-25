@@ -16,10 +16,10 @@ $date_icon = '<span class="dashicons dashicons-calendar-alt"></span>';
 $time_icon = '<span class="dashicons dashicons-clock"></span>';
 
 // separation mark '–' between from day/time and until day/time
-$sepmark_date = '<span class="eap__sepmark-date"> – </span>';
+$sepmark_date = ' – ';
 // separation mark between date and time
-$sepmark_time = '<span class="eap__sepmark-time"> | </span>';
-$comma = '<span class="eap__comma">, </span>'
+$sepmark_time = ' | ';
+$comma = ', ';
 ?>
 
 <!-- event meta -->
@@ -131,28 +131,25 @@ $comma = '<span class="eap__comma">, </span>'
         <a href="<?php echo $link_location ?>" target="_blank" class="eap__location"><?php echo $location ?></a>
         <?php
 
+        if ( $city ) {
+            echo $comma . $city;
+        }
+
+        if ( $country ) {
+            echo $comma . $country;
+        }
+
     } else {
-        ?>
-        <span class="eap__location"><?php echo $location ?></span>
-        <?php
-    }
+        
+        echo $location; 
+       
+        if ( $city ) {
+            echo $comma . $city;
+        }
 
-    // city
-    if ( $city ) {
-
-        echo $comma;
-        ?>
-        <span class="eap__city"><?php echo $city; ?></span>
-        <?php
-    }
-
-    // country
-    if ( $country ) {
-
-        echo $comma;
-        ?>
-        <span class="eap__country"><?php echo $country; ?></span>
-        <?php
+        if ( $country ) {
+            echo $comma . $country;
+        }
     }
     ?>
 </p>
