@@ -5,8 +5,8 @@ Author URI: https://ambrogiopiredda.com
 Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.8
-Tested up to: 4.9.8
-Stable tag: 0.5.3
+Tested up to: 5.2
+Stable tag: 0.5.4
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,9 @@ If you're going to use 'M' or 'F' as a date format for the month, which display 
 1. Adding a new event
 
 == Changelog ==
+
+= 0.5.4 &mdash; 25 of May, 2019 =
+* Removed some span elements and some classes to get rid of white spaces after location meta
 
 = 0.5.3 &mdash; 23 of November, 2018 =
 * Fixed an error appearing when installing the plugin for the first time
