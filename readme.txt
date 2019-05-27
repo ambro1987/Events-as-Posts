@@ -6,7 +6,7 @@ Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 0.5.5
+Stable tag: 0.5.6
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,9 @@ If you're going to use 'M' or 'F' as a date format for the month, which display 
 1. Adding a new event
 
 == Changelog ==
+
+= 0.5.6 &mdash; 27 of May, 2019 =
+* Removed front-end and admin stylesheets to improve performance
 
 = 0.5.4 / 0.5.5 &mdash; 25 of May, 2019 =
 * Updated the code that displays the event location to remove white spaces appearing before the commas
