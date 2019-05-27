@@ -74,38 +74,38 @@ If you're going to use 'M' or 'F' as a date format for the month, which display 
 == Changelog ==
 
 = 0.5.4 / 0.5.5 &mdash; 25 of May, 2019 =
-* Updated the code that displays the event location to remove white spaces appearing before the commas.
+* Updated the code that displays the event location to remove white spaces appearing before the commas
 
 = 0.5.3 &mdash; 23 of November, 2018 =
-* Fixed an error appearing when installing the plugin for the first time.
+* Fixed an error appearing when installing the plugin for the first time
 
 = 0.5.2 &mdash; 6 of November, 2018 =
-* Added option to display calendar icon and clock icon before date and time.
+* Added option to display calendar icon and clock icon before date and time
 
 = 0.5.1 &mdash; 5 of November, 2018 =
-* Added custom css option.
+* Added custom css option
 
 = 0.5 &mdash; 4 of November, 2018 =
-* Added date and time format options.
-* Added date and time custom format meta keys to use with other plugins.
-* General improvements in the plugin and the code.
+* Added date and time format options
+* Added date and time custom format meta keys to use with other plugins
+* General improvements in the plugin and the code
 
 = 0.4 &mdash; 5 of October, 2018 =
-* Added 'Country' and 'Additional information' fields.
-* Added 'Display categories' option for list of events.
-* Improved settings page and removed options for colors ( apart from background color ) in style tab.
+* Added 'Country' and 'Additional information' fields
+* Added 'Display categories' option for list of events
+* Improved settings page and removed options for colors ( apart from background color ) in style tab
 
 = 0.3 &mdash; 3 of October, 2018 =
-* Added 'Read more link' option for list of events.
-* Added admin stylesheet.
-* Improved location fields when adding or editing an event.
+* Added 'Read more link' option for list of events
+* Added admin stylesheet
+* Improved location fields when adding or editing an event
 
 = 0.2.1 &mdash; 2 of October, 2018 =
-* Display all the future or all the past events independently of posts per page in 'Settings' -> 'Reading'.
+* Display all the future or all the past events independently of posts per page in 'Settings' -> 'Reading'
 
 = 0.2 &mdash; 2 of October, 2018 =
-* Added event's 'Until' date ( if present ) in 'Date' column in 'Events' -> 'All events'.
-* List of events responsive.
+* Added event's 'Until' date ( if present ) in 'Date' column in 'Events' -> 'All events'
+* List of events responsive
 
 = 0.1 &mdash; 15 of September, 2018 =
-* First release.
+* First release
