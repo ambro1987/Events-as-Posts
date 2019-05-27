@@ -16,7 +16,7 @@ function eap_list_settings_cb() {
     </p>
 
     <p>
-        <span class="eap-settings__shortcode">[display_events]</span>
+        <span>[display_events]</span>
     </p>
 
     <p>
@@ -64,8 +64,8 @@ function eap_date_format_cb() {
     $setting = get_option( 'eap_settings' );
     ?>
 
-    <p class="eap-settings__date-settings">
-        <input type="text" name="eap_settings[date_format]" value="<?php echo $setting['date_format']; ?>" required /> <!-- pattern="[-dDjFmMnYylS,./\s]+" -->
+    <p>
+        <input style="max-width:56px;" type="text" name="eap_settings[date_format]" value="<?php echo $setting['date_format']; ?>" required /> <!-- pattern="[-dDjFmMnYylS,./\s]+" -->
         <p>
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> d, D, j, l, S, F, m, M, n, Y, y</i>
         </p>
@@ -83,8 +83,8 @@ function eap_time_format_cb() {
     $setting = get_option( 'eap_settings' );
     ?>
 
-    <p class="eap-settings__date-settings">
-        <input type="text" name="eap_settings[time_format]" value="<?php echo $setting['time_format']; ?>" required /> <!-- pattern="[aAgGhHi:\s]+"  -->
+    <p>
+        <input style="max-width:56px;" type="text" name="eap_settings[time_format]" value="<?php echo $setting['time_format']; ?>" required /> <!-- pattern="[aAgGhHi:\s]+"  -->
         <p>
             <i><?php _e( 'Valid characters: ', 'events-as-posts' ); ?> a, A, g, G, h, H, i</i>
         </p>
@@ -187,7 +187,7 @@ function eap_generate_shortcode_cb() {
 
     $setting = get_option( 'eap_settings' );
 
-    $shortcode = '<span class="eap-settings__shortcode">';
+    $shortcode = '<span>';
 
     // shortcode for future events
     if ( $setting['period'] == 'future' ) {
@@ -363,8 +363,8 @@ function eap_custom_css_cb() {
 
     $setting = get_option( 'eap_settings_style' );
     ?>
-    <div class="eap-settings__custom-css">
-        <textarea name="eap_settings_style[custom_css]" rows="8" cols="40"><?php if ( isset( $setting['custom_css'] ) ) echo $setting['custom_css']; ?></textarea>
+    <div>
+        <textarea style="padding:8px;" name="eap_settings_style[custom_css]" rows="8" cols="40"><?php if ( isset( $setting['custom_css'] ) ) echo $setting['custom_css']; ?></textarea>
     </div>
     <?php
 }

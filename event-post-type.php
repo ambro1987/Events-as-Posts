@@ -82,10 +82,10 @@ function eap_date_metabox_callback( $post ) {
     <h4><?php _e( 'From', 'events-as-posts' ) ?></h4>
 
     <p class="eap-add-event__custom-field">
-        <label for="eap__from-day"><span class="dashicons dashicons-calendar-alt"></span> <?php _e( 'Day', 'events-as-posts' )?></label>
+        <label for="eap__from-day"><span style="vertical-align:middle;" class="dashicons dashicons-calendar-alt"></span> <?php _e( 'Day', 'events-as-posts' )?></label>
         <input type="date" required name="eap_from_day" id="eap__from-day" value="<?php if ( isset ( $eap_stored_meta['eap_from_day'] ) ) echo $eap_stored_meta['eap_from_day'][0]; ?>" />
         <br>
-        <label for="eap__from-time"><span class="dashicons dashicons-clock"></span> <?php _e( 'Time', 'events-as-posts' )?></label>
+        <label for="eap__from-time"><span style="vertical-align:middle;" class="dashicons dashicons-clock"></span> <?php _e( 'Time', 'events-as-posts' )?></label>
         <input type="time" name="eap_from_time" id="eap__from-time" value="<?php if ( isset ( $eap_stored_meta['eap_from_time'] ) ) echo $eap_stored_meta['eap_from_time'][0]; ?>" />
     </p>
 
@@ -93,10 +93,10 @@ function eap_date_metabox_callback( $post ) {
     <h4><?php _e('Until', 'events-as-posts') ?></h4>
 
     <p class="eap-add-event__custom-field">
-        <label for="eap__until-day"><span class="dashicons dashicons-calendar-alt"></span> <?php _e( 'Day', 'events-as-posts' )?></label>
+        <label for="eap__until-day"><span style="vertical-align:middle;" class="dashicons dashicons-calendar-alt"></span> <?php _e( 'Day', 'events-as-posts' )?></label>
         <input type="date" name="eap_until_day" id="eap__until-day" value="<?php if ( isset ( $eap_stored_meta['eap_until_day'] ) ) echo $eap_stored_meta['eap_until_day'][0]; ?>" />
         <br>
-        <label for="eap__until-time"><span class="dashicons dashicons-clock"></span> <?php _e( 'Time', 'events-as-posts' )?></label>
+        <label for="eap__until-time"><span style="vertical-align:middle;" class="dashicons dashicons-clock"></span> <?php _e( 'Time', 'events-as-posts' )?></label>
         <input type="time" name="eap_until_time" id="eap__until-time" value="<?php if ( isset ( $eap_stored_meta['eap_until_time'] ) ) echo $eap_stored_meta['eap_until_time'][0]; ?>" />
     </p>
 <?php

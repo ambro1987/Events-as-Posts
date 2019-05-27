@@ -1,35 +1,15 @@
 <?php
-
-// front-end stylesheet
-function eap_load_plugin_stylesheet() {
-
-    $plugin_url = plugin_dir_url( __FILE__ );
-
-    wp_enqueue_style( 'eap_stylesheet', $plugin_url . '/inc/eap.css' );
-}
-add_action( 'wp_enqueue_scripts', 'eap_load_plugin_stylesheet' );
-
-
-// admin stylesheet
-function eap_wp_admin_style() {
-
-    wp_register_style( 'eap_wp_admin_css', plugin_dir_url( __FILE__ ) . '/inc/eap-admin.css', false );
-    wp_enqueue_style( 'eap_wp_admin_css' );
-}
-add_action( 'admin_enqueue_scripts', 'eap_wp_admin_style' );
-
-
-// wp-color-picker and admin script
-function eap_add_color_picker( $hook ) {
+// eap admin scripts and styles
+function eap_admin_scripts( $hook ) {
 
     if( is_admin() ) {
-        // Add the color picker css file
+        // add the color picker css file
         wp_enqueue_style( 'wp-color-picker' );
-        // Include our custom jQuery file with WordPress Color Picker dependency
-        wp_enqueue_script( 'custom-script-handle', plugins_url( '/inc/eap.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+        // include custom jQuery file with WordPress Color Picker dependency
+        wp_enqueue_script( 'eap_color_picker_script', plugins_url( '/eap.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
     }
 }
-add_action( 'admin_enqueue_scripts', 'eap_add_color_picker' );
+add_action( 'admin_enqueue_scripts', 'eap_admin_scripts' );
 
 
 // load textdomain
@@ -275,6 +255,7 @@ function eap_events_style() {
             }
             @media all and (min-width: 576px) {
                 .eap__event {
+                    display: -ms-grid;
                     display: grid;
                     grid-template-columns: 1fr 2fr;
                     grid-gap: 1.6em;
@@ -316,7 +297,22 @@ function eap_events_style() {
     ?>
 
     <style>
+        .eap__img img {
+            width: 100%;
+        }
+
+        .no-wrap {
+            white-space: nowrap;
+        }
+
+        .eap__meta .dashicons {
+            vertical-align: middle;
+        }
+
         .eap__list {
+            display: -ms-grid;
+            display: grid;
+            grid-gap: 1.6em;
             background:
             <?php
             if ( $setting['bg_color'] ) {
@@ -327,6 +323,7 @@ function eap_events_style() {
             ;
         }
         .eap__event {
+            padding: 1em;
             background:
             <?php
             if ( $setting['event_bg_color'] ) {
