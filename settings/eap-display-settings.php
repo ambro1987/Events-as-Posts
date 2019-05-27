@@ -353,7 +353,7 @@ function eap_event_bg_color_cb() {
     $setting = get_option( 'eap_settings_style' );
     ?>
 
-    <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[event_bg_color]" value="<?php echo isset( $setting['event_color'] ) ? esc_attr( $setting['event_color'] ) : '#f4f4f4'; ?>" data-default-color="#f4f4f4" />
+    <input type="text" class="eap__color-field" maxlength="7" name="eap_settings_style[event_bg_color]" value="<?php echo isset( $setting['event_bg_color'] ) ? esc_attr( $setting['event_bg_color'] ) : '#f4f4f4'; ?>" data-default-color="#f4f4f4" />
     <?php
 }
 

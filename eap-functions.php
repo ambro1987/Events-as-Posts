@@ -242,105 +242,27 @@ add_action( 'init', 'eap_register_shortcodes' );
 function eap_events_style() {
 
     $setting = get_option( 'eap_settings_style' );
-
-    // 1 column layout (default)
-    if ( $setting['layout'] == 1 || !$setting['layout'] ) {
-        ?>
-        <style>
-            .eap__list {
-                grid-template-columns: 1fr;
-            }
-            .eap__title {
-                margin: 0 0 .6em !important;
-            }
-            @media all and (min-width: 576px) {
-                .eap__event {
-                    display: -ms-grid;
-                    display: grid;
-                    grid-template-columns: 1fr 2fr;
-                    grid-gap: 1.6em;
-                }
-            }
-        </style>
-        <?php
-
-    // 2 columns layout
-    } elseif ( $setting['layout'] == 2 ) {
-        ?>
-        <style>
-            .eap__title {
-                margin: .6em 0 .6em;
-            }
-            @media all and (min-width: 576px) {
-                .eap__list {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-        </style>
-        <?php
-
-    // 3 columns layout
-    } elseif ( $setting['layout'] == 3 ) {
-        ?>
-        <style>
-            .eap__title {
-                margin: .6em 0 .6em;
-            }
-            @media all and (min-width: 576px) {
-                .eap__list {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-            }
-        </style>
-        <?php
-    }
     ?>
-
     <style>
-        .eap__img img {
-            width: 100%;
-        }
+        /* Events as Posts */
+        <?php if ( $setting['layout'] == 1 || ! isset( $setting['layout'] ) ) : ?>
+            .eap__list { grid-template-columns: 1fr; }
+            .eap__title { margin: 0 0 .6em !important;}
+            @media all and (min-width: 576px) { .eap__event { display: -ms-grid; display: grid; grid-template-columns: 1fr 2fr; grid-gap: 1.6em; } }
+        <?php elseif ( $setting['layout'] == 2 ) : ?>
+            .eap__title { margin: .6em 0 .6em; }
+            @media all and (min-width: 576px) { .eap__list { grid-template-columns: repeat(2, 1fr); } }
+        <?php elseif ( $setting['layout'] == 3 ) : ?>
+            .eap__title { margin: .6em 0 .6em; }
+            @media all and (min-width: 576px) { .eap__list { grid-template-columns: repeat(3, 1fr); } }
+        <?php endif; ?>
 
-        .no-wrap {
-            white-space: nowrap;
-        }
-
-        .eap__meta .dashicons {
-            vertical-align: middle;
-        }
-
-        .eap__list {
-            display: -ms-grid;
-            display: grid;
-            grid-gap: 1.6em;
-            background:
-            <?php
-            if ( $setting['bg_color'] ) {
-
-                echo $setting['bg_color'];
-            }
-            ?>
-            ;
-        }
-        .eap__event {
-            padding: 1em;
-            background:
-            <?php
-            if ( $setting['event_bg_color'] ) {
-
-                echo $setting['event_bg_color'];
-            }
-            ?>
-            ;
-        }
-
-        <?php
-        // custom css
-        if ( $setting['custom_css'] ) {
-
-            echo htmlentities( $setting['custom_css'] );
-        }
-        ?>
+        .eap__img img { width: 100%; }
+        .no-wrap { white-space: nowrap; }
+        .eap__meta .dashicons { vertical-align: middle; }
+        .eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background: <?php echo ( isset( $setting['bg_color'] ) && ! empty ( $setting['bg_color'] ) ) ? $setting['bg_color'] : 'initial'; ?>; }
+        .eap__event { padding: 1em; background: <?php echo ( isset( $setting['event_bg_color'] ) && ! empty ( $setting['event_bg_color'] ) ) ? $setting['event_bg_color'] : 'initial'; ?>; }
+        <?php if ( isset( $setting['custom_css'] ) && ! empty ( $setting['custom_css'] ) ) echo htmlentities( $setting['custom_css'] ); ?>
     </style>
     <?php
 }
