@@ -18,28 +18,32 @@ function eap_enqueue_styles() {
     wp_enqueue_style( 'eap-styles' );
 
     $setting = get_option( 'eap_settings_style' );
+
+    $bg_color = ( isset( $setting['bg_color'] ) && ! empty ( $setting['bg_color'] ) ) ? $setting['bg_color'] : 'initial';
+    $event_bg_color = ( isset( $setting['event_bg_color'] ) && ! empty ( $setting['event_bg_color'] ) ) ? $setting['event_bg_color'] : 'initial';
     
     $css = null;
     
+    $css .= ".eap__event { padding: 1em; background: $event_bg_color; }";
+
     if ( $setting['layout'] == 1 || ! isset( $setting['layout'] ) ) {
         
-        $css .= ".eap__list { grid-template-columns: 1fr; }" .
+        $css .= ".eap__list { display: -ms-grid; display: grid; grid-template-columns: 1fr; grid-gap: 1.6em; background: $bg_color; }" .
                 ".eap__title { margin: 0 0 .6em !important;}" .
                 "@media screen and (min-width: 576px) { .eap__event { display: -ms-grid; display: grid; grid-template-columns: 1fr 2fr; grid-gap: 1.6em; } }";
 
     } elseif ( $setting['layout'] == 2 ) {
        
-        $css .= ".eap__title { margin: .6em 0 .6em; }" .
+        $css .= ".eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background: $bg_color; }" .
+                ".eap__title { margin: .6em 0 .6em; }" .
                 "@media screen and (min-width: 576px) { .eap__list { grid-template-columns: repeat(2, 1fr); } }";
 
     } elseif ( $setting['layout'] == 3 ) {
             
-        $css .= ".eap__title { margin: .6em 0 .6em; }" .
+        $css .= ".eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background: $bg_color; }" .
+                ".eap__title { margin: .6em 0 .6em; }" .
                 "@media screen and (min-width: 576px) { .eap__list { grid-template-columns: repeat(3, 1fr); } }";
     }
-
-    $css .= ".eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background:" . ( isset( $setting['bg_color'] ) && ! empty ( $setting['bg_color'] ) ) ? $setting['bg_color'] : 'initial' . "; }" .
-            ".eap__event { padding: 1em; background:" . ( isset( $setting['event_bg_color'] ) && ! empty ( $setting['event_bg_color'] ) ) ? $setting['event_bg_color'] : 'initial' . "; }";
     
     if ( isset( $setting['custom_css'] ) && ! empty ( $setting['custom_css'] ) ) {
         $css .= htmlentities( $setting['custom_css'] );
