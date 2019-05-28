@@ -6,7 +6,7 @@ Donate link: https://paypal.me/ambrogiopiredda
 Tags: event, events, event list, agenda
 Requires at least: 4.8
 Tested up to: 5.2
-Stable tag: 0.5.7
+Stable tag: 0.5.8
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,9 @@ If you're going to use 'M' or 'F' as a date format for the month, which display 
 1. Adding a new event
 
 == Changelog ==
+
+= 0.5.8 &mdash; 28 of May, 2019 =
+* Added front-end stylesheet again, but now can be disabled using [wp_deregister_style()](https://developer.wordpress.org/reference/functions/wp_deregister_style/) in case you don't want to use the plugin default styles
 
 = 0.5.7 &mdash; 27 of May, 2019 =
 * Cleaned up code that displays the styles, and correct a wrong option name in setting's page
