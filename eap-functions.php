@@ -1,16 +1,57 @@
 <?php
-// eap admin scripts and styles
-function eap_admin_scripts( $hook ) {
+// enqueue admin scripts
+function eap_enqueue_admin_scripts( $hook ) {
 
     if( is_admin() ) {
         // add the color picker css file
         wp_enqueue_style( 'wp-color-picker' );
         // include custom jQuery file with WordPress Color Picker dependency
-        wp_enqueue_script( 'eap_color_picker_script', plugins_url( '/eap.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+        wp_enqueue_script( 'eap-scripts', plugins_url( 'js/eap.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
     }
 }
-add_action( 'admin_enqueue_scripts', 'eap_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'eap_enqueue_admin_scripts' );
 
+// enqueue styles
+function eap_enqueue_styles() {
+
+    wp_register_style( 'eap-styles', plugins_url( 'css/eap.css', __FILE__ ) );
+    wp_enqueue_style( 'eap-styles' );
+
+    $setting = get_option( 'eap_settings_style' );
+    
+    $css = null;
+    
+    if ( $setting['layout'] == 1 || ! isset( $setting['layout'] ) ) {
+        
+        $css .= ".eap__list { grid-template-columns: 1fr; }" .
+                ".eap__title { margin: 0 0 .6em !important;}" .
+                "@media screen and (min-width: 576px) { .eap__event { display: -ms-grid; display: grid; grid-template-columns: 1fr 2fr; grid-gap: 1.6em; } }";
+
+    } elseif ( $setting['layout'] == 2 ) {
+       
+        $css .= ".eap__title { margin: .6em 0 .6em; }" .
+                "@media screen and (min-width: 576px) { .eap__list { grid-template-columns: repeat(2, 1fr); } }";
+
+    } elseif ( $setting['layout'] == 3 ) {
+            
+        $css .= ".eap__title { margin: .6em 0 .6em; }" .
+                "@media screen and (min-width: 576px) { .eap__list { grid-template-columns: repeat(3, 1fr); } }";
+    }
+
+    $css .= ".eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background:" . ( isset( $setting['bg_color'] ) && ! empty ( $setting['bg_color'] ) ) ? $setting['bg_color'] : 'initial' . "; }" .
+            ".eap__event { padding: 1em; background:" . ( isset( $setting['event_bg_color'] ) && ! empty ( $setting['event_bg_color'] ) ) ? $setting['event_bg_color'] : 'initial' . "; }";
+    
+    if ( isset( $setting['custom_css'] ) && ! empty ( $setting['custom_css'] ) ) {
+        $css .= htmlentities( $setting['custom_css'] );
+    }
+
+    if ( ! empty ( $css ) ) {
+        wp_add_inline_style( 'eap-styles', $css );
+    }
+
+    // wp_deregister_style('eap-styles');
+}
+add_action( 'wp_enqueue_scripts', 'eap_enqueue_styles' );
 
 // load textdomain
 function eap_load_textdomain() {
@@ -236,34 +277,3 @@ function eap_register_shortcodes() {
     add_shortcode( 'display_all_events', 'eap_display_all_events' );
 }
 add_action( 'init', 'eap_register_shortcodes' );
-
-
-// list styles
-function eap_events_style() {
-
-    $setting = get_option( 'eap_settings_style' );
-    ?>
-    <style>
-        /* Events as Posts */
-        <?php if ( $setting['layout'] == 1 || ! isset( $setting['layout'] ) ) : ?>
-            .eap__list { grid-template-columns: 1fr; }
-            .eap__title { margin: 0 0 .6em !important;}
-            @media all and (min-width: 576px) { .eap__event { display: -ms-grid; display: grid; grid-template-columns: 1fr 2fr; grid-gap: 1.6em; } }
-        <?php elseif ( $setting['layout'] == 2 ) : ?>
-            .eap__title { margin: .6em 0 .6em; }
-            @media all and (min-width: 576px) { .eap__list { grid-template-columns: repeat(2, 1fr); } }
-        <?php elseif ( $setting['layout'] == 3 ) : ?>
-            .eap__title { margin: .6em 0 .6em; }
-            @media all and (min-width: 576px) { .eap__list { grid-template-columns: repeat(3, 1fr); } }
-        <?php endif; ?>
-
-        .eap__img img { width: 100%; }
-        .no-wrap { white-space: nowrap; }
-        .eap__meta .dashicons { vertical-align: middle; }
-        .eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background: <?php echo ( isset( $setting['bg_color'] ) && ! empty ( $setting['bg_color'] ) ) ? $setting['bg_color'] : 'initial'; ?>; }
-        .eap__event { padding: 1em; background: <?php echo ( isset( $setting['event_bg_color'] ) && ! empty ( $setting['event_bg_color'] ) ) ? $setting['event_bg_color'] : 'initial'; ?>; }
-        <?php if ( isset( $setting['custom_css'] ) && ! empty ( $setting['custom_css'] ) ) echo htmlentities( $setting['custom_css'] ); ?>
-    </style>
-    <?php
-}
-add_action('wp_head', 'eap_events_style');
