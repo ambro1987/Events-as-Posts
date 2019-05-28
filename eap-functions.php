@@ -14,10 +14,10 @@ add_action( 'admin_enqueue_scripts', 'eap_enqueue_admin_scripts' );
 // enqueue styles
 function eap_enqueue_styles() {
 
+    $setting = get_option( 'eap_settings_style' );
+
     wp_register_style( 'eap-styles', plugins_url( 'css/eap.css', __FILE__ ) );
     wp_enqueue_style( 'eap-styles' );
-
-    $setting = get_option( 'eap_settings_style' );
 
     $bg_color = ( isset( $setting['bg_color'] ) && ! empty ( $setting['bg_color'] ) ) ? $setting['bg_color'] : 'initial';
     $event_bg_color = ( isset( $setting['event_bg_color'] ) && ! empty ( $setting['event_bg_color'] ) ) ? $setting['event_bg_color'] : 'initial';
@@ -52,8 +52,6 @@ function eap_enqueue_styles() {
     if ( ! empty ( $css ) ) {
         wp_add_inline_style( 'eap-styles', $css );
     }
-
-    // wp_deregister_style('eap-styles');
 }
 add_action( 'wp_enqueue_scripts', 'eap_enqueue_styles' );
 
