@@ -21,30 +21,30 @@ function eap_enqueue_styles() {
 
     $bg_color = ( isset( $setting['bg_color'] ) && ! empty ( $setting['bg_color'] ) ) ? $setting['bg_color'] : 'initial';
     $event_bg_color = ( isset( $setting['event_bg_color'] ) && ! empty ( $setting['event_bg_color'] ) ) ? $setting['event_bg_color'] : 'initial';
-    
+
     $css = null;
-    
+
     $css .= ".eap__event { padding: 1em; background: $event_bg_color; }";
 
     if ( $setting['layout'] == 1 || ! isset( $setting['layout'] ) ) {
-        
+
         $css .= ".eap__list { display: -ms-grid; display: grid; grid-template-columns: 1fr; grid-gap: 1.6em; background: $bg_color; }" .
                 ".eap__title { margin: 0 0 .6em !important;}" .
                 "@media screen and (min-width: 576px) { .eap__event { display: -ms-grid; display: grid; grid-template-columns: 1fr 2fr; grid-gap: 1.6em; } }";
 
     } elseif ( $setting['layout'] == 2 ) {
-       
+
         $css .= ".eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background: $bg_color; }" .
                 ".eap__title { margin: .6em 0 .6em; }" .
                 "@media screen and (min-width: 576px) { .eap__list { grid-template-columns: repeat(2, 1fr); } }";
 
     } elseif ( $setting['layout'] == 3 ) {
-            
+
         $css .= ".eap__list { display: -ms-grid; display: grid; grid-gap: 1.6em; background: $bg_color; }" .
                 ".eap__title { margin: .6em 0 .6em; }" .
                 "@media screen and (min-width: 576px) { .eap__list { grid-template-columns: repeat(3, 1fr); } }";
     }
-    
+
     if ( isset( $setting['custom_css'] ) && ! empty ( $setting['custom_css'] ) ) {
         $css .= htmlentities( $setting['custom_css'] );
     }
@@ -108,9 +108,17 @@ function eap_display_events( $atts ) {
         'meta_key'       => 'eap_from_day',
         'category_name'  => $category,
         'meta_query'     => array(
-            'key' => 'eap_from_day',
-            'value' => $date,
-            'compare' => '>='
+            'relation'   => 'OR',
+            array(
+                'key' => 'eap_from_day',
+                'value' => $date,
+                'compare' => '>='
+            ),
+            array(
+                'key' => 'eap_until_day',
+                'value' => $date,
+                'compare' => '>='
+            )
         ),
     );
 
@@ -169,9 +177,17 @@ function eap_display_past_events( $atts ) {
         'meta_key'       => 'eap_from_day',
         'category_name'  => $category,
         'meta_query'     => array(
-            'key' => 'eap_from_day',
-            'value' => $date,
-            'compare' => '<'
+            'relation'   => 'AND',
+            array(
+                'key' => 'eap_from_day',
+                'value' => $date,
+                'compare' => '<'
+            ),
+            array(
+                'key' => 'eap_until_day',
+                'value' => $date,
+                'compare' => '<'
+            )
         ),
     );
 

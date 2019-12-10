@@ -39,6 +39,7 @@ function eap_create_event_post_type() {
         'menu_position'     => 5,
         'menu_icon'         => 'dashicons-calendar-alt',
         'taxonomies'        => array( 'category' ),
+        'show_in_rest' => true
     );
 
     register_post_type( 'eap_event', $args );
